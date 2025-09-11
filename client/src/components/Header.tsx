@@ -10,7 +10,11 @@ export default function Header() {
     { label: 'Sobre Nós', href: '#sobre' },
     { label: 'Cursos', href: '#cursos' },
     { label: 'Calculadora', href: '#calculadora' },
+    { label: 'Quiz', href: '#quiz' },
+    { label: 'Dicas', href: '#dicas' },
+    { label: 'Exame', href: '#conselhos-exame' },
     { label: 'Galeria', href: '#galeria' },
+    { label: 'Newsletter', href: '#newsletter' },
     { label: 'Contacto', href: '#contacto' },
   ];
 

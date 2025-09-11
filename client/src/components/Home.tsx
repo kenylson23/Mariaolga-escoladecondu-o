@@ -3,7 +3,11 @@ import Hero from './Hero';
 import About from './About';
 import Courses from './Courses';
 import Calculator from './Calculator';
+import Quiz from './Quiz';
+import DrivingTips from './DrivingTips';
+import ExamTips from './ExamTips';
 import Gallery from './Gallery';
+import Newsletter from './Newsletter';
 import Contact from './Contact';
 import Footer from './Footer';
 
@@ -16,7 +20,11 @@ export default function Home() {
         <About />
         <Courses />
         <Calculator />
+        <Quiz />
+        <DrivingTips />
+        <ExamTips />
         <Gallery />
+        <Newsletter />
         <Contact />
       </main>
       <Footer />
