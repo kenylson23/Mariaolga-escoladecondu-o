@@ -16,66 +16,66 @@ export default function DrivingTips() {
   const tips: Tip[] = [
     {
       id: 1,
-      title: "Regra dos 3 Segundos",
-      content: "Mantenha sempre uma distância de pelo menos 3 segundos do veículo da frente. Escolha um ponto de referência (poste, placa) e conte: '1001, 1002, 1003'. Se passar pelo mesmo ponto antes de terminar a contagem, está demasiado próximo.",
+      title: "Distância de Segurança",
+      content: "Em Angola, mantenha pelo menos 4 segundos de distância do veículo da frente devido às condições das estradas. Em terra batida ou areia, aumente para 5-6 segundos. Conte devagar: 'mil e um, mil e dois...'",
       icon: Timer,
-      category: "Distância de Segurança",
+      category: "Segurança Rodoviária",
       difficulty: "Básico"
     },
     {
       id: 2,
-      title: "Verificação dos Espelhos",
-      content: "Verifique os espelhos a cada 8-10 segundos. Ordem: espelho retrovisor, espelho esquerdo, espelho direito. Esta técnica mantém-no consciente do que acontece ao seu redor em todas as direções.",
+      title: "Atenção ao Tráfego Misto",
+      content: "Nas cidades angolanas, esteja sempre atento a mototáxis, bicicletas, vendedores ambulantes e peões. Muitos não respeitam a sinalização. Reduza a velocidade em zonas comerciais e residenciais.",
       icon: Eye,
-      category: "Observação",
+      category: "Trânsito Urbano",
       difficulty: "Básico"
     },
     {
       id: 3,
-      title: "Posição das Mãos no Volante",
-      content: "Mantenha as mãos na posição 9h e 3h do relógio. Esta posição oferece melhor controlo, especialmente em situações de emergência. Evite a posição 10h e 2h - pode causar lesões se o airbag disparar.",
+      title: "Condução em Estradas de Terra",
+      content: "Em estradas não pavimentadas, reduza a velocidade pela metade. Mantenha as mãos firmes no volante para controlar vibrações. Evite travagens bruscas que podem causar derrapagem na areia ou barro.",
       icon: Car,
-      category: "Posicionamento",
-      difficulty: "Básico"
-    },
-    {
-      id: 4,
-      title: "Condução em Chuva",
-      content: "Reduza a velocidade em 10-15 km/h em piso molhado. Aumente a distância de segurança para 4-5 segundos. Evite travagens bruscas e manobras repentinas. Ligue os faróis mesmo durante o dia.",
-      icon: AlertTriangle,
-      category: "Condições Adversas",
+      category: "Estradas Rurais",
       difficulty: "Intermédio"
     },
     {
+      id: 4,
+      title: "Condução na Época das Chuvas",
+      content: "Durante a época das chuvas, as estradas ficam escorregadias. Reduza drasticamente a velocidade, aumente a distância e ligue os faróis. Cuidado com buracos cheios de água - podem ser mais profundos do que parecem.",
+      icon: AlertTriangle,
+      category: "Condições Climáticas",
+      difficulty: "Avançado"
+    },
+    {
       id: 5,
-      title: "Técnica de Curva",
-      content: "Aproxime-se devagar, curve rápido, saia rápido. Trave antes da curva, não durante. Olhe sempre para onde quer ir, não para o obstáculo. O carro segue naturalmente o seu olhar.",
+      title: "Navegação em Buracos",
+      content: "Reduza a velocidade ao aproximar-se de buracos. Se não conseguir desviar, passe devagar e em linha reta. Nunca trave dentro do buraco. Mantenha o veículo sempre verificado - pneus e suspensão sofrem muito.",
       icon: MapPin,
-      category: "Técnicas Avançadas",
+      category: "Infraestrutura",
       difficulty: "Intermédio"
     },
     {
       id: 6,
-      title: "Gestão da Velocidade",
-      content: "A velocidade ideal não é a máxima permitida, mas a adequada às condições. Considere: tráfego, visibilidade, estado da via, condições meteorológicas. Uma condução suave e previsível é mais segura.",
+      title: "Segurança nos Semáforos",
+      content: "Aproxime-se devagar dos semáforos. Muitos condutores aceleram no amarelo ou passam no vermelho. Antes de arrancar no verde, observe se não vem ninguém da esquerda ou direita.",
       icon: Gauge,
-      category: "Velocidade",
-      difficulty: "Intermédio"
+      category: "Intersecções",
+      difficulty: "Básico"
     },
     {
       id: 7,
-      title: "Condução Defensiva em Rotundas",
-      content: "Aproxime-se devagar, observe bem à esquerda. Sinalize a saída apenas quando passar a saída anterior à sua. Ceda sempre passagem a quem já está na rotunda. Mantenha-se na faixa exterior se possível.",
+      title: "Respeito pelas Zonas Escolares",
+      content: "Reduza drasticamente a velocidade próximo de escolas, especialmente na entrada e saída. Crianças podem surgir inesperadamente. Toque a buzina suavemente para alertar da sua presença em zonas residenciais.",
       icon: Shield,
-      category: "Rotundas",
-      difficulty: "Avançado"
+      category: "Proteção Infantil",
+      difficulty: "Básico"
     },
     {
       id: 8,
-      title: "Antecipação de Perigos",
-      content: "Observe sempre 12-15 segundos à frente. Procure pistas: luzes de travão, sinais de mudança de direção, peões nas bermas, crianças a brincar. Antecipe sempre o pior cenário possível.",
+      title: "Condução Noturna Segura",
+      content: "Nas estradas angolanas, a iluminação pública é limitada. Use sempre os faróis médios na cidade e máximos nas estradas rurais (quando não há tráfego contrário). Cuidado com animais na estrada.",
       icon: Lightbulb,
-      category: "Prevenção",
+      category: "Condução Noturna",
       difficulty: "Avançado"
     }
   ];
@@ -97,8 +97,8 @@ export default function DrivingTips() {
             Dicas de <span className="text-primary">Condução Defensiva</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Aprenda técnicas essenciais para uma condução mais segura e responsável. 
-            Estas dicas irão ajudá-lo a desenvolver bons hábitos ao volante.
+            Aprenda técnicas essenciais adaptadas às condições de condução em Angola. 
+            Estas dicas irão ajudá-lo a conduzir com segurança nas nossas estradas.
           </p>
         </div>
 

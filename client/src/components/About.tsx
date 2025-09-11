@@ -14,7 +14,7 @@ export default function About() {
     {
       icon: Trophy,
       title: 'Taxa de Sucesso Elevada',
-      description: 'Mais de 95% dos nossos alunos são aprovados no exame à primeira tentativa.'
+      description: 'Mais de 90% dos nossos alunos são aprovados no exame de condução em Angola.'
     },
     {
       icon: Heart,
@@ -36,7 +36,7 @@ export default function About() {
             Sobre a <span className="text-primary">Maria Olga</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Uma história de dedicação, profissionalismo e paixão pelo ensino da condução
+            Uma história de excelência no ensino da condução em Angola
           </p>
         </div>
 
@@ -44,18 +44,18 @@ export default function About() {
           {/* Text content */}
           <div>
             <h3 className="text-2xl md:text-3xl font-semibold mb-6 text-foreground">
-              25 Anos de Experiência na Formação de Condutores
+              20 Anos de Experiência na Formação de Condutores em Angola
             </h3>
             <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-              Fundada em 1999 por Maria Olga, a nossa escola tem-se dedicado à formação 
-              de milhares de condutores em Portugal. Com uma paixão genuína pelo ensino 
+              Fundada em 2004 por Maria Olga, a nossa escola tem-se dedicado à formação 
+              de milhares de condutores em Angola. Com uma paixão genuína pelo ensino 
               e um compromisso inabalável com a segurança rodoviária, construímos uma 
-              reputação sólida na comunidade.
+              reputação sólida em Luanda e províncias.
             </p>
             <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
               A nossa missão é simples: formar condutores confiantes, responsáveis e 
-              preparados para enfrentar os desafios das estradas modernas. Utilizamos 
-              métodos de ensino comprovados e veículos de última geração para garantir 
+              preparados para as condições únicas das estradas angolanas. Utilizamos 
+              métodos adaptados à realidade local e veículos adequados para garantir 
               a melhor experiência de aprendizagem.
             </p>
             <Button 

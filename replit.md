@@ -2,7 +2,7 @@
 
 ## Overview
 
-A comprehensive website for a Portuguese driving school (Escola de Condução Maria Olga) built as a modern single-page application. The website showcases the school's 25+ years of experience, course offerings across multiple vehicle categories (B, A, C), and provides interactive features like a course price calculator. The application emphasizes trust, professionalism, and user-friendly navigation to attract potential students and facilitate course enrollment.
+A comprehensive website for an Angolan driving school (Escola de Condução Maria Olga) built as a modern single-page application. The website showcases the school's 20+ years of experience, course offerings across multiple vehicle categories (B, A, C), and provides interactive features like a course price calculator. The application emphasizes trust, professionalism, and user-friendly navigation to attract potential students and facilitate course enrollment.
 
 ## User Preferences
 

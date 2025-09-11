@@ -31,23 +31,23 @@ export default function Contact() {
   const contactInfo = [
     {
       icon: MapPin,
-      title: 'Morada',
-      content: 'Rua das Flores, 123\n1000-100 Lisboa, Portugal'
+      title: 'Endereço',
+      content: 'Rua Rainha Ginga, 45\nMaianga, Luanda - Angola'
     },
     {
       icon: Phone,
       title: 'Telefone',
-      content: '+351 123 456 789\n+351 987 654 321'
+      content: '+244 923 456 789\n+244 912 654 321'
     },
     {
       icon: Mail,
       title: 'Email',
-      content: 'info@mariaolga.pt\ncontacto@mariaolga.pt'
+      content: 'info@mariaolga.ao\ncontacto@mariaolga.ao'
     },
     {
       icon: Clock,
       title: 'Horário',
-      content: 'Segunda a Sexta: 9h-19h\nSábado: 9h-13h'
+      content: 'Segunda a Sexta: 8h-18h\nSábado: 8h-12h'
     }
   ];
 
@@ -106,7 +106,7 @@ export default function Contact() {
                       type="tel"
                       value={formData.phone}
                       onChange={(e) => handleInputChange('phone', e.target.value)}
-                      placeholder="+351 123 456 789"
+                      placeholder="+244 923 456 789"
                       required
                       data-testid="input-phone"
                     />

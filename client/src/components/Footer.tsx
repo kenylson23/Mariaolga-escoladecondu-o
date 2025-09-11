@@ -33,7 +33,7 @@ export default function Footer() {
               Escola de Condução <span className="text-orange">Maria Olga</span>
             </h3>
             <p className="text-white/80 mb-6 leading-relaxed">
-              Há mais de 25 anos a formar condutores responsáveis e confiantes. 
+              Há mais de 20 anos a formar condutores responsáveis e confiantes em Angola. 
               A sua jornada na estrada começa connosco.
             </p>
             <div className="flex gap-4">

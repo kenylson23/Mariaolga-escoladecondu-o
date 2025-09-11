@@ -15,26 +15,26 @@ export default function ExamTips() {
   const theoreticalTips: ExamTip[] = [
     {
       id: 1,
-      title: "Estude o Manual do Código da Estrada",
-      content: "Leia atentamente todo o manual oficial. É a base de todas as perguntas do exame. Não confie apenas em resumos online.",
+      title: "Estude o Código da Estrada Angolano",
+      content: "Leia o Código da Estrada Angolano oficial. Foque nas leis de trânsito específicas do país. Não use materiais de outros países.",
       type: "do"
     },
     {
       id: 2,
-      title: "Pratique com simuladores online",
-      content: "Faça muitos testes práticos online. Familiarize-se com o formato das perguntas e o tipo de linguagem usada no exame real.",
+      title: "Pratique questões sobre sinalização local",
+      content: "Familiarize-se com os sinais de trânsito usados em Angola. Alguns podem diferir dos padrões internacionais. Pratique identificação de placas e sinais.",
       type: "do"
     },
     {
       id: 3,
-      title: "Não decore apenas as respostas",
-      content: "Compreenda a lógica por trás de cada regra. As perguntas podem ser formuladas de maneiras diferentes no exame real.",
+      title: "Não ignore as multas e penalizações",
+      content: "Estude bem o sistema de multas angolano. Conheça as infrações mais comuns e respectivas penalizações. É uma parte importante do exame.",
       type: "dont"
     },
     {
       id: 4,
-      title: "Chegue cedo no dia do exame",
-      content: "Apareça pelo menos 30 minutos antes. Leve todos os documentos necessários: BI, certificado médico e comprovativo de pagamento.",
+      title: "Documentação necessária",
+      content: "Leve o Bilhete de Identidade, certificado médico da Junta Médica aprovada, comprovativo de pagamento e fotos tipo passe. Chegue 45 minutos antes.",
       type: "info"
     }
   ];
@@ -42,38 +42,38 @@ export default function ExamTips() {
   const practicalTips: ExamTip[] = [
     {
       id: 1,
-      title: "Ajuste sempre o banco e espelhos",
-      content: "Mesmo que seja o carro da escola, ajuste tudo ao seu gosto. Demonstra que sabe a importância da posição correta de condução.",
+      title: "Inspecção inicial do veículo",
+      content: "Antes de iniciar, verifique pneus, luzes, espelhos e cintos. O examinador pode pedir para explicar alguns controlos do veículo. Mostre conhecimento.",
       type: "do"
     },
     {
       id: 2,
-      title: "Sinalize SEMPRE as manobras",
-      content: "Pisca, espelho, ponto morto - nesta ordem. Mesmo que pareça óbvio, o examinador quer ver que tem este hábito automático.",
+      title: "Adapte-se às condições da estrada",
+      content: "Demonstre como ajusta a condução a buracos, terra batida ou trânsito intenso. Reduza velocidade e mantenha segurança em estradas periféricas.",
       type: "do"
     },
     {
       id: 3,
-      title: "Não acelere desnecessariamente",
-      content: "Condução calma e suave impressiona mais que velocidade. Evite arranques bruscos e travagens repentinas.",
+      title: "Não ignore peões e vendedores",
+      content: "Em Angola, peões e vendedores ambulantes são comuns. Tenha paciência, reduza velocidade e sinalize claramente suas intenções.",
       type: "dont"
     },
     {
       id: 4,
-      title: "O examinador pode ficar em silêncio",
-      content: "Não se preocupe se o examinador não falar muito. Concentre-se na condução e siga as instruções dadas.",
+      title: "Estacionamento em declive",
+      content: "Luanda tem muitas ruas inclinadas. Pratique estacionar em aclives e declives. Saiba usar o travão de mão correctamente.",
       type: "info"
     },
     {
       id: 5,
-      title: "Mantenha as mãos no volante",
-      content: "Evite gestos desnecessários. Mantenha sempre o controlo total do veículo e uma postura profissional.",
+      title: "Respeite as condições locais",
+      content: "Conduza de forma adequada ao trânsito angolano: toque a buzina quando necessário (mas sem exageros), seja paciente com outros condutores.",
       type: "do"
     },
     {
       id: 6,
-      title: "Não tente 'impressionar' o examinador",
-      content: "Conduza normalmente, dentro dos limites. Manobras arriscadas ou desnecessárias podem resultar em reprovação.",
+      title: "Não tenha medo dos buracos",
+      content: "Se encontrar buracos durante o exame, navegue-os com calma. Reduza velocidade, passe devagar. O examinador compreende as condições das estradas.",
       type: "dont"
     }
   ];
@@ -98,30 +98,30 @@ export default function ExamTips() {
 
   const preparationSteps = [
     {
-      week: "4-6 semanas antes",
+      week: "6-8 semanas antes",
       tasks: [
-        "Inscreva-se numa escola de condução",
-        "Inicie o estudo teórico",
-        "Faça o exame médico",
-        "Comece as aulas práticas"
+        "Inscreva-se numa escola de condução licenciada",
+        "Faça exame médico na Junta Médica aprovada",
+        "Inicie estudo do Código da Estrada angolano",
+        "Comece aulas teóricas e práticas"
       ]
     },
     {
-      week: "2-3 semanas antes",
+      week: "3-4 semanas antes",
       tasks: [
-        "Intensifique as aulas práticas",
-        "Pratique estacionamentos e manobras",
-        "Faça simulados do exame teórico",
-        "Revise pontos fracos"
+        "Intensifique aulas práticas em diferentes tipos de estrada",
+        "Pratique condução em terra batida e asfalto",
+        "Faça simulados do exame teórico com questões angolanas",
+        "Revise sinalização e multas locais"
       ]
     },
     {
-      week: "1 semana antes",
+      week: "1-2 semanas antes",
       tasks: [
-        "Aulas de revisão práticas",
-        "Último simulado teórico",
-        "Prepare todos os documentos",
-        "Descanse bem na véspera"
+        "Aulas de revisão em condições reais de trânsito",
+        "Pratique estacionamento em declive (comum em Luanda)",
+        "Confirme documentos: BI, certificado médico, fotos",
+        "Descanse e mantenha-se calmo"
       ]
     }
   ];
@@ -134,8 +134,8 @@ export default function ExamTips() {
             Conselhos para o <span className="text-primary">Exame Prático</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Prepare-se adequadamente para os exames teórico e prático. 
-            Siga estes conselhos para aumentar as suas hipóteses de sucesso.
+            Prepare-se para os exames de condução em Angola. 
+            Conselhos adaptados ao sistema angolano para garantir o seu sucesso.
           </p>
         </div>
 
@@ -160,7 +160,7 @@ export default function ExamTips() {
               <div className="text-center mb-8">
                 <h3 className="text-2xl font-semibold mb-4">Exame Teórico</h3>
                 <p className="text-muted-foreground">
-                  30 perguntas | 27 respostas certas para aprovar | 35 minutos
+                  25 perguntas | 23 respostas certas para aprovar | 30 minutos
                 </p>
               </div>
               <div className="grid md:grid-cols-2 gap-6">
@@ -192,7 +192,7 @@ export default function ExamTips() {
               <div className="text-center mb-8">
                 <h3 className="text-2xl font-semibold mb-4">Exame Prático</h3>
                 <p className="text-muted-foreground">
-                  25-35 minutos | Condução em cidade e estrada | Manobras obrigatórias
+                  30-40 minutos | Condução urbana e estrada | Estacionamento e manobras
                 </p>
               </div>
               <div className="grid md:grid-cols-2 gap-6">
