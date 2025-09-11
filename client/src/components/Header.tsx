@@ -9,6 +9,7 @@ export default function Header() {
     { label: 'Início', href: '#inicio' },
     { label: 'Sobre Nós', href: '#sobre' },
     { label: 'Cursos', href: '#cursos' },
+    { label: 'Calculadora', href: '#calculadora' },
     { label: 'Galeria', href: '#galeria' },
     { label: 'Contacto', href: '#contacto' },
   ];
