@@ -122,8 +122,22 @@ export default function Footer() {
       <div className="border-t border-white/20">
         <div className="container mx-auto px-4 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-white/80">
-            <div>
-              © {new Date().getFullYear()} {siteData.company.name}. Todos os direitos reservados.
+            <div className="flex flex-col md:flex-row items-center gap-2 md:gap-4">
+              <div>
+                © {new Date().getFullYear()} {siteData.company.name}. Todos os direitos reservados.
+              </div>
+              <div className="text-xs">
+                feito por{' '}
+                <a 
+                  href="https://www.instagram.com/keny_ggg/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-orange hover:text-orange/80 transition-colors font-medium"
+                  data-testid="link-developer-credit"
+                >
+                  Kenylson Lourenço
+                </a>
+              </div>
             </div>
             <div className="flex gap-6">
               <a href="#" className="hover:text-orange transition-colors">
