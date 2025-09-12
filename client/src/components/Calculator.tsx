@@ -5,7 +5,7 @@ import { Label } from '@/components/ui/label';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Separator } from '@/components/ui/separator';
 import { Slider } from '@/components/ui/slider';
-import { Calculator as CalcIcon, Euro, CreditCard } from 'lucide-react';
+import { Calculator as CalcIcon, CreditCard, Banknote } from 'lucide-react';
 
 interface CoursePrice {
   id: string;
@@ -237,7 +237,7 @@ export default function Calculator() {
           <Card className="hover-elevate">
             <CardHeader>
               <CardTitle className="flex items-center gap-2 text-2xl">
-                <Euro className="w-6 h-6 text-primary" />
+                <Banknote className="w-6 h-6 text-primary" />
                 Resultado do Cálculo
               </CardTitle>
             </CardHeader>
