@@ -2,7 +2,7 @@
 
 ## Overview
 
-A comprehensive website for an Angolan driving school (Escola de Condução Maria Olga) built as a modern single-page application. The website showcases the school's 20+ years of experience, course offerings across multiple vehicle categories (B, A, C), and provides interactive features like a course price calculator. The application emphasizes trust, professionalism, and user-friendly navigation to attract potential students and facilitate course enrollment.
+A comprehensive website for an Angolan driving school (Escola de Condução Maria Olga) built as a modern single-page application. The website showcases the school's 20+ years of experience, course offerings across multiple vehicle categories (Ligeiro Amador, Ligeiro Profissional, Pesado Profissional), and provides interactive features like a course price calculator. The application has been converted to a completely static architecture using JSON data files as the data source, making it deployment-ready without any backend dependencies. The site emphasizes trust, professionalism, and user-friendly navigation to attract potential students and facilitate course enrollment.
 
 ## User Preferences
 
@@ -30,16 +30,21 @@ Preferred communication style: Simple, everyday language.
 - **Component composition pattern** using React composition over inheritance
 - **Form handling** with React Hook Form and Zod validation
 
-### State Management & Data Fetching
-- **TanStack Query (React Query)** for server state management and caching
-- **Local component state** using React hooks for UI interactions
+### State Management & Data Architecture
+- **Static JSON data files** located in `client/src/data/` directory containing all application data
+- **Local component state** using React hooks for UI interactions and calculator logic
 - **Form state** managed through React Hook Form for contact forms and calculator
+- **Contact form** uses mailto links for static email submission
+- **No external dependencies** for data fetching - completely self-contained
 
-### Backend Architecture
-- **Express.js** server with TypeScript for API endpoints
-- **RESTful API design** with `/api` prefix for all backend routes
-- **Memory storage** implementation with interface for easy database migration
-- **Middleware-based architecture** for request processing and error handling
+### Static Architecture
+- **Pure frontend application** with no backend dependencies
+- **JSON data files** serve as the single source of truth for all content
+  - `courses.json` - Course information, pricing, and features
+  - `quiz.json` - Traffic code quiz questions and answers
+  - `contact.json` - Contact information and course options
+  - `site.json` - General site data, navigation, and company information
+- **Component-based architecture** importing data directly from JSON files
 
 ### Database & ORM
 - **Drizzle ORM** configured for PostgreSQL with type-safe database operations
@@ -73,9 +78,9 @@ Preferred communication style: Simple, everyday language.
 - **zod** - TypeScript-first schema validation
 - **drizzle-zod** - Integration between Drizzle ORM and Zod validation
 
-### Data Fetching & State
-- **@tanstack/react-query** - Powerful data synchronization for React
-- **wouter** - Lightweight routing library alternative to React Router
+### Static Data & Navigation
+- **JSON imports** - Direct static data imports in components
+- **wouter** - Lightweight routing library (removed for single-page design)
 
 ### Backend Dependencies
 - **express** - Web application framework for Node.js
@@ -95,4 +100,4 @@ Preferred communication style: Simple, everyday language.
 - **clsx** - Utility for constructing className strings conditionally
 - **nanoid** - URL-safe unique string ID generator
 
-The architecture is designed for scalability and maintainability, with clear separation between client and server code, type safety throughout the stack, and modern development practices. The system can easily be extended with additional features like user authentication, payment processing, or advanced course management functionality.
+The architecture is designed for scalability and maintainability as a completely static site, with type safety throughout the frontend, modern development practices, and zero runtime dependencies. The system uses JSON data files as the single source of truth, making it easy to update content without code changes. The static nature makes it ideal for deployment to CDNs and ensures fast loading times. The system can be easily extended by adding new JSON data files or converting back to a dynamic architecture if needed.
