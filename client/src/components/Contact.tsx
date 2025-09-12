@@ -224,17 +224,34 @@ Enviado através do site da Escola de Condução Maria Olga`;
               </div>
             </div>
 
-            {/* Map placeholder */}
+            {/* Interactive Map */}
             <Card className="hover-elevate">
               <CardContent className="p-6">
                 <h4 className="font-semibold mb-4 text-card-foreground">
                   Como Chegar
                 </h4>
-                <div className="bg-muted rounded-lg h-48 flex items-center justify-center">
-                  <div className="text-center text-muted-foreground">
-                    <MapPin className="w-12 h-12 mx-auto mb-2" />
-                    <p>Mapa Interativo</p>
-                    <p className="text-sm">Rua das Flores, 123 - Lisboa</p>
+                <div className="rounded-lg overflow-hidden border border-border">
+                  <div className="relative w-full h-0" style={{ paddingBottom: '56.25%' }}>
+                    <iframe
+                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3942.6847419477825!2d13.242203315384615!3d-8.838316993234566!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1a51f24764b6b3b5%3A0x7e2b4b7b4b7b4b7b!2sLuanda%2C%20Angola!5e0!3m2!1spt!2sao!4v1620000000000!5m2!1spt!2sao"
+                      className="absolute top-0 left-0 w-full h-full"
+                      style={{ border: 0 }}
+                      allowFullScreen={true}
+                      loading="lazy"
+                      referrerPolicy="no-referrer-when-downgrade"
+                      data-testid="map-location"
+                      title="Localização da Escola de Condução Maria Olga"
+                    />
+                  </div>
+                </div>
+                <div className="mt-4 text-sm text-muted-foreground">
+                  <div className="flex items-start gap-2">
+                    <MapPin className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
+                    <div>
+                      <p className="font-medium text-card-foreground">Escola de Condução Maria Olga</p>
+                      <p>Luanda, Luanda-Sul, casa nº 41</p>
+                      <p>Estrada nº 11 de novembro – 4 campos</p>
+                    </div>
                   </div>
                 </div>
               </CardContent>
