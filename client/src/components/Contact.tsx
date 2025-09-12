@@ -118,9 +118,12 @@ export default function Contact() {
                         <SelectValue placeholder="Selecione um curso" />
                       </SelectTrigger>
                       <SelectContent>
-                        <SelectItem value="categoria-b">Categoria B - Automóveis</SelectItem>
-                        <SelectItem value="categoria-a">Categoria A - Motociclos</SelectItem>
-                        <SelectItem value="categoria-c">Categoria C - Pesados</SelectItem>
+                        <SelectItem value="categoria-b">Categoria B - Automóveis Ligeiros</SelectItem>
+                        <SelectItem value="categoria-a">Categoria A - Motociclos e Ciclomotores</SelectItem>
+                        <SelectItem value="categoria-c">Categoria C - Veículos Pesados</SelectItem>
+                        <SelectItem value="categoria-d">Categoria D - Transportes Colectivos</SelectItem>
+                        <SelectItem value="categoria-e">Categoria E - Veículos Articulados</SelectItem>
+                        <SelectItem value="reciclagem">Curso de Reciclagem</SelectItem>
                         <SelectItem value="outras">Outras Categorias</SelectItem>
                       </SelectContent>
                     </Select>

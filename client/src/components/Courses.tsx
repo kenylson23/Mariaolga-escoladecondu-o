@@ -9,13 +9,14 @@ export default function Courses() {
       category: 'Categoria B',
       icon: Car,
       title: 'Automóveis Ligeiros',
-      description: 'Curso completo para condução de automóveis ligeiros até 3.5 toneladas.',
-      price: '450',
-      duration: '28 aulas',
+      description: 'Curso completo para condução de automóveis ligeiros e veículos até 3.5 toneladas.',
+      price: '85.000',
+      duration: '30 aulas',
       features: [
-        'Aulas teóricas e práticas',
+        'Código da estrada angolano',
+        'Aulas práticas de condução',
+        'Preparação para exame do IMT',
         'Veículos com duplo comando',
-        'Preparação para exame',
         'Material didático incluído'
       ],
       popular: true
@@ -23,30 +24,31 @@ export default function Courses() {
     {
       category: 'Categoria A',
       icon: Bike,
-      title: 'Motociclos',
-      description: 'Formação especializada para condução de motociclos de todas as cilindradas.',
-      price: '380',
-      duration: '20 aulas',
+      title: 'Motociclos e Ciclomotores',
+      description: 'Formação para condução de motociclos, ciclomotores e triciclos motorizados.',
+      price: '65.000',
+      duration: '25 aulas',
       features: [
-        'Curso A1, A2 e A',
-        'Equipamento de proteção incluído',
-        'Pista de treino própria',
-        'Motociclos modernos'
+        'Condução de motociclos até 125cc',
+        'Equipamento de proteção fornecido',
+        'Aulas práticas em circuito',
+        'Preparação específica IMT Angola'
       ],
       popular: false
     },
     {
       category: 'Categoria C',
       icon: Truck,
-      title: 'Pesados de Mercadorias',
-      description: 'Curso profissional para condução de veículos pesados de mercadorias.',
-      price: '850',
-      duration: '35 aulas',
+      title: 'Veículos Pesados',
+      description: 'Curso profissional para condução de veículos pesados de mercadorias e transporte.',
+      price: '120.000',
+      duration: '40 aulas',
       features: [
-        'Formação profissional',
-        'Veículos industriais',
-        'Certificação reconhecida',
-        'Apoio na colocação'
+        'Legislação de transportes Angola',
+        'Condução defensiva',
+        'Manuseamento de cargas',
+        'Certificação profissional',
+        'Apoio na obtenção de emprego'
       ],
       popular: false
     }
@@ -60,8 +62,8 @@ export default function Courses() {
             Nossos <span className="text-primary">Cursos</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Oferecemos formação completa para todas as categorias de condução, 
-            com instrutores qualificados e veículos modernos
+            Oferecemos formação completa seguindo as normas do IMT Angola, 
+            com instrutores certificados e veículos adaptados às condições angolanas
           </p>
         </div>
 
@@ -99,7 +101,7 @@ export default function Courses() {
               <CardContent>
                 <div className="text-center mb-6">
                   <div className="text-3xl font-bold text-primary mb-2">
-                    {course.price}€
+                    {course.price} Kz
                   </div>
                   <div className="flex items-center justify-center gap-4 text-sm text-muted-foreground">
                     <div className="flex items-center gap-1">
@@ -136,8 +138,8 @@ export default function Courses() {
             Outras Categorias Disponíveis
           </h3>
           <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
-            Também oferecemos cursos para as categorias D (transportes públicos), 
-            E (reboques) e cursos de reciclagem. Contacte-nos para mais informações.
+            Também oferecemos cursos para categoria D (transportes colectivos), 
+            categoria E (veículos articulados) e cursos de reciclagem conforme exigido pelo IMT Angola.
           </p>
           <Button 
             variant="outline" 

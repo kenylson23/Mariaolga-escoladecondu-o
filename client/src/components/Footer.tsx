@@ -17,9 +17,10 @@ export default function Footer() {
   ];
 
   const courses = [
-    { label: 'Categoria B - Automóveis', href: '#cursos' },
+    { label: 'Categoria B - Automóveis Ligeiros', href: '#cursos' },
     { label: 'Categoria A - Motociclos', href: '#cursos' },
-    { label: 'Categoria C - Pesados', href: '#cursos' },
+    { label: 'Categoria C - Veículos Pesados', href: '#cursos' },
+    { label: 'Categoria D - Transportes Colectivos', href: '#cursos' },
     { label: 'Outras Categorias', href: '#cursos' },
   ];
 
