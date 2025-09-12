@@ -8,6 +8,13 @@ export default function Header() {
 
   const menuItems = siteData.navigation.menuItems;
 
+  const handleQuickContact = () => {
+    const whatsappNumber = "244923912483";
+    const whatsappMessage = "Olá! Gostaria de saber mais informações sobre os cursos da Escola de Condução Maria Olga.";
+    const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
+    window.open(whatsappLink, '_blank');
+  };
+
   return (
     <header className="bg-primary text-primary-foreground sticky top-0 z-50 shadow-lg">
       <div className="container mx-auto px-4">
@@ -51,6 +58,7 @@ export default function Header() {
               <Button 
                 variant="secondary" 
                 size="sm"
+                onClick={handleQuickContact}
                 data-testid="button-contacto-rapido"
               >
                 Contacto Rápido
@@ -87,6 +95,10 @@ export default function Header() {
                 <Button 
                   variant="secondary" 
                   className="mt-4 self-start"
+                  onClick={() => {
+                    handleQuickContact();
+                    setIsMenuOpen(false);
+                  }}
                   data-testid="button-mobile-contacto"
                 >
                   Contacto Rápido
