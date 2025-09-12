@@ -17,10 +17,10 @@ export default function Footer() {
   ];
 
   const courses = [
-    { label: 'Categoria B - Automóveis Ligeiros', href: '#cursos' },
-    { label: 'Categoria A - Motociclos', href: '#cursos' },
-    { label: 'Categoria C - Veículos Pesados', href: '#cursos' },
-    { label: 'Categoria D - Transportes Colectivos', href: '#cursos' },
+    { label: 'Ligeiro Amador - Particular', href: '#cursos' },
+    { label: 'Ligeiro Profissional - Comercial', href: '#cursos' },
+    { label: 'Pesado Profissional - Veículos Pesados', href: '#cursos' },
+    { label: 'Cursos de Reciclagem', href: '#cursos' },
     { label: 'Outras Categorias', href: '#cursos' },
   ];
 

@@ -6,12 +6,12 @@ import { Car, Bike, Truck, Clock, Euro, CheckCircle } from 'lucide-react';
 export default function Courses() {
   const courses = [
     {
-      category: 'Categoria B',
+      category: 'Ligeiro Amador',
       icon: Car,
-      title: 'Automóveis Ligeiros',
-      description: 'Curso completo para condução de automóveis ligeiros e veículos até 3.5 toneladas.',
-      price: '85.000',
-      duration: '30 aulas',
+      title: 'Condução Particular',
+      description: 'Curso para condução de veículos ligeiros para uso pessoal e familiar.',
+      price: '60.000',
+      duration: '25 aulas',
       features: [
         'Código da estrada angolano',
         'Aulas práticas de condução',
@@ -22,33 +22,34 @@ export default function Courses() {
       popular: true
     },
     {
-      category: 'Categoria A',
-      icon: Bike,
-      title: 'Motociclos e Ciclomotores',
-      description: 'Formação para condução de motociclos, ciclomotores e triciclos motorizados.',
-      price: '65.000',
-      duration: '25 aulas',
+      category: 'Ligeiro Profissional',
+      icon: Car,
+      title: 'Condução Profissional',
+      description: 'Curso profissional para condução comercial de veículos ligeiros.',
+      price: '70.000',
+      duration: '30 aulas',
       features: [
-        'Condução de motociclos até 125cc',
-        'Equipamento de proteção fornecido',
-        'Aulas práticas em circuito',
-        'Preparação específica IMT Angola'
+        'Formação profissional completa',
+        'Legislação de transportes comerciais',
+        'Condução defensiva avançada',
+        'Certificação profissional',
+        'Apoio na obtenção de emprego'
       ],
       popular: false
     },
     {
-      category: 'Categoria C',
+      category: 'Pesado Profissional',
       icon: Truck,
       title: 'Veículos Pesados',
       description: 'Curso profissional para condução de veículos pesados de mercadorias e transporte.',
-      price: '120.000',
-      duration: '40 aulas',
+      price: '80.000',
+      duration: '35 aulas',
       features: [
         'Legislação de transportes Angola',
-        'Condução defensiva',
+        'Condução defensiva profissional',
         'Manuseamento de cargas',
         'Certificação profissional',
-        'Apoio na obtenção de emprego'
+        'Apoio na colocação profissional'
       ],
       popular: false
     }

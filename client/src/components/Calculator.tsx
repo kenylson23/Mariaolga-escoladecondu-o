@@ -23,25 +23,25 @@ export default function Calculator() {
 
   const courses: CoursePrice[] = [
     {
-      id: 'categoria-b',
-      name: 'Categoria B - Automóveis Ligeiros',
-      price: 85000,
-      minInstallments: 1,
-      maxInstallments: 6
-    },
-    {
-      id: 'categoria-a',
-      name: 'Categoria A - Motociclos e Ciclomotores',
-      price: 65000,
+      id: 'ligeiro-amador',
+      name: 'Ligeiro Amador - Condução Particular',
+      price: 60000,
       minInstallments: 1,
       maxInstallments: 4
     },
     {
-      id: 'categoria-c',
-      name: 'Categoria C - Veículos Pesados',
-      price: 120000,
+      id: 'ligeiro-profissional',
+      name: 'Ligeiro Profissional - Condução Comercial',
+      price: 70000,
       minInstallments: 1,
-      maxInstallments: 8
+      maxInstallments: 5
+    },
+    {
+      id: 'pesado-profissional',
+      name: 'Pesado Profissional - Veículos Pesados',
+      price: 80000,
+      minInstallments: 1,
+      maxInstallments: 6
     }
   ];
 
