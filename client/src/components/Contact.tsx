@@ -37,12 +37,12 @@ export default function Contact() {
     {
       icon: Phone,
       title: 'Telefone',
-      content: '+244 923 456 789\n+244 912 654 321'
+      content: '(+244) 923 912 483\n(+244) 950 282 032'
     },
     {
       icon: Mail,
       title: 'Email',
-      content: 'info@mariaolga.ao\ncontacto@mariaolga.ao'
+      content: 'escoladeconducaomariaolga@gmail.com'
     },
     {
       icon: Clock,
