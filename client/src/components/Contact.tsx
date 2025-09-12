@@ -5,7 +5,7 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-import { MapPin, Phone, Mail, Clock } from 'lucide-react';
+import { MapPin, Phone, Mail, Clock, MessageCircle } from 'lucide-react';
 import contactData from '@/data/contact.json';
 
 export default function Contact() {
@@ -20,22 +20,41 @@ export default function Contact() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     
-    // Create mailto link with form data
-    const emailBody = `Nome: ${formData.name}
-Email: ${formData.email}
-Telefone: ${formData.phone}
-Curso de Interesse: ${formData.course}
-
-Mensagem:
-${formData.message}`;
-
-    const mailtoLink = `mailto:escoladeconducaomariaolga@gmail.com?subject=Solicitação de Informações - ${formData.name}&body=${encodeURIComponent(emailBody)}`;
+    // Validate required fields
+    if (!formData.name || !formData.email || !formData.phone || !formData.course || !formData.message) {
+      alert('Por favor, preencha todos os campos obrigatórios.');
+      return;
+    }
     
-    // Open email client
-    window.location.href = mailtoLink;
+    // Create WhatsApp message with form data
+    const whatsappMessage = `*Solicitação de Informações - Escola de Condução Maria Olga*
+
+*Nome:* ${formData.name}
+*Email:* ${formData.email}
+*Telefone:* ${formData.phone}
+*Curso de Interesse:* ${formData.course}
+
+*Mensagem:*
+${formData.message}
+
+Enviado através do site da Escola de Condução Maria Olga`;
+
+    // WhatsApp number: (+244) 923 912 483 -> 244923912483
+    const whatsappNumber = "244923912483";
+    const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
+    
+    // Open WhatsApp
+    window.open(whatsappLink, '_blank');
     
     // Reset form
     setFormData({ name: '', email: '', phone: '', course: '', message: '' });
+  };
+
+  const handleDirectWhatsApp = () => {
+    const whatsappNumber = "244923912483";
+    const whatsappMessage = "Olá! Gostaria de saber mais informações sobre os cursos da Escola de Condução Maria Olga.";
+    const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
+    window.open(whatsappLink, '_blank');
   };
 
   const handleInputChange = (field: string, value: string) => {
@@ -149,10 +168,11 @@ ${formData.message}`;
                 <Button 
                   type="submit" 
                   size="lg" 
-                  className="w-full bg-primary hover:bg-primary/90"
+                  className="w-full bg-green-600 hover:bg-green-700 text-white"
                   data-testid="button-submit-form"
                 >
-                  Enviar Mensagem
+                  <MessageCircle className="w-5 h-5 mr-2" />
+                  Enviar via WhatsApp
                 </Button>
               </form>
             </CardContent>
@@ -188,6 +208,19 @@ ${formData.message}`;
                     </CardContent>
                   </Card>
                 ))}
+              </div>
+              
+              {/* Direct WhatsApp Button */}
+              <div className="mt-6">
+                <Button 
+                  onClick={handleDirectWhatsApp}
+                  size="lg"
+                  className="w-full bg-green-600 hover:bg-green-700 text-white"
+                  data-testid="button-direct-whatsapp"
+                >
+                  <MessageCircle className="w-5 h-5 mr-2" />
+                  Contactar via WhatsApp
+                </Button>
               </div>
             </div>
 
