@@ -116,16 +116,16 @@ export default function Calculator() {
     <section id="calculadora" className="py-20 bg-background">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-4">
+          <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold text-foreground mb-4">
             Calculadora de <span className="text-primary">Mensalidades</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto">
             Calcule o valor das mensalidades do seu curso de condução e escolha 
             a forma de pagamento mais adequada ao seu orçamento
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-12 max-w-6xl mx-auto">
           {/* Calculator inputs */}
           <Card className="hover-elevate">
             <CardHeader>
@@ -142,7 +142,7 @@ export default function Calculator() {
                   <SelectTrigger>
                     <SelectValue placeholder="Escolha o curso de interesse" />
                   </SelectTrigger>
-                  <SelectContent>
+                  <SelectContent className="max-h-[60vh]">
                     {courses.map((course) => (
                       <SelectItem key={course.id} value={course.id}>
                         {course.name} - {formatCurrency(course.price)}
@@ -171,19 +171,21 @@ export default function Calculator() {
                   {/* Down payment */}
                   <div>
                     <Label htmlFor="down-payment">Entrada (%)</Label>
-                    <div className="flex items-center space-x-4">
-                      <Slider
-                        id="down-payment"
-                        min={0}
-                        max={50}
-                        step={1}
-                        value={[clampedDownPayment]}
-                        onValueChange={handleDownPaymentChange}
-                        className="flex-1"
-                        data-testid="slider-down-payment"
-                        aria-label={`Entrada de ${clampedDownPayment}%`}
-                      />
-                      <span className="text-sm font-medium w-12 text-right">{clampedDownPayment}%</span>
+                    <div className="w-full">
+                      <div className="flex items-center space-x-4">
+                        <Slider
+                          id="down-payment"
+                          min={0}
+                          max={50}
+                          step={1}
+                          value={[clampedDownPayment]}
+                          onValueChange={handleDownPaymentChange}
+                          className="flex-1 w-full"
+                          data-testid="slider-down-payment"
+                          aria-label={`Entrada de ${clampedDownPayment}%`}
+                        />
+                        <span className="text-sm font-medium w-12 text-right">{clampedDownPayment}%</span>
+                      </div>
                     </div>
                     <div className="text-xs text-muted-foreground mt-1">
                       Valor da entrada: {calculationResult && formatCurrency(calculationResult.downPaymentAmount)}

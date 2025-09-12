@@ -10,7 +10,7 @@ export default function Hero() {
   ];
 
   return (
-    <section id="inicio" className="relative h-[80vh] flex items-center justify-center overflow-hidden">
+    <section id="inicio" className="relative min-h-[70vh] sm:min-h-[80vh] flex items-center justify-center overflow-hidden">
       {/* Background image with overlay */}
       <div className="absolute inset-0 z-0">
         <img 
@@ -25,10 +25,10 @@ export default function Hero() {
       {/* Content */}
       <div className="container mx-auto px-4 relative z-10 text-center">
         <div className="max-w-4xl mx-auto">
-          <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
+          <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold text-white mb-6">
             Aprenda a Conduzir com <span className="text-orange">Confiança</span>
           </h1>
-          <p className="text-xl md:text-2xl text-white/90 mb-8 leading-relaxed">
+          <p className="text-lg sm:text-xl md:text-2xl text-white/90 mb-8 leading-relaxed">
             Na Escola de Condução Maria Olga, transformamos sonhos em realidade. 
             Com mais de 20 anos de experiência em Angola, oferecemos formação 
             adaptada às condições locais para todas as categorias de condução.
@@ -36,16 +36,16 @@ export default function Hero() {
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
             <Button 
-              size="lg" 
-              className="bg-orange hover:bg-orange/90 text-white px-8 py-4 text-lg font-semibold"
+              size="default"
+              className="bg-orange hover:bg-orange/90 text-white px-6 py-3 md:px-8 md:py-4 text-base md:text-lg font-semibold md:size-lg"
               data-testid="button-inscrever-agora"
             >
               Inscrever Agora
             </Button>
             <Button 
-              size="lg" 
+              size="default"
               variant="outline" 
-              className="bg-white/10 backdrop-blur-sm border-white/30 text-white hover:bg-white/20 px-8 py-4 text-lg"
+              className="bg-white/10 backdrop-blur-sm border-white/30 text-white hover:bg-white/20 px-6 py-3 md:px-8 md:py-4 text-base md:text-lg md:size-lg"
               data-testid="button-saber-mais"
             >
               Saber Mais
@@ -53,7 +53,7 @@ export default function Hero() {
           </div>
 
           {/* Stats */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-3xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 max-w-3xl mx-auto">
             {stats.map((stat, index) => (
               <div 
                 key={index} 

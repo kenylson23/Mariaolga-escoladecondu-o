@@ -61,16 +61,16 @@ ${formData.message}`;
     <section id="contacto" className="py-20 bg-background">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-4">
+          <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold text-foreground mb-4">
             Entre em <span className="text-primary">Contacto</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto">
             Pronto para começar a sua jornada? Contacte-nos hoje mesmo para mais informações 
             ou para agendar a sua primeira aula
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-16">
+        <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-16">
           {/* Contact form */}
           <Card className="hover-elevate">
             <CardHeader>
@@ -123,7 +123,7 @@ ${formData.message}`;
                       <SelectTrigger data-testid="select-course">
                         <SelectValue placeholder="Selecione um curso" />
                       </SelectTrigger>
-                      <SelectContent>
+                      <SelectContent className="max-h-[60vh]">
                         {contactData.courses.map((course) => (
                           <SelectItem key={course.value} value={course.value}>
                             {course.label}
@@ -161,7 +161,7 @@ ${formData.message}`;
           {/* Contact info */}
           <div className="space-y-8">
             <div>
-              <h3 className="text-2xl font-semibold mb-6 text-foreground">
+              <h3 className="text-xl sm:text-2xl font-semibold mb-6 text-foreground">
                 Informações de Contacto
               </h3>
               <div className="grid gap-6">
@@ -172,15 +172,15 @@ ${formData.message}`;
                     data-testid={`card-contact-${info.title.toLowerCase()}`}
                   >
                     <CardContent className="p-6">
-                      <div className="flex items-start gap-4">
+                      <div className="flex flex-wrap items-start gap-4">
                         <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0">
                           <info.icon className="w-6 h-6 text-primary" />
                         </div>
-                        <div>
-                          <h4 className="font-semibold text-card-foreground mb-2">
+                        <div className="min-w-0 flex-1">
+                          <h4 className="font-semibold text-card-foreground mb-2 text-sm sm:text-base">
                             {info.title}
                           </h4>
-                          <p className="text-muted-foreground whitespace-pre-line">
+                          <p className="text-muted-foreground whitespace-pre-line text-sm sm:text-base break-words">
                             {info.content}
                           </p>
                         </div>

@@ -22,16 +22,16 @@ export default function Courses() {
     <section id="cursos" className="py-20 bg-background">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-4">
+          <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold text-foreground mb-4">
             Nossos <span className="text-primary">Cursos</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto">
             Oferecemos formação completa seguindo as normas do IMT Angola, 
             com instrutores certificados e veículos adaptados às condições angolanas
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-12">
           {courses.map((course, index) => (
             <Card 
               key={index} 
@@ -42,7 +42,7 @@ export default function Courses() {
             >
               {course.popular && (
                 <Badge 
-                  className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-orange text-white"
+                  className="absolute -top-2 sm:-top-3 left-1/2 transform -translate-x-1/2 bg-orange text-white"
                   data-testid="badge-popular"
                 >
                   Mais Popular
@@ -56,8 +56,8 @@ export default function Courses() {
                 <Badge variant="secondary" className="w-fit mx-auto mb-2">
                   {course.category}
                 </Badge>
-                <CardTitle className="text-xl mb-2">{course.title}</CardTitle>
-                <p className="text-muted-foreground text-sm">
+                <CardTitle className="text-lg sm:text-xl mb-2">{course.title}</CardTitle>
+                <p className="text-muted-foreground text-sm break-words">
                   {course.description}
                 </p>
               </CardHeader>

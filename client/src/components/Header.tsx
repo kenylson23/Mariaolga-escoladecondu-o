@@ -13,13 +13,13 @@ export default function Header() {
       <div className="container mx-auto px-4">
         {/* Top bar */}
         <div className="border-b border-primary-foreground/20 py-2">
-          <div className="flex justify-between items-center text-sm">
-            <div className="flex items-center gap-4">
+          <div className="flex justify-between items-center text-xs sm:text-sm">
+            <div className="flex flex-wrap items-center gap-2 sm:gap-4">
               <div className="flex items-center gap-2">
                 <Phone className="w-4 h-4" />
                 <span>{siteData.contact.phone}</span>
               </div>
-              <div className="flex items-center gap-2">
+              <div className="hidden sm:flex items-center gap-2">
                 <MapPin className="w-4 h-4" />
                 <span>{siteData.contact.address}</span>
               </div>
@@ -31,7 +31,7 @@ export default function Header() {
         <div className="py-4">
           <div className="flex justify-between items-center">
             <div className="flex items-center">
-              <h1 className="text-2xl font-bold">
+              <h1 className="text-xl sm:text-2xl font-bold">
                 {siteData.company.name.split(' Maria Olga')[0]} <span className="text-orange">Maria Olga</span>
               </h1>
             </div>

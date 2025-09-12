@@ -176,10 +176,10 @@ export default function Quiz() {
     <section id="quiz" className="py-20 bg-muted">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-4">
+          <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold text-foreground mb-4">
             Quiz do <span className="text-primary">Código da Estrada</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto">
             Teste os seus conhecimentos sobre o código da estrada angolano. 
             Responda às perguntas e veja se está preparado para o exame do IMT!
           </p>
@@ -199,12 +199,12 @@ export default function Quiz() {
               value={((currentQuestion + 1) / questions.length) * 100} 
               className="mb-4"
             />
-            <CardTitle className="text-xl md:text-2xl leading-relaxed">
+            <CardTitle className="text-lg sm:text-xl md:text-2xl leading-relaxed break-words">
               {questions[currentQuestion].question}
             </CardTitle>
           </CardHeader>
           <CardContent className="space-y-6">
-            <div className="grid gap-3">
+            <div className="flex flex-col gap-3">
               {questions[currentQuestion].options.map((option, index) => (
                 <Button
                   key={index}
@@ -219,7 +219,7 @@ export default function Quiz() {
                       ? "secondary"
                       : "outline"
                   }
-                  className={`p-4 h-auto text-left justify-start relative ${
+                  className={`w-full p-4 h-auto text-left justify-start relative text-base sm:text-lg ${
                     showResult && index === questions[currentQuestion].correct
                       ? "bg-green-100 border-green-500 text-green-800 hover:bg-green-100"
                       : showResult && index === selectedAnswer && index !== questions[currentQuestion].correct
@@ -230,7 +230,7 @@ export default function Quiz() {
                   disabled={showResult}
                   data-testid={`answer-option-${index}`}
                 >
-                  <span className="flex-1">{option}</span>
+                  <span className="flex-1 break-words">{option}</span>
                   {showResult && index === questions[currentQuestion].correct && (
                     <CheckCircle className="w-5 h-5 ml-2 text-green-600" />
                   )}
