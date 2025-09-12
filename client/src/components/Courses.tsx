@@ -3,6 +3,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Car, Bike, Truck, Clock, CheckCircle } from 'lucide-react';
 import coursesData from '@/data/courses.json';
+import AnimatedSection from '@/components/AnimatedSection';
 
 export default function Courses() {
   const getIconComponent = (iconName: string) => {
