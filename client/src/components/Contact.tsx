@@ -6,6 +6,7 @@ import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { MapPin, Phone, Mail, Clock } from 'lucide-react';
+import contactData from '@/data/contact.json';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -18,9 +19,22 @@ export default function Contact() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
-    // TODO: remove mock functionality - implement real form submission
-    alert('Obrigado pelo seu interesse! Entraremos em contacto brevemente.');
+    
+    // Create mailto link with form data
+    const emailBody = `Nome: ${formData.name}
+Email: ${formData.email}
+Telefone: ${formData.phone}
+Curso de Interesse: ${formData.course}
+
+Mensagem:
+${formData.message}`;
+
+    const mailtoLink = `mailto:escoladeconducaomariaolga@gmail.com?subject=Solicitação de Informações - ${formData.name}&body=${encodeURIComponent(emailBody)}`;
+    
+    // Open email client
+    window.location.href = mailtoLink;
+    
+    // Reset form
     setFormData({ name: '', email: '', phone: '', course: '', message: '' });
   };
 
@@ -28,28 +42,20 @@ export default function Contact() {
     setFormData(prev => ({ ...prev, [field]: value }));
   };
 
-  const contactInfo = [
-    {
-      icon: MapPin,
-      title: 'Endereço',
-      content: 'Luanda, Luanda-Sul, casa nº 41\nest. nº 11 de novembro – 4 campos'
-    },
-    {
-      icon: Phone,
-      title: 'Telefone',
-      content: '(+244) 923 912 483\n(+244) 950 282 032'
-    },
-    {
-      icon: Mail,
-      title: 'Email',
-      content: 'escoladeconducaomariaolga@gmail.com'
-    },
-    {
-      icon: Clock,
-      title: 'Horário',
-      content: 'Segunda a Sexta: 8h-18h\nSábado: 8h-12h'
+  const getIconComponent = (iconName: string) => {
+    switch (iconName) {
+      case 'MapPin': return MapPin;
+      case 'Phone': return Phone;
+      case 'Mail': return Mail;
+      case 'Clock': return Clock;
+      default: return MapPin;
     }
-  ];
+  };
+
+  const contactInfo = contactData.contactInfo.map(info => ({
+    ...info,
+    icon: getIconComponent(info.icon)
+  }));
 
   return (
     <section id="contacto" className="py-20 bg-background">
@@ -118,11 +124,11 @@ export default function Contact() {
                         <SelectValue placeholder="Selecione um curso" />
                       </SelectTrigger>
                       <SelectContent>
-                        <SelectItem value="ligeiro-amador">Ligeiro Amador - Condução Particular</SelectItem>
-                        <SelectItem value="ligeiro-profissional">Ligeiro Profissional - Condução Comercial</SelectItem>
-                        <SelectItem value="pesado-profissional">Pesado Profissional - Veículos Pesados</SelectItem>
-                        <SelectItem value="reciclagem">Curso de Reciclagem</SelectItem>
-                        <SelectItem value="outras">Outras Categorias</SelectItem>
+                        {contactData.courses.map((course) => (
+                          <SelectItem key={course.value} value={course.value}>
+                            {course.label}
+                          </SelectItem>
+                        ))}
                       </SelectContent>
                     </Select>
                   </div>

@@ -1,0 +1,40 @@
+{
+  "company": {
+    "name": "Escola de Condução Maria Olga",
+    "shortName": "Maria Olga",
+    "description": "Há mais de 20 anos a formar condutores responsáveis e confiantes em Angola. A sua jornada na estrada começa connosco.",
+    "experienceYears": 20
+  },
+  "navigation": {
+    "menuItems": [
+      { "label": "Início", "href": "#inicio" },
+      { "label": "Sobre Nós", "href": "#sobre" },
+      { "label": "Cursos", "href": "#cursos" },
+      { "label": "Calculadora", "href": "#calculadora" },
+      { "label": "Quiz", "href": "#quiz" },
+      { "label": "Dicas", "href": "#dicas" },
+      { "label": "Exame", "href": "#conselhos-exame" },
+      { "label": "Galeria", "href": "#galeria" },
+      { "label": "Newsletter", "href": "#newsletter" },
+      { "label": "Contacto", "href": "#contacto" }
+    ],
+    "quickLinks": [
+      { "label": "Início", "href": "#inicio" },
+      { "label": "Sobre Nós", "href": "#sobre" },
+      { "label": "Cursos", "href": "#cursos" },
+      { "label": "Galeria", "href": "#galeria" },
+      { "label": "Contacto", "href": "#contacto" }
+    ]
+  },
+  "socialLinks": [
+    { "icon": "Facebook", "href": "#", "label": "Facebook" },
+    { "icon": "Instagram", "href": "#", "label": "Instagram" },
+    { "icon": "Youtube", "href": "#", "label": "YouTube" }
+  ],
+  "contact": {
+    "email": "escoladeconducaomariaolga@gmail.com",
+    "phone": "(+244) 923 912 483",
+    "secondaryPhone": "(+244) 950 282 032",
+    "address": "Luanda, Luanda-Sul, casa nº 41, est. nº 11 de novembro – 4 campos"
+  }
+}

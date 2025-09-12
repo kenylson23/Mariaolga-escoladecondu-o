@@ -1,59 +1,22 @@
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Car, Bike, Truck, Clock, Euro, CheckCircle } from 'lucide-react';
+import { Car, Bike, Truck, Clock, CheckCircle } from 'lucide-react';
+import coursesData from '@/data/courses.json';
 
 export default function Courses() {
-  const courses = [
-    {
-      category: 'Ligeiro Amador',
-      icon: Car,
-      title: 'Condução Particular',
-      description: 'Curso para condução de veículos ligeiros para uso pessoal e familiar.',
-      price: '60.000',
-      duration: '25 aulas',
-      features: [
-        'Código da estrada angolano',
-        'Aulas práticas de condução',
-        'Preparação para exame do IMT',
-        'Veículos com duplo comando',
-        'Material didático incluído'
-      ],
-      popular: true
-    },
-    {
-      category: 'Ligeiro Profissional',
-      icon: Car,
-      title: 'Condução Profissional',
-      description: 'Curso profissional para condução comercial de veículos ligeiros.',
-      price: '70.000',
-      duration: '30 aulas',
-      features: [
-        'Formação profissional completa',
-        'Legislação de transportes comerciais',
-        'Condução defensiva avançada',
-        'Certificação profissional',
-        'Apoio na obtenção de emprego'
-      ],
-      popular: false
-    },
-    {
-      category: 'Pesado Profissional',
-      icon: Truck,
-      title: 'Veículos Pesados',
-      description: 'Curso profissional para condução de veículos pesados de mercadorias e transporte.',
-      price: '80.000',
-      duration: '35 aulas',
-      features: [
-        'Legislação de transportes Angola',
-        'Condução defensiva profissional',
-        'Manuseamento de cargas',
-        'Certificação profissional',
-        'Apoio na colocação profissional'
-      ],
-      popular: false
+  const getIconComponent = (iconName: string) => {
+    switch (iconName) {
+      case 'Car': return Car;
+      case 'Truck': return Truck;
+      default: return Car;
     }
-  ];
+  };
+
+  const courses = coursesData.courses.map(course => ({
+    ...course,
+    icon: getIconComponent(course.icon)
+  }));
 
   return (
     <section id="cursos" className="py-20 bg-background">

@@ -6,6 +6,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { Separator } from '@/components/ui/separator';
 import { Slider } from '@/components/ui/slider';
 import { Calculator as CalcIcon, CreditCard, Banknote } from 'lucide-react';
+import coursesData from '@/data/courses.json';
 
 interface CoursePrice {
   id: string;
@@ -21,29 +22,13 @@ export default function Calculator() {
   const [installments, setInstallments] = useState<number>(1);
   const [paymentMethod, setPaymentMethod] = useState<string>('cash');
 
-  const courses: CoursePrice[] = [
-    {
-      id: 'ligeiro-amador',
-      name: 'Ligeiro Amador - Condução Particular',
-      price: 60000,
-      minInstallments: 1,
-      maxInstallments: 4
-    },
-    {
-      id: 'ligeiro-profissional',
-      name: 'Ligeiro Profissional - Condução Comercial',
-      price: 70000,
-      minInstallments: 1,
-      maxInstallments: 5
-    },
-    {
-      id: 'pesado-profissional',
-      name: 'Pesado Profissional - Veículos Pesados',
-      price: 80000,
-      minInstallments: 1,
-      maxInstallments: 6
-    }
-  ];
+  const courses: CoursePrice[] = coursesData.courses.map(course => ({
+    id: course.id,
+    name: `${course.category} - ${course.title}`,
+    price: course.priceNumeric,
+    minInstallments: course.minInstallments,
+    maxInstallments: course.maxInstallments
+  }));
 
   const selectedCourseData = courses.find(c => c.id === selectedCourse);
 
@@ -356,19 +341,17 @@ export default function Calculator() {
                 <div>
                   <h4 className="font-medium text-card-foreground mb-2">Formas de Pagamento</h4>
                   <ul className="space-y-1">
-                    <li>• Dinheiro, Multicaixa Express</li>
-                    <li>• Transferência bancária</li>
-                    <li>• Sem juros até 2 parcelas</li>
-                    <li>• Desconto para pagamento à vista</li>
+                    {coursesData.additionalInfo.paymentMethods.map((method, index) => (
+                      <li key={index}>• {method}</li>
+                    ))}
                   </ul>
                 </div>
                 <div>
                   <h4 className="font-medium text-card-foreground mb-2">O que está incluído</h4>
                   <ul className="space-y-1">
-                    <li>• Aulas teóricas e práticas</li>
-                    <li>• Material didático do IMT</li>
-                    <li>• Preparação para exame</li>
-                    <li>• Seguro durante a formação</li>
+                    {coursesData.additionalInfo.includedServices.map((service, index) => (
+                      <li key={index}>• {service}</li>
+                    ))}
                   </ul>
                 </div>
               </div>

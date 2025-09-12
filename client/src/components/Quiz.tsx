@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Progress } from '@/components/ui/progress';
 import { CheckCircle, XCircle, RotateCcw, Trophy, Brain } from 'lucide-react';
+import quizData from '@/data/quiz.json';
 
 interface Question {
   id: number;
@@ -26,68 +27,7 @@ export default function Quiz() {
   const autoAdvanceTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   // Questions about Angolan traffic code
-  const questions: Question[] = [
-    {
-      id: 1,
-      question: "Qual é a velocidade máxima permitida dentro das cidades em Angola?",
-      options: ["40 km/h", "50 km/h", "60 km/h", "80 km/h"],
-      correct: 2,
-      explanation: "Nas áreas urbanas de Angola, a velocidade máxima permitida é de 60 km/h, conforme o Código da Estrada angolano.",
-      category: "Velocidades"
-    },
-    {
-      id: 2,
-      question: "Qual documento é obrigatório para conduzir em Angola?",
-      options: [
-        "Apenas carta de condução",
-        "Carta de condução e documento de identificação",
-        "Carta de condução, B.I. e documento do veículo",
-        "Apenas o passaporte"
-      ],
-      correct: 2,
-      explanation: "É obrigatório ter sempre consigo a carta de condução válida, documento de identificação (B.I.) e documentos do veículo (livrete e seguro).",
-      category: "Documentação"
-    },
-    {
-      id: 3,
-      question: "Em estradas nacionais, qual é a velocidade máxima para automóveis?",
-      options: [
-        "80 km/h",
-        "90 km/h",
-        "100 km/h",
-        "120 km/h"
-      ],
-      correct: 2,
-      explanation: "Nas estradas nacionais angolanas, a velocidade máxima para automóveis é de 100 km/h, salvo sinalização em contrário.",
-      category: "Velocidades"
-    },
-    {
-      id: 4,
-      question: "Durante a época das chuvas, que cuidados especiais deve ter?",
-      options: [
-        "Apenas reduzir a velocidade",
-        "Aumentar a distância de segurança e reduzir velocidade",
-        "Usar sempre os máximos",
-        "Conduzir apenas de dia"
-      ],
-      correct: 1,
-      explanation: "Durante a época chuvosa, deve aumentar a distância de segurança, reduzir a velocidade e usar os médios para melhor visibilidade.",
-      category: "Condições Climáticas"
-    },
-    {
-      id: 5,
-      question: "Qual é a idade mínima para obter carta de condução da categoria B em Angola?",
-      options: [
-        "16 anos",
-        "17 anos",
-        "18 anos",
-        "21 anos"
-      ],
-      correct: 2,
-      explanation: "A idade mínima para obter a carta de condução da categoria B (automóveis ligeiros) em Angola é de 18 anos.",
-      category: "Legislação"
-    }
-  ];
+  const questions: Question[] = quizData.questions;
 
   const handleAnswerSelect = useCallback((answerIndex: number) => {
     if (showResult) return;

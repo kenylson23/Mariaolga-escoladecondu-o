@@ -1,22 +1,12 @@
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Menu, X, Phone, MapPin } from 'lucide-react';
+import siteData from '@/data/site.json';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const menuItems = [
-    { label: 'Início', href: '#inicio' },
-    { label: 'Sobre Nós', href: '#sobre' },
-    { label: 'Cursos', href: '#cursos' },
-    { label: 'Calculadora', href: '#calculadora' },
-    { label: 'Quiz', href: '#quiz' },
-    { label: 'Dicas', href: '#dicas' },
-    { label: 'Exame', href: '#conselhos-exame' },
-    { label: 'Galeria', href: '#galeria' },
-    { label: 'Newsletter', href: '#newsletter' },
-    { label: 'Contacto', href: '#contacto' },
-  ];
+  const menuItems = siteData.navigation.menuItems;
 
   return (
     <header className="bg-primary text-primary-foreground sticky top-0 z-50 shadow-lg">
@@ -27,11 +17,11 @@ export default function Header() {
             <div className="flex items-center gap-4">
               <div className="flex items-center gap-2">
                 <Phone className="w-4 h-4" />
-                <span>(+244) 923 912 483</span>
+                <span>{siteData.contact.phone}</span>
               </div>
               <div className="flex items-center gap-2">
                 <MapPin className="w-4 h-4" />
-                <span>Luanda, Luanda-Sul, casa nº 41, est. nº 11 de novembro – 4 campos</span>
+                <span>{siteData.contact.address}</span>
               </div>
             </div>
           </div>
@@ -42,7 +32,7 @@ export default function Header() {
           <div className="flex justify-between items-center">
             <div className="flex items-center">
               <h1 className="text-2xl font-bold">
-                Escola de Condução <span className="text-orange">Maria Olga</span>
+                {siteData.company.name.split(' Maria Olga')[0]} <span className="text-orange">Maria Olga</span>
               </h1>
             </div>
 

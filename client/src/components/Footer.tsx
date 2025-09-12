@@ -1,20 +1,24 @@
 import { Facebook, Instagram, Youtube, Mail, Phone, MapPin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import siteData from '@/data/site.json';
+import contactData from '@/data/contact.json';
 
 export default function Footer() {
-  const socialLinks = [
-    { icon: Facebook, href: '#', label: 'Facebook' },
-    { icon: Instagram, href: '#', label: 'Instagram' },
-    { icon: Youtube, href: '#', label: 'YouTube' },
-  ];
+  const getIconComponent = (iconName: string) => {
+    switch (iconName) {
+      case 'Facebook': return Facebook;
+      case 'Instagram': return Instagram;
+      case 'Youtube': return Youtube;
+      default: return Facebook;
+    }
+  };
 
-  const quickLinks = [
-    { label: 'Início', href: '#inicio' },
-    { label: 'Sobre Nós', href: '#sobre' },
-    { label: 'Cursos', href: '#cursos' },
-    { label: 'Galeria', href: '#galeria' },
-    { label: 'Contacto', href: '#contacto' },
-  ];
+  const socialLinks = siteData.socialLinks.map(link => ({
+    ...link,
+    icon: getIconComponent(link.icon)
+  }));
+
+  const quickLinks = siteData.navigation.quickLinks;
 
   const courses = [
     { label: 'Ligeiro Amador - Particular', href: '#cursos' },
@@ -31,11 +35,10 @@ export default function Footer() {
           {/* Company info */}
           <div>
             <h3 className="text-2xl font-bold mb-4">
-              Escola de Condução <span className="text-orange">Maria Olga</span>
+              {siteData.company.name.split(' Maria Olga')[0]} <span className="text-orange">{siteData.company.shortName}</span>
             </h3>
             <p className="text-white/80 mb-6 leading-relaxed">
-              Há mais de 20 anos a formar condutores responsáveis e confiantes em Angola. 
-              A sua jornada na estrada começa connosco.
+              {siteData.company.description}
             </p>
             <div className="flex gap-4">
               {socialLinks.map((social, index) => (
@@ -104,11 +107,11 @@ export default function Footer() {
               </div>
               <div className="flex items-center gap-3">
                 <Phone className="w-5 h-5 text-orange flex-shrink-0" />
-                <span className="text-white/80 text-sm">(+244) 923 912 483</span>
+                <span className="text-white/80 text-sm">{siteData.contact.phone}</span>
               </div>
               <div className="flex items-center gap-3">
                 <Mail className="w-5 h-5 text-orange flex-shrink-0" />
-                <span className="text-white/80 text-sm">escoladeconducaomariaolga@gmail.com</span>
+                <span className="text-white/80 text-sm">{siteData.contact.email}</span>
               </div>
             </div>
           </div>
@@ -120,7 +123,7 @@ export default function Footer() {
         <div className="container mx-auto px-4 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-white/80">
             <div>
-              © {new Date().getFullYear()} Escola de Condução Maria Olga. Todos os direitos reservados.
+              © {new Date().getFullYear()} {siteData.company.name}. Todos os direitos reservados.
             </div>
             <div className="flex gap-6">
               <a href="#" className="hover:text-orange transition-colors">
