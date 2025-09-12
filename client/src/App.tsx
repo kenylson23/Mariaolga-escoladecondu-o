@@ -1,29 +1,24 @@
-import { Switch, Route } from "wouter";
-import { queryClient } from "./lib/queryClient";
-import { QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import Home from "@/components/Home";
-import NotFound from "@/pages/not-found";
-
-function Router() {
-  return (
-    <Switch>
-      <Route path="/" component={Home} />
-      {/* Fallback to 404 */}
-      <Route component={NotFound} />
-    </Switch>
-  );
-}
+import { useEffect } from 'react';
 
 function App() {
+  useEffect(() => {
+    // Set Angolan design theme
+    document.documentElement.style.setProperty('--primary', '200 80% 20%');
+    document.documentElement.style.setProperty('--primary-foreground', '0 0% 100%');
+    document.documentElement.style.setProperty('--orange', '25 100% 50%');
+    document.documentElement.style.setProperty('--orange-foreground', '0 0% 100%');
+  }, []);
+
   return (
-    <QueryClientProvider client={queryClient}>
-      <TooltipProvider>
-        <Toaster />
-        <Router />
-      </TooltipProvider>
-    </QueryClientProvider>
+    <TooltipProvider>
+      <div className="min-h-screen bg-background">
+        <Home />
+      </div>
+      <Toaster />
+    </TooltipProvider>
   );
 }
 
