@@ -27,11 +27,11 @@ export default function Header() {
             <div className="flex items-center gap-4">
               <div className="flex items-center gap-2">
                 <Phone className="w-4 h-4" />
-                <span>+351 123 456 789</span>
+                <span>(+244) 923 912 483</span>
               </div>
               <div className="flex items-center gap-2">
                 <MapPin className="w-4 h-4" />
-                <span>Rua das Flores, 123, Lisboa</span>
+                <span>Rua Rainha Ginga, 45, Maianga, Luanda</span>
               </div>
             </div>
           </div>
