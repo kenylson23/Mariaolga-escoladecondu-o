@@ -97,8 +97,8 @@ export default function Footer() {
               <div className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-orange flex-shrink-0 mt-0.5" />
                 <div className="text-white/80 text-sm">
-                  Rua Rainha Ginga, 45<br />
-                  Maianga, Luanda - Angola
+                  Luanda, Luanda-Sul, casa nº 41<br />
+                  est. nº 11 de novembro – 4 campos
                 </div>
               </div>
               <div className="flex items-center gap-3">

@@ -32,7 +32,7 @@ export default function Contact() {
     {
       icon: MapPin,
       title: 'Endereço',
-      content: 'Rua Rainha Ginga, 45\nMaianga, Luanda - Angola'
+      content: 'Luanda, Luanda-Sul, casa nº 41\nest. nº 11 de novembro – 4 campos'
     },
     {
       icon: Phone,

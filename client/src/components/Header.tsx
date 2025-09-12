@@ -31,7 +31,7 @@ export default function Header() {
               </div>
               <div className="flex items-center gap-2">
                 <MapPin className="w-4 h-4" />
-                <span>Rua Rainha Ginga, 45, Maianga, Luanda</span>
+                <span>Luanda, Luanda-Sul, casa nº 41, est. nº 11 de novembro – 4 campos</span>
               </div>
             </div>
           </div>
