@@ -7,7 +7,6 @@ import Quiz from './Quiz';
 import DrivingTips from './DrivingTips';
 import ExamTips from './ExamTips';
 import Gallery from './Gallery';
-import Newsletter from './Newsletter';
 import Contact from './Contact';
 import Footer from './Footer';
 
@@ -24,7 +23,6 @@ export default function Home() {
         <DrivingTips />
         <ExamTips />
         <Gallery />
-        <Newsletter />
         <Contact />
       </main>
       <Footer />
