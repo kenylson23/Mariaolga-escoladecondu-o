@@ -32,27 +32,27 @@ export default function About() {
     <section id="sobre" className="py-20 bg-muted">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-4">
+          <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold text-foreground mb-4">
             Sobre a <span className="text-primary">Maria Olga</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto">
             Uma história de excelência no ensino da condução em Angola
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-16 items-center mb-20">
+        <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-16 items-center mb-20">
           {/* Text content */}
           <div>
-            <h3 className="text-2xl md:text-3xl font-semibold mb-6 text-foreground">
+            <h3 className="text-xl sm:text-2xl md:text-3xl font-semibold mb-6 text-foreground">
               20 Anos de Experiência na Formação de Condutores em Angola
             </h3>
-            <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
+            <p className="text-base sm:text-lg text-muted-foreground mb-6 leading-relaxed">
               Fundada em 2004 por Maria Olga, a nossa escola tem-se dedicado à formação 
               de milhares de condutores em Angola. Com uma paixão genuína pelo ensino 
               e um compromisso inabalável com a segurança rodoviária, construímos uma 
               reputação sólida em Luanda e províncias.
             </p>
-            <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
+            <p className="text-base sm:text-lg text-muted-foreground mb-8 leading-relaxed">
               A nossa missão é simples: formar condutores confiantes, responsáveis e 
               preparados para as condições únicas das estradas angolanas. Utilizamos 
               métodos adaptados à realidade local e veículos adequados para garantir 
@@ -73,13 +73,13 @@ export default function About() {
               <img 
                 src={mariaOlgaImage} 
                 alt="Maria Olga - Fundadora" 
-                className="rounded-lg shadow-lg"
+                className="w-full h-auto object-cover rounded-lg shadow-lg"
                 data-testid="img-maria-olga"
               />
               <img 
                 src={schoolImage} 
                 alt="Escola de Condução" 
-                className="rounded-lg shadow-lg mt-8"
+                className="w-full h-auto object-cover rounded-lg shadow-lg mt-8"
                 data-testid="img-escola-edificio"
               />
             </div>
@@ -87,7 +87,7 @@ export default function About() {
         </div>
 
         {/* Features grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {features.map((feature, index) => (
             <Card 
               key={index} 
@@ -96,7 +96,7 @@ export default function About() {
             >
               <CardContent className="p-6">
                 <feature.icon className="w-12 h-12 text-primary mx-auto mb-4" />
-                <h4 className="text-lg font-semibold mb-3 text-card-foreground">
+                <h4 className="text-base sm:text-lg font-semibold mb-3 text-card-foreground">
                   {feature.title}
                 </h4>
                 <p className="text-muted-foreground text-sm leading-relaxed">
