@@ -240,8 +240,8 @@ export default function Quiz() {
             Quiz do <span className="text-primary">Código da Estrada</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Teste os seus conhecimentos sobre o código da estrada português. 
-            Responda às perguntas e veja se está preparado para o exame teórico!
+            Teste os seus conhecimentos sobre o código da estrada angolano. 
+            Responda às perguntas e veja se está preparado para o exame do IMT!
           </p>
         </div>
 
