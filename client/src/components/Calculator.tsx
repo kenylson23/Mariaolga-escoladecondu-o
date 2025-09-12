@@ -24,24 +24,24 @@ export default function Calculator() {
   const courses: CoursePrice[] = [
     {
       id: 'categoria-b',
-      name: 'Categoria B - Automóveis',
-      price: 450,
+      name: 'Categoria B - Automóveis Ligeiros',
+      price: 85000,
       minInstallments: 1,
-      maxInstallments: 12
+      maxInstallments: 6
     },
     {
       id: 'categoria-a',
-      name: 'Categoria A - Motociclos',
-      price: 380,
+      name: 'Categoria A - Motociclos e Ciclomotores',
+      price: 65000,
       minInstallments: 1,
-      maxInstallments: 10
+      maxInstallments: 4
     },
     {
       id: 'categoria-c',
-      name: 'Categoria C - Pesados',
-      price: 850,
+      name: 'Categoria C - Veículos Pesados',
+      price: 120000,
       minInstallments: 1,
-      maxInstallments: 18
+      maxInstallments: 8
     }
   ];
 
@@ -64,9 +64,9 @@ export default function Calculator() {
     // Interest rates based on payment method and number of installments
     let interestRate = 0;
     if (paymentMethod === 'installments' && clampedInstallments > 1) {
-      if (clampedInstallments <= 3) interestRate = 2; // 2% total
-      else if (clampedInstallments <= 6) interestRate = 5; // 5% total
-      else if (clampedInstallments <= 12) interestRate = 8; // 8% total
+      if (clampedInstallments <= 2) interestRate = 0; // Sem juros até 2x
+      else if (clampedInstallments <= 4) interestRate = 3; // 3% total
+      else if (clampedInstallments <= 6) interestRate = 7; // 7% total
       else interestRate = 12; // 12% total
     }
 
@@ -121,9 +121,9 @@ export default function Calculator() {
   }, [selectedCourseData]);
 
   const formatCurrency = useCallback((amount: number) => {
-    return new Intl.NumberFormat('pt-PT', {
+    return new Intl.NumberFormat('pt-AO', {
       style: 'currency',
-      currency: 'EUR'
+      currency: 'AOA'
     }).format(amount);
   }, []);
 
@@ -178,7 +178,7 @@ export default function Calculator() {
                       </SelectTrigger>
                       <SelectContent>
                         <SelectItem value="cash">Pagamento à Vista</SelectItem>
-                        <SelectItem value="installments">Pagamento a Prestações</SelectItem>
+                        <SelectItem value="installments">Pagamento Faseado</SelectItem>
                       </SelectContent>
                     </Select>
                   </div>
@@ -208,7 +208,7 @@ export default function Calculator() {
                   {/* Number of installments */}
                   {paymentMethod === 'installments' && (
                     <div>
-                      <Label htmlFor="installments">Número de Prestações</Label>
+                      <Label htmlFor="installments">Número de Parcelas</Label>
                       <div className="flex items-center space-x-4">
                         <Slider
                           id="installments"
@@ -219,7 +219,7 @@ export default function Calculator() {
                           onValueChange={handleInstallmentsChange}
                           className="flex-1"
                           data-testid="slider-installments"
-                          aria-label={`${clampedInstallments} prestações`}
+                          aria-label={`${clampedInstallments} parcelas`}
                         />
                         <span className="text-sm font-medium w-10 text-right">{clampedInstallments}x</span>
                       </div>
@@ -265,7 +265,7 @@ export default function Calculator() {
                     </div>
                     {paymentMethod === 'installments' && clampedInstallments > 1 && (
                       <div className="text-sm text-muted-foreground">
-                        em {clampedInstallments}x mensalidades
+                        em {clampedInstallments}x parcelas mensais
                       </div>
                     )}
                   </div>
@@ -297,7 +297,7 @@ export default function Calculator() {
                           <span className="text-muted-foreground">Forma de pagamento:</span>
                           <span className="font-medium">
                             {clampedInstallments > 1 
-                              ? `${clampedInstallments}x prestações`
+                              ? `${clampedInstallments}x parcelas`
                               : 'Pagamento único'
                             }
                           </span>
@@ -356,19 +356,19 @@ export default function Calculator() {
                 <div>
                   <h4 className="font-medium text-card-foreground mb-2">Formas de Pagamento</h4>
                   <ul className="space-y-1">
-                    <li>• Dinheiro, MB Way, Cartão</li>
+                    <li>• Dinheiro, Multicaixa Express</li>
                     <li>• Transferência bancária</li>
-                    <li>• Financiamento sem juros até 3x</li>
-                    <li>• Possibilidade de desconto à vista</li>
+                    <li>• Sem juros até 2 parcelas</li>
+                    <li>• Desconto para pagamento à vista</li>
                   </ul>
                 </div>
                 <div>
                   <h4 className="font-medium text-card-foreground mb-2">O que está incluído</h4>
                   <ul className="space-y-1">
                     <li>• Aulas teóricas e práticas</li>
-                    <li>• Material didático</li>
-                    <li>• Taxas de exame incluídas</li>
-                    <li>• Seguro durante as aulas</li>
+                    <li>• Material didático do IMT</li>
+                    <li>• Preparação para exame</li>
+                    <li>• Seguro durante a formação</li>
                   </ul>
                 </div>
               </div>
