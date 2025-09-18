@@ -73,6 +73,41 @@
       "Material didático do IMT",
       "Preparação para exame",
       "Seguro durante a formação"
-    ]
+    ],
+    "additionalFees": [
+      {
+        "id": "licenca-aprendizagem",
+        "name": "Licença de Aprendizagem",
+        "price": "15.000",
+        "priceNumeric": 15000,
+        "required": true,
+        "description": "Taxa obrigatória para obtenção da licença de aprendizagem"
+      },
+      {
+        "id": "cadastramento",
+        "name": "Cadastramento",
+        "price": "25.000",
+        "priceNumeric": 25000,
+        "required": true,
+        "description": "Taxa de cadastramento no sistema IMT"
+      },
+      {
+        "id": "conta-stack",
+        "name": "Conta Stack",
+        "price": "2.000",
+        "priceNumeric": 2000,
+        "required": true,
+        "description": "Taxa para ativação da conta stack"
+      },
+      {
+        "id": "cartao-estudante",
+        "name": "Cartão do Estudante",
+        "price": "2.000",
+        "priceNumeric": 2000,
+        "required": true,
+        "description": "Emissão do cartão de estudante"
+      }
+    ],
+    "totalAdditionalFees": 44000
   }
 }

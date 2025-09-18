@@ -97,6 +97,41 @@ export default function Courses() {
           ))}
         </div>
 
+        {/* Additional Fees */}
+        <div className="bg-amber-50 border border-amber-200 rounded-lg p-8 mb-12">
+          <h3 className="text-2xl font-semibold mb-4 text-foreground text-center">
+            Taxas Adicionais Obrigatórias
+          </h3>
+          <p className="text-muted-foreground mb-6 text-center max-w-3xl mx-auto">
+            Além do preço da categoria, são obrigatórias as seguintes taxas para todos os estudantes:
+          </p>
+          
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-4xl mx-auto mb-6">
+            {coursesData.additionalInfo.additionalFees.map((fee, index) => (
+              <div key={fee.id} className="bg-white rounded-lg p-4 border border-amber-200">
+                <div className="text-center">
+                  <div className="text-lg font-bold text-amber-700 mb-1">
+                    {fee.price} Kz
+                  </div>
+                  <div className="text-sm font-medium text-foreground mb-2">
+                    {fee.name}
+                  </div>
+                  <div className="text-xs text-muted-foreground">
+                    {fee.description}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+          
+          <div className="text-center border-t border-amber-200 pt-4">
+            <div className="text-sm text-muted-foreground mb-2">Total das taxas adicionais:</div>
+            <div className="text-2xl font-bold text-amber-700">
+              {(coursesData.additionalInfo.totalAdditionalFees).toLocaleString('pt-AO')} Kz
+            </div>
+          </div>
+        </div>
+
         {/* Additional info */}
         <div className="text-center bg-muted rounded-lg p-8">
           <h3 className="text-2xl font-semibold mb-4 text-foreground">

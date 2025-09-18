@@ -38,13 +38,17 @@ export default function Calculator() {
     ? Math.max(selectedCourseData.minInstallments, Math.min(selectedCourseData.maxInstallments, installments))
     : installments;
 
+  // Additional fees from courses data
+  const additionalFees = coursesData.additionalInfo.totalAdditionalFees || 0;
+
   // Calculate payment details using useMemo for better performance
   const calculationResult = useMemo(() => {
     if (!selectedCourseData) return null;
 
-    const basePrice = selectedCourseData.price;
-    const downPaymentAmount = (basePrice * clampedDownPayment) / 100;
-    const financedAmount = basePrice - downPaymentAmount;
+    const baseCoursePrice = selectedCourseData.price;
+    const totalBasePrice = baseCoursePrice + additionalFees;
+    const downPaymentAmount = (totalBasePrice * clampedDownPayment) / 100;
+    const financedAmount = totalBasePrice - downPaymentAmount;
 
     // Interest rates based on payment method and number of installments
     let interestRate = 0;
@@ -65,9 +69,11 @@ export default function Calculator() {
       downPaymentAmount,
       financedAmount,
       totalWithInterest,
-      interestRate
+      interestRate,
+      baseCoursePrice,
+      additionalFees
     };
-  }, [selectedCourseData, clampedDownPayment, clampedInstallments, paymentMethod]);
+  }, [selectedCourseData, clampedDownPayment, clampedInstallments, paymentMethod, additionalFees]);
 
   const handleCourseChange = useCallback((courseId: string) => {
     setSelectedCourse(courseId);
@@ -265,8 +271,13 @@ export default function Calculator() {
                     
                     <div className="space-y-3 text-sm">
                       <div className="flex justify-between">
-                        <span className="text-muted-foreground">Preço do curso:</span>
-                        <span className="font-medium">{formatCurrency(selectedCourseData.price)}</span>
+                        <span className="text-muted-foreground">Preço da categoria:</span>
+                        <span className="font-medium">{formatCurrency(calculationResult.baseCoursePrice)}</span>
+                      </div>
+                      
+                      <div className="flex justify-between">
+                        <span className="text-muted-foreground">Taxas adicionais:</span>
+                        <span className="font-medium">{formatCurrency(calculationResult.additionalFees)}</span>
                       </div>
                       
                       <div className="flex justify-between">
