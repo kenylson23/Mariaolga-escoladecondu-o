@@ -137,10 +137,10 @@ Enviado através do site da Escola de Condução Maria Olga`;
                     />
                   </div>
                   <div>
-                    <Label htmlFor="course">Curso de Interesse</Label>
+                    <Label htmlFor="course">Categoria de Interesse</Label>
                     <Select onValueChange={(value) => handleInputChange('course', value)}>
                       <SelectTrigger data-testid="select-course">
-                        <SelectValue placeholder="Selecione um curso" />
+                        <SelectValue placeholder="Selecione uma categoria" />
                       </SelectTrigger>
                       <SelectContent className="max-h-[60vh]">
                         {contactData.courses.map((course) => (

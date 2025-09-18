@@ -120,7 +120,7 @@ export default function Calculator() {
             Calculadora de <span className="text-primary">Mensalidades</span>
           </h2>
           <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto">
-            Calcule o valor das mensalidades do seu curso de condução e escolha 
+            Calcule o valor das mensalidades da sua categoria de condução e escolha 
             a forma de pagamento mais adequada ao seu orçamento
           </p>
         </div>
@@ -137,7 +137,7 @@ export default function Calculator() {
             <CardContent className="space-y-6">
               {/* Course selection */}
               <div>
-                <Label htmlFor="course">Selecione o Curso</Label>
+                <Label htmlFor="course">Selecione a Categoria</Label>
                 <Select onValueChange={handleCourseChange} data-testid="select-course-calculator">
                   <SelectTrigger>
                     <SelectValue placeholder="Escolha o curso de interesse" />

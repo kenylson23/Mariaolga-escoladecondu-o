@@ -21,11 +21,11 @@ export default function Footer() {
   const quickLinks = siteData.navigation.quickLinks;
 
   const courses = [
-    { label: 'Ligeiro Amador - Particular', href: '#cursos' },
-    { label: 'Ligeiro Profissional - Comercial', href: '#cursos' },
-    { label: 'Pesado Profissional - Veículos Pesados', href: '#cursos' },
-    { label: 'Cursos de Reciclagem', href: '#cursos' },
-    { label: 'Outras Categorias', href: '#cursos' },
+    { label: 'Ligeiro Amador - Particular', href: '#categorias' },
+    { label: 'Ligeiro Profissional - Comercial', href: '#categorias' },
+    { label: 'Pesado Profissional - Veículos Pesados', href: '#categorias' },
+    { label: 'Categorias de Reciclagem', href: '#categorias' },
+    { label: 'Outras Categorias', href: '#categorias' },
   ];
 
   return (
@@ -78,7 +78,7 @@ export default function Footer() {
 
           {/* Courses */}
           <div>
-            <h4 className="text-lg font-semibold mb-4">Nossos Cursos</h4>
+            <h4 className="text-lg font-semibold mb-4">Nossas Categorias</h4>
             <ul className="space-y-2">
               {courses.map((course, index) => (
                 <li key={index}>

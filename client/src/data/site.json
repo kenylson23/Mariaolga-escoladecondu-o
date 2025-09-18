@@ -9,7 +9,7 @@
     "menuItems": [
       { "label": "Início", "href": "#inicio" },
       { "label": "Sobre Nós", "href": "#sobre" },
-      { "label": "Cursos", "href": "#cursos" },
+      { "label": "Categorias", "href": "#categorias" },
       { "label": "Calculadora", "href": "#calculadora" },
       { "label": "Quiz", "href": "#quiz" },
       { "label": "Dicas", "href": "#dicas" },
@@ -20,7 +20,7 @@
     "quickLinks": [
       { "label": "Início", "href": "#inicio" },
       { "label": "Sobre Nós", "href": "#sobre" },
-      { "label": "Cursos", "href": "#cursos" },
+      { "label": "Categorias", "href": "#categorias" },
       { "label": "Galeria", "href": "#galeria" },
       { "label": "Contacto", "href": "#contacto" }
     ]
