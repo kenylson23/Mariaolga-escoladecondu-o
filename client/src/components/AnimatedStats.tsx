@@ -9,7 +9,7 @@ export default function AnimatedStats() {
     triggerOnce: true
   });
 
-  const yearsCount = useCounterAnimation({ end: 20, isVisible, duration: 2000 });
+  const yearsCount = useCounterAnimation({ end: 12, isVisible, duration: 2000 });
   const studentsCount = useCounterAnimation({ end: 1500, isVisible, duration: 2500 });
   const successRate = useCounterAnimation({ end: 92, isVisible, duration: 2200 });
   const coursesCount = useCounterAnimation({ end: 8, isVisible, duration: 1800 });
@@ -20,7 +20,7 @@ export default function AnimatedStats() {
       value: yearsCount,
       suffix: '+',
       label: 'Anos de Experiência',
-      description: 'Formando condutores desde 2004'
+      description: 'Formando condutores desde 2013'
     },
     {
       icon: Users,
@@ -57,7 +57,7 @@ export default function AnimatedStats() {
             Números que Falam por Si
           </h2>
           <p className="text-lg text-primary-foreground/80 max-w-2xl mx-auto">
-            Duas décadas de dedicação ao ensino da condução em Angola
+            Mais de uma década de dedicação ao ensino da condução em Angola
           </p>
         </div>
 

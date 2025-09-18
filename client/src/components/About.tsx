@@ -47,10 +47,10 @@ export default function About() {
           <AnimatedSection animation="slideRight" delay={200}>
             <div>
               <h3 className="text-xl sm:text-2xl md:text-3xl font-semibold mb-6 text-foreground">
-                20 Anos de Experiência na Formação de Condutores em Angola
+                Mais de 10 Anos de Experiência na Formação de Condutores em Angola
               </h3>
               <p className="text-base sm:text-lg text-muted-foreground mb-6 leading-relaxed">
-                Fundada em 2004 por Maria Olga, a nossa escola tem-se dedicado à formação 
+                Fundada em 2013 por Maria Olga, a nossa escola tem-se dedicado à formação 
                 de milhares de condutores em Angola. Com uma paixão genuína pelo ensino 
                 e um compromisso inabalável com a segurança rodoviária, construímos uma 
                 reputação sólida em Luanda e províncias.

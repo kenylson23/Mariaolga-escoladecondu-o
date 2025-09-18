@@ -4,7 +4,7 @@ import heroImage from '@assets/generated_images/Driving_instructor_teaching_stud
 
 export default function Hero() {
   const stats = [
-    { icon: Award, label: 'Anos de Experiência', value: '20+' },
+    { icon: Award, label: 'Anos de Experiência', value: '12+' },
     { icon: Users, label: 'Alunos Aprovados', value: '3500+' },
     { icon: Car, label: 'Veículos Adequados', value: '12' },
   ];
@@ -30,7 +30,7 @@ export default function Hero() {
           </h1>
           <p className="text-lg sm:text-xl md:text-2xl text-white/90 mb-8 leading-relaxed">
             Na Escola de Condução Maria Olga, transformamos sonhos em realidade. 
-            Com mais de 20 anos de experiência em Angola, oferecemos formação 
+            Com mais de 10 anos de experiência em Angola, oferecemos formação 
             adaptada às condições locais para todas as categorias de condução.
           </p>
           
