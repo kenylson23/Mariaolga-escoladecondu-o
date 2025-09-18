@@ -68,7 +68,16 @@ export default function Courses() {
                   <div className="text-3xl font-bold text-primary mb-2">
                     {course.price} Kz
                   </div>
-                  <div className="flex items-center justify-center gap-4 text-sm text-muted-foreground">
+                  <div className="text-sm text-muted-foreground mb-2">
+                    + {course.rupeFee.price} Kz (Taxa RUPE)
+                  </div>
+                  <div className="text-xs text-muted-foreground mb-3">
+                    + 44.000 Kz (Taxas adicionais)
+                  </div>
+                  <div className="text-sm font-semibold text-foreground border-t pt-2">
+                    Total: {((course.priceNumeric + course.rupeFee.priceNumeric + coursesData.additionalInfo.totalAdditionalFees)).toLocaleString('pt-AO')} Kz
+                  </div>
+                  <div className="flex items-center justify-center gap-4 text-sm text-muted-foreground mt-3">
                     <div className="flex items-center gap-1">
                       <Clock className="w-4 h-4" />
                       {course.duration}
@@ -100,34 +109,59 @@ export default function Courses() {
         {/* Additional Fees */}
         <div className="bg-amber-50 border border-amber-200 rounded-lg p-8 mb-12">
           <h3 className="text-2xl font-semibold mb-4 text-foreground text-center">
-            Taxas Adicionais Obrigatórias
+            Taxas Obrigatórias
           </h3>
-          <p className="text-muted-foreground mb-6 text-center max-w-3xl mx-auto">
-            Além do preço da categoria, são obrigatórias as seguintes taxas para todos os estudantes:
+          <p className="text-muted-foreground mb-8 text-center max-w-4xl mx-auto">
+            Além do preço da categoria, são obrigatórias as seguintes taxas. As taxas comuns aplicam-se a todas as categorias, enquanto a taxa RUPE varia conforme a categoria escolhida:
           </p>
           
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-4xl mx-auto mb-6">
-            {coursesData.additionalInfo.additionalFees.map((fee, index) => (
-              <div key={fee.id} className="bg-white rounded-lg p-4 border border-amber-200">
-                <div className="text-center">
-                  <div className="text-lg font-bold text-amber-700 mb-1">
-                    {fee.price} Kz
-                  </div>
-                  <div className="text-sm font-medium text-foreground mb-2">
-                    {fee.name}
-                  </div>
-                  <div className="text-xs text-muted-foreground">
-                    {fee.description}
+          {/* Common fees */}
+          <div className="mb-8">
+            <h4 className="text-lg font-semibold mb-4 text-center text-foreground">Taxas Comuns (Para Todas as Categorias)</h4>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-4xl mx-auto mb-4">
+              {coursesData.additionalInfo.additionalFees.map((fee, index) => (
+                <div key={fee.id} className="bg-white rounded-lg p-4 border border-amber-200">
+                  <div className="text-center">
+                    <div className="text-lg font-bold text-amber-700 mb-1">
+                      {fee.price} Kz
+                    </div>
+                    <div className="text-sm font-medium text-foreground mb-2">
+                      {fee.name}
+                    </div>
+                    <div className="text-xs text-muted-foreground">
+                      {fee.description}
+                    </div>
                   </div>
                 </div>
+              ))}
+            </div>
+            <div className="text-center border-t border-amber-200 pt-4">
+              <div className="text-sm text-muted-foreground mb-2">Subtotal das taxas comuns:</div>
+              <div className="text-xl font-bold text-amber-700">
+                {(coursesData.additionalInfo.totalAdditionalFees).toLocaleString('pt-AO')} Kz
               </div>
-            ))}
+            </div>
           </div>
-          
-          <div className="text-center border-t border-amber-200 pt-4">
-            <div className="text-sm text-muted-foreground mb-2">Total das taxas adicionais:</div>
-            <div className="text-2xl font-bold text-amber-700">
-              {(coursesData.additionalInfo.totalAdditionalFees).toLocaleString('pt-AO')} Kz
+
+          {/* RUPE fees */}
+          <div>
+            <h4 className="text-lg font-semibold mb-4 text-center text-foreground">Taxas RUPE (Específicas por Categoria)</h4>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-3xl mx-auto">
+              {coursesData.courses.map((course, index) => (
+                <div key={course.id} className="bg-blue-50 rounded-lg p-4 border border-blue-200">
+                  <div className="text-center">
+                    <div className="text-lg font-bold text-blue-700 mb-1">
+                      {course.rupeFee.price} Kz
+                    </div>
+                    <div className="text-sm font-medium text-foreground mb-2">
+                      {course.category}
+                    </div>
+                    <div className="text-xs text-muted-foreground">
+                      Referência Única de Pagamento ao Estado
+                    </div>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </div>

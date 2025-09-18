@@ -18,6 +18,10 @@
         "Veículos com duplo comando",
         "Material didático incluído"
       ],
+      "rupeFee": {
+        "price": "46.672",
+        "priceNumeric": 46672
+      },
       "popular": true
     },
     {
@@ -38,6 +42,10 @@
         "Certificação profissional",
         "Apoio na obtenção de emprego"
       ],
+      "rupeFee": {
+        "price": "50.290",
+        "priceNumeric": 50290
+      },
       "popular": false
     },
     {
@@ -58,6 +66,10 @@
         "Certificação profissional",
         "Apoio na colocação profissional"
       ],
+      "rupeFee": {
+        "price": "53.856",
+        "priceNumeric": 53856
+      },
       "popular": false
     }
   ],

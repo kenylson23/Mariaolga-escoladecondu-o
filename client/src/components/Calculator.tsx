@@ -14,6 +14,7 @@ interface CoursePrice {
   price: number;
   minInstallments: number;
   maxInstallments: number;
+  rupeFee: number;
 }
 
 export default function Calculator() {
@@ -27,7 +28,8 @@ export default function Calculator() {
     name: `${course.category} - ${course.title}`,
     price: course.priceNumeric,
     minInstallments: course.minInstallments,
-    maxInstallments: course.maxInstallments
+    maxInstallments: course.maxInstallments,
+    rupeFee: course.rupeFee.priceNumeric
   }));
 
   const selectedCourseData = courses.find(c => c.id === selectedCourse);
@@ -46,7 +48,8 @@ export default function Calculator() {
     if (!selectedCourseData) return null;
 
     const baseCoursePrice = selectedCourseData.price;
-    const totalBasePrice = baseCoursePrice + additionalFees;
+    const rupeFeeCourse = selectedCourseData.rupeFee;
+    const totalBasePrice = baseCoursePrice + additionalFees + rupeFeeCourse;
     const downPaymentAmount = (totalBasePrice * clampedDownPayment) / 100;
     const financedAmount = totalBasePrice - downPaymentAmount;
 
@@ -71,7 +74,8 @@ export default function Calculator() {
       totalWithInterest,
       interestRate,
       baseCoursePrice,
-      additionalFees
+      additionalFees,
+      rupeFeeCourse
     };
   }, [selectedCourseData, clampedDownPayment, clampedInstallments, paymentMethod, additionalFees]);
 
@@ -278,6 +282,11 @@ export default function Calculator() {
                       <div className="flex justify-between">
                         <span className="text-muted-foreground">Taxas adicionais:</span>
                         <span className="font-medium">{formatCurrency(calculationResult.additionalFees)}</span>
+                      </div>
+                      
+                      <div className="flex justify-between">
+                        <span className="text-muted-foreground">Taxa RUPE:</span>
+                        <span className="font-medium">{formatCurrency(calculationResult.rupeFeeCourse)}</span>
                       </div>
                       
                       <div className="flex justify-between">
