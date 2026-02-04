@@ -35,7 +35,7 @@ export default function About() {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold text-foreground mb-4">
-            Sobre a <span className="text-primary">Maria Olga</span>
+            Sobre a <span className="text-primary">KL</span>
           </h2>
           <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto">
             Uma história de excelência no ensino da condução em Angola
@@ -50,7 +50,7 @@ export default function About() {
                 Mais de 10 Anos de Experiência na Formação de Condutores em Angola
               </h3>
               <p className="text-base sm:text-lg text-muted-foreground mb-6 leading-relaxed">
-                Fundada em 2013 por Maria Olga, a nossa escola tem-se dedicado à formação 
+                Fundada em 2013, a nossa escola tem-se dedicado à formação 
                 de milhares de condutores em Angola. Com uma paixão genuína pelo ensino 
                 e um compromisso inabalável com a segurança rodoviária, construímos uma 
                 reputação sólida em Luanda e províncias.
@@ -77,7 +77,7 @@ export default function About() {
               <div className="grid grid-cols-2 gap-4">
                 <img 
                   src={mariaOlgaImage} 
-                  alt="Maria Olga - Fundadora" 
+                  alt="KL - Formação de Excelência" 
                   className="w-full h-auto object-cover rounded-lg shadow-lg"
                   data-testid="img-maria-olga"
                 />

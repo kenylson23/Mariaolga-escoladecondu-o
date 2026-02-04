@@ -35,7 +35,7 @@ export default function Footer() {
           {/* Company info */}
           <div>
             <h3 className="text-2xl font-bold mb-4">
-              {siteData.company.name.split(' Maria Olga')[0]} <span className="text-orange">{siteData.company.shortName}</span>
+              {siteData.company.name.split(' KL')[0]} <span className="text-orange">{siteData.company.shortName}</span>
             </h3>
             <p className="text-white/80 mb-6 leading-relaxed">
               {siteData.company.description}

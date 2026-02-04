@@ -10,7 +10,7 @@ export default function Header() {
 
   const handleQuickContact = () => {
     const whatsappNumber = "244923912483";
-    const whatsappMessage = "Olá! Gostaria de saber mais informações sobre os cursos da Escola de Condução Maria Olga.";
+    const whatsappMessage = "Olá! Gostaria de saber mais informações sobre as categorias da Escola de Condução KL.";
     const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
     window.open(whatsappLink, '_blank');
   };
@@ -39,7 +39,7 @@ export default function Header() {
           <div className="flex justify-between items-center">
             <div className="flex items-center">
               <h1 className="text-xl sm:text-2xl font-bold">
-                {siteData.company.name.split(' Maria Olga')[0]} <span className="text-orange">Maria Olga</span>
+                {siteData.company.name.split(' KL')[0]} <span className="text-orange">KL</span>
               </h1>
             </div>
 

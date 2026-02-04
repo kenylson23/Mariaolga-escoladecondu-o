@@ -1,8 +1,8 @@
-# Escola de Condução Maria Olga
+# Escola de Condução KL
 
 ## Overview
 
-A comprehensive website for an Angolan driving school (Escola de Condução Maria Olga) built as a modern single-page application. The website showcases the school's 12+ years of experience (founded in 2013), course offerings across multiple vehicle categories (Ligeiro Amador, Ligeiro Profissional, Pesado Profissional), and provides interactive features like a course price calculator. The application has been converted to a completely static architecture using JSON data files as the data source, making it deployment-ready without any backend dependencies. The site emphasizes trust, professionalism, and user-friendly navigation to attract potential students and facilitate course enrollment.
+A comprehensive website for an Angolan driving school (Escola de Condução KL) built as a modern single-page application. The website showcases the school's 12+ years of experience (founded in 2013), course offerings across multiple vehicle categories (Ligeiro Amador, Ligeiro Profissional, Pesado Profissional), and provides interactive features like a course price calculator. The application has been converted to a completely static architecture using JSON data files as the data source, making it deployment-ready without any backend dependencies. The site emphasizes trust, professionalism, and user-friendly navigation to attract potential students and facilitate course enrollment.
 
 ## User Preferences
 

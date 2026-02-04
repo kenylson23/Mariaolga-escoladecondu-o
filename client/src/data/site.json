@@ -1,7 +1,7 @@
 {
   "company": {
-    "name": "Escola de Condução Maria Olga",
-    "shortName": "Maria Olga",
+    "name": "Escola de Condução KL",
+    "shortName": "KL",
     "description": "Há mais de 10 anos a formar condutores responsáveis e confiantes em Angola. A sua jornada na estrada começa connosco.",
     "experienceYears": 12
   },
@@ -31,7 +31,7 @@
     { "icon": "Youtube", "href": "#", "label": "YouTube" }
   ],
   "contact": {
-    "email": "escoladeconducaomariaolga@gmail.com",
+    "email": "escoladeconducaokl@gmail.com",
     "phone": "(+244) 923 912 483",
     "secondaryPhone": "(+244) 950 282 032",
     "address": "Luanda, Luanda-Sul, casa nº 41, est. nº 11 de novembro – 4 campos"

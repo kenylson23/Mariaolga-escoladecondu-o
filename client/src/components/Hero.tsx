@@ -29,7 +29,7 @@ export default function Hero() {
             Aprenda a Conduzir com <span className="text-orange">Confiança</span>
           </h1>
           <p className="text-lg sm:text-xl md:text-2xl text-white/90 mb-8 leading-relaxed">
-            Na Escola de Condução Maria Olga, transformamos sonhos em realidade. 
+            Na Escola de Condução KL, transformamos sonhos em realidade. 
             Com mais de 10 anos de experiência em Angola, oferecemos formação 
             adaptada às condições locais para todas as categorias de condução.
           </p>
