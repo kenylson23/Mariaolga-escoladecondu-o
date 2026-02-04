@@ -9,7 +9,7 @@ export default function Header() {
   const menuItems = siteData.navigation.menuItems;
 
   const handleQuickContact = () => {
-    const whatsappNumber = "244923912483";
+    const whatsappNumber = "244949639932";
     const whatsappMessage = "Olá! Gostaria de saber mais informações sobre as categorias da Escola de Condução KL.";
     const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
     window.open(whatsappLink, '_blank');
