@@ -27,7 +27,7 @@ export default function Contact() {
     }
     
     // Create WhatsApp message with form data
-    const whatsappMessage = `*Solicitação de Informações - Escola de Condução Maria Olga*
+    const whatsappMessage = `*Solicitação de Informações - Escola de Condução KL*
 
 *Nome:* ${formData.name}
 *Email:* ${formData.email}
@@ -37,7 +37,7 @@ export default function Contact() {
 *Mensagem:*
 ${formData.message}
 
-Enviado através do site da Escola de Condução Maria Olga`;
+Enviado através do site da Escola de Condução KL`;
 
     // WhatsApp number: (+244) 923 912 483 -> 244923912483
     const whatsappNumber = "244923912483";
@@ -52,7 +52,7 @@ Enviado através do site da Escola de Condução Maria Olga`;
 
   const handleDirectWhatsApp = () => {
     const whatsappNumber = "244923912483";
-    const whatsappMessage = "Olá! Gostaria de saber mais informações sobre os cursos da Escola de Condução Maria Olga.";
+    const whatsappMessage = "Olá! Gostaria de saber mais informações sobre os cursos da Escola de Condução KL.";
     const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
     window.open(whatsappLink, '_blank');
   };
@@ -240,7 +240,7 @@ Enviado através do site da Escola de Condução Maria Olga`;
                       loading="lazy"
                       referrerPolicy="no-referrer-when-downgrade"
                       data-testid="map-location"
-                      title="Localização da Escola de Condução Maria Olga"
+                      title="Localização da Escola de Condução KL"
                     />
                   </div>
                 </div>
@@ -248,7 +248,7 @@ Enviado através do site da Escola de Condução Maria Olga`;
                   <div className="flex items-start gap-2">
                     <MapPin className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
                     <div>
-                      <p className="font-medium text-card-foreground">Escola de Condução Maria Olga</p>
+                      <p className="font-medium text-card-foreground">Escola de Condução KL</p>
                       <p>Luanda, Luanda-Sul, casa nº 41</p>
                       <p>Estrada nº 11 de novembro – 4 campos</p>
                     </div>
