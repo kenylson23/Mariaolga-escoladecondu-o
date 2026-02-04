@@ -249,7 +249,7 @@ Enviado através do site da Escola de Condução KL`;
                     <MapPin className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
                     <div>
                       <p className="font-medium text-card-foreground">Escola de Condução KL</p>
-                      <p>Luanda, Luanda-Sul, casa nº 41</p>
+                      <p>Luanda, Luanda-Sul, casa nº 41,</p>
                       <p>Estrada nº 11 de novembro – 4 campos</p>
                     </div>
                   </div>
