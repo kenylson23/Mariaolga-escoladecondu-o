@@ -233,7 +233,7 @@ Enviado através do site da Escola de Condução KL`;
                 <div className="rounded-lg overflow-hidden border border-border">
                   <div className="relative w-full h-0" style={{ paddingBottom: '56.25%' }}>
                     <iframe
-                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3942.6847419477825!2d13.242203315384615!3d-8.838316993234566!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1a51f24764b6b3b5%3A0x7e2b4b7b4b7b4b7b!2sLuanda%2C%20Angola!5e0!3m2!1spt!2sao!4v1620000000000!5m2!1spt!2sao"
+                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3942.569438914614!2d13.24255!3d-8.8415!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1a51f3b0e68e4b77%3A0x7b1b5b1b5b1b5b1b!2sLuanda%2C%20Angola!5e0!3m2!1spt!2sao!4v1710000000000!5m2!1spt!2sao"
                       className="absolute top-0 left-0 w-full h-full"
                       style={{ border: 0 }}
                       allowFullScreen={true}
