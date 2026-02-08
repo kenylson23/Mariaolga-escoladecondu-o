@@ -92,24 +92,25 @@ export default function Gallery() {
         </div>
 
         {/* Image grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredImages.map((image) => (
             <Card 
               key={image.id} 
-              className="group overflow-hidden hover-elevate transition-all duration-300 cursor-pointer"
+              className="group relative overflow-hidden rounded-xl border-0 shadow-lg hover:shadow-2xl transition-all duration-500 cursor-pointer aspect-[4/3]"
               data-testid={`img-gallery-${image.id}`}
             >
-              <div className="relative aspect-video overflow-hidden">
-                <img
-                  src={image.src}
-                  alt={image.alt}
-                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/20 transition-all duration-300 flex items-center justify-center">
-                  <div className="text-white text-lg font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    {image.title}
-                  </div>
-                </div>
+              <img
+                src={image.src}
+                alt={image.alt}
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6">
+                <span className="text-orange text-xs font-bold uppercase tracking-wider mb-1 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                  {image.category === 'veiculos' ? 'Nossa Frota' : image.category === 'instalacoes' ? 'Infraestrutura' : 'Formação Prática'}
+                </span>
+                <h3 className="text-white text-xl font-bold font-serif transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500 delay-75">
+                  {image.title}
+                </h3>
               </div>
             </Card>
           ))}
