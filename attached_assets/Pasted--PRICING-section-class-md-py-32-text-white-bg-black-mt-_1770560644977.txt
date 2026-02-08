@@ -1,0 +1,274 @@
+<!-- PRICING -->
+    <section class="md:py-32 text-white bg-black mt-0 mb-0 pt-24 pb-24 relative" id="pricing">
+      <div class="lg:px-8 max-w-6xl mr-auto ml-auto pr-6 pl-6">
+        <!-- Header -->
+        <div class="text-center mb-12 md:mb-16 reveal">
+          <p class="text-xs font-semibold tracking-[0.25em] uppercase text-orange-400 mb-3">
+            #PRICING
+          </p>
+          <h2 class="text-3xl md:text-5xl font-semibold leading-tight text-neutral-50">
+            Pricing that grows with your content
+          </h2>
+          <p class="mt-3 text-sm md:text-base text-neutral-400 max-w-2xl mx-auto">
+            Start small, scale when your publishing cadence and team grow. Every
+            plan includes the Lexora editor and AI engine.
+          </p>
+        </div>
+
+        <!-- Billing toggle -->
+        <div class="flex justify-center mb-14">
+          <div class="inline-flex items-center rounded-full bg-neutral-900/80 border border-neutral-700/70 px-1 py-1 text-sm shadow-[0_18px_60px_rgba(0,0,0,0.85)]">
+            <button type="button" class="billing-toggle rounded-full px-6 py-2 bg-orange-500 text-black font-medium shadow-[0_0_0_1px_rgba(248,250,252,0.1)]" data-billing-toggle="monthly">
+              Monthly
+            </button>
+            <button type="button" class="billing-toggle rounded-full px-6 py-2 text-neutral-300/80" data-billing-toggle="yearly">
+              <span class="mr-2">Yearly</span>
+              <span class="inline-flex items-center rounded-full bg-orange-500/10 px-2 py-0.5 text-[11px] font-semibold text-orange-400 border border-orange-500/30">
+                30% OFF
+              </span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Cards -->
+        <div class="grid gap-6 md:gap-8 md:grid-cols-[minmax(0,1fr)_minmax(0,1.1fr)_minmax(0,1fr)]">
+          <!-- Starter -->
+          <div class="rounded-[32px] bg-neutral-950/70 border border-neutral-800 shadow-[0_26px_80px_rgba(0,0,0,0.9)] px-8 py-10 flex flex-col justify-between reveal">
+            <div>
+              <h3 class="text-xl mb-2 font-medium">Starter</h3>
+              <p class="text-sm text-neutral-400 mb-8">
+                For independent writers who want Lexora’s help on every draft
+                without the team features.
+              </p>
+
+              <div class="mb-6">
+                <div class="flex items-baseline gap-1">
+                  <div class="relative h-12 overflow-hidden">
+                    <div class="price-stack flex flex-col transition-transform duration-300 ease-out" data-price-stack="starter" style="transform: translateY(0%);">
+                      <!-- Monthly price row -->
+                      <span class="h-12 flex items-center leading-none text-4xl tracking-tight font-medium">
+                        $19
+                      </span>
+                      <!-- Yearly price row -->
+                      <span class="h-12 flex items-center leading-none text-4xl tracking-tight font-medium">
+                        $13
+                      </span>
+                    </div>
+                  </div>
+                  <span class="text-sm text-neutral-400">/month</span>
+                </div>
+                <p class="mt-1 text-xs text-neutral-500">
+                  Billed
+                  <span class="billing-label">monthly</span>
+                  .
+                </p>
+              </div>
+            </div>
+
+            <div class="space-y-6">
+              <button class="w-full rounded-full bg-neutral-800/80 hover:bg-neutral-700 transition-colors px-6 py-3 text-sm font-medium">
+                Get started with Starter
+              </button>
+
+              <ul class="space-y-2 text-sm text-neutral-300">
+                <li class="flex items-start gap-2">
+                  <span class="mt-[3px] h-1.5 w-1.5 rounded-full bg-neutral-500"></span>
+                  <span>
+                    Lexora editor with AI suggestions on every section.
+                  </span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="mt-[3px] h-1.5 w-1.5 rounded-full bg-neutral-500"></span>
+                  <span>Up to 8 active projects at a time.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="mt-[3px] h-1.5 w-1.5 rounded-full bg-neutral-500"></span>
+                  <span>25,000 AI-generated words each month.</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Pro (highlighted) -->
+          <div class="relative rounded-[32px] bg-gradient-to-b from-orange-500/10 via-orange-500/5 to-black border border-orange-500/70 shadow-[0_30px_110px_rgba(249,115,22,0.6)] px-8 py-10 flex flex-col justify-between overflow-hidden reveal delay-100">
+            <div class="pointer-events-none absolute inset-0 opacity-60 mix-blend-screen" style="background-image: radial-gradient(circle at 0 0,rgba(249,115,22,0.16),transparent 55%), radial-gradient(circle at 100% 100%,rgba(249,115,22,0.16),transparent 55%), repeating-linear-gradient(0deg,rgba(249,115,22,0.08),rgba(249,115,22,0.08) 1px,transparent 1px,transparent 3px);"></div>
+
+            <div class="relative">
+              <div class="flex items-center justify-between mb-3">
+                <h3 class="text-xl font-medium">Pro</h3>
+                <span class="rounded-full border border-orange-500/60 bg-orange-500/15 px-3 py-1 text-[11px] tracking-[0.16em] uppercase text-orange-400 font-medium">
+                  Most popular
+                </span>
+              </div>
+              <p class="text-sm text-neutral-100/80 mb-8">
+                Built for content teams that publish often and need shared
+                workspaces, approvals, and more control.
+              </p>
+
+              <div class="mb-6">
+                <div class="flex items-baseline gap-1">
+                  <div class="relative h-12 overflow-hidden">
+                    <div class="price-stack flex flex-col transition-transform duration-300 ease-out" data-price-stack="pro" style="transform: translateY(0%);">
+                      <!-- Monthly price row -->
+                      <span class="h-12 flex items-center leading-none text-4xl tracking-tight font-medium">
+                        $49
+                      </span>
+                      <!-- Yearly price row -->
+                      <span class="h-12 flex items-center leading-none text-4xl tracking-tight font-medium">
+                        $39
+                      </span>
+                    </div>
+                  </div>
+                  <span class="text-sm text-neutral-400">/month</span>
+                </div>
+                <p class="mt-1 text-xs text-neutral-500">
+                  Billed
+                  <span class="billing-label">monthly</span>
+                  , per workspace.
+                </p>
+              </div>
+            </div>
+
+            <div class="relative space-y-6">
+              <button class="w-full rounded-full bg-orange-500 hover:bg-orange-400 transition-colors px-6 py-3 text-sm font-semibold text-black">
+                Upgrade to Pro
+              </button>
+
+              <ul class="space-y-2 text-sm text-neutral-50/90">
+                <li class="flex items-start gap-2">
+                  <span class="mt-[3px] h-1.5 w-1.5 rounded-full bg-orange-400"></span>
+                  <span class="">
+                    Unlimited projects and brand spaces for your team.
+                  </span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="mt-[3px] h-1.5 w-1.5 rounded-full bg-orange-400"></span>
+                  <span class="">
+                    Up to 100,000 AI-generated words per month.
+                  </span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="mt-[3px] h-1.5 w-1.5 rounded-full bg-orange-400"></span>
+                  <span class="">
+                    Advanced tone controls, templates, and content presets.
+                  </span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Enterprise -->
+          <div class="rounded-[32px] bg-neutral-950/70 border border-neutral-800 shadow-[0_26px_80px_rgba(0,0,0,0.9)] px-8 py-10 flex flex-col justify-between reveal delay-200">
+            <div class="">
+              <h3 class="text-xl mb-2 font-medium">Enterprise</h3>
+              <p class="text-sm text-neutral-400 mb-8">
+                For organizations that need custom workflows, tighter security,
+                and a partner on the Lexora side.
+              </p>
+
+              <div class="mb-6">
+                <p class="text-3xl md:text-4xl font-semibold tracking-tight mb-1">
+                  Contact us
+                </p>
+                <p class="text-xs text-neutral-500">
+                  We’ll design a plan that matches your volume, stack, and
+                  review process.
+                </p>
+              </div>
+            </div>
+
+            <div class="space-y-6">
+              <button class="w-full rounded-full bg-neutral-800/80 hover:bg-neutral-700 transition-colors px-6 py-3 text-sm font-medium">
+                Talk to sales
+              </button>
+
+              <ul class="space-y-2 text-sm text-neutral-300">
+                <li class="flex items-start gap-2">
+                  <span class="mt-[3px] h-1.5 w-1.5 rounded-full bg-neutral-500"></span>
+                  <span class="">
+                    Unlimited workspaces, users, and documents.
+                  </span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="mt-[3px] h-1.5 w-1.5 rounded-full bg-neutral-500"></span>
+                  <span class="">
+                    Single sign-on (SSO) and security review.
+                  </span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="mt-[3px] h-1.5 w-1.5 rounded-full bg-neutral-500"></span>
+                  <span class="">
+                    Custom integrations, API access, and SLAs.
+                  </span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Full pricing button -->
+        <div class="mt-12 flex justify-center">
+          <button class="hover:bg-neutral-800 md:px-10 [--fx-filter:blur(10px)_liquid-glass(5,10)_saturate(1.25)_noise(0.5,1,0)] text-sm font-medium text-neutral-100 bg-neutral-900/90 border-neutral-700 border rounded-full pt-3.5 pr-8 pb-3.5 pl-8 shadow-[0_20px_70px_rgba(0,0,0,0.85)]">
+            View all billing details
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      // Billing toggle + sliding prices
+      (function () {
+        const section = document.getElementById('pricing');
+        if (!section) return;
+
+        const toggles = section.querySelectorAll('.billing-toggle');
+        const labels = section.querySelectorAll('.billing-label');
+        const priceStacks = section.querySelectorAll('.price-stack');
+
+        function setBilling(mode) {
+          // 1) Update toggle button visuals
+          toggles.forEach((btn) => {
+            const isActive = btn.dataset.billingToggle === mode;
+
+            if (isActive) {
+              btn.classList.add(
+                'bg-orange-500',
+                'text-black',
+                'font-medium',
+                'shadow-[0_0_0_1px_rgba(248,250,252,0.1)]'
+              );
+              btn.classList.remove('text-neutral-300/80');
+            } else {
+              btn.classList.remove(
+                'bg-orange-500',
+                'text-black',
+                'font-medium',
+                'shadow-[0_0_0_1px_rgba(248,250,252,0.1)]'
+              );
+              btn.classList.add('text-neutral-300/80');
+            }
+          });
+
+          // 2) Slide prices (0% = monthly, -50% = yearly)
+          const offset = mode === 'monthly' ? '0%' : '-50%';
+          priceStacks.forEach((stack) => {
+            stack.style.transform = `translateY(${offset})`;
+          });
+
+          // 3) Update small "Billed monthly/yearly" labels
+          labels.forEach((el) => {
+            el.textContent = mode === 'monthly' ? 'monthly' : 'yearly';
+          });
+        }
+
+        // Click handlers
+        toggles.forEach((btn) => {
+          btn.addEventListener('click', () => {
+            setBilling(btn.dataset.billingToggle);
+          });
+        });
+
+        // Default state
+        setBilling('monthly');
+      })();
+    </script>
