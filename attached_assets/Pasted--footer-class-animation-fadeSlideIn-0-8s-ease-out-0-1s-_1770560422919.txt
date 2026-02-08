@@ -1,0 +1,151 @@
+<footer class="[animation:fadeSlideIn_0.8s_ease-out_0.1s_both] animate-on-scroll lg:px-6 lg:pt-12 lg:pb-0 animate max-w-6xl mr-auto ml-auto pt-24 pr-4 pb-24 pl-4">
+        <div class="lg:px-6 bg-gradient-to-br from-blue-500/0 via-blue-500/10 to-blue-500/0 max-w-6xl rounded-3xl mr-auto mb-8 ml-auto pt-8 pr-4 pb-8 pl-4" style="position: relative; --border-gradient: linear-gradient(135deg, rgba(59, 130, 246, 0.2), rgba(59, 130, 246, 0)); --border-radius-before: 24px">
+          <!-- CTA Banner -->
+          <div class="mb-0 pt-8 pr-8 pb-8 pl-8">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+              <h2 class="text-4xl lg:text-5xl font-light text-white tracking-tight font-geist">
+                Let’s talk workflows
+                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="inline-block ml-4 w-[48px] h-[48px]" style="width: 48px; height: 48px; color: rgb(251, 191, 36);">
+                  <path d="M7 7h10v10" class=""></path>
+                  <path d="M7 17 17 7" class=""></path>
+                </svg>
+              </h2>
+              <button type="submit" class="inline-flex text-[12px] transition-all hover:brightness-110 hover:shadow-[0_0_40px_rgba(248,181,129,0.9),0_0_0_1px_rgba(251,191,36,0.7)] text-white font-geist bg-gradient-to-bl from-[#fff370] via-orange-500 to-[#fff370] h-9 rounded-full pr-6 pl-6 items-center" style="border-radius: 9999px; position: relative; --border-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0)); --border-radius-before: 9999px;">
+                Get In Touch
+              </button>
+            </div>
+          </div>
+
+          <!-- Divider -->
+          <div class="h-px bg-gradient-to-r from-transparent via-white/10 to-transparent mb-12"></div>
+
+          <!-- Footer Content -->
+          <div class="flex flex-col gap-12 gap-x-12 gap-y-12">
+            <!-- Top Section -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-sm">
+              <!-- Logo + short description -->
+              <div class="">
+                <div class="flex items-center gap-3 mb-4">
+                  <svg width="120" height="40" viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-[120px] h-[40px]" stroke-width="2" data-icon-replaced="true" style="color: rgb(241, 245, 249); width: 120px; height: 40px;">
+  <text x="0" y="30" font-family="'Inter', sans-serif" font-size="28" font-weight="600" fill="white" class="">
+    Neuro
+  </text>
+</svg>
+                </div>
+                <p class="text-xs text-white/60 font-geist max-w-xs" style="">
+                  Neuro is your workflow command center. Automate tasks, keep
+                  projects in sync, and help your team ship faster with less
+                  chaos.
+                </p>
+              </div>
+
+              <!-- Product Column -->
+              <div class="">
+                <h4 class="text-sm text-amber-300 mb-4 font-geist" style="">
+                  Product
+                </h4>
+                <ul class="space-y-2">
+                  <li>
+                    <a href="#" class="text-white/70 hover:text-white transition font-geist" style="">
+                      Overview
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" class="text-white/70 hover:text-white transition font-geist" style="">
+                      Workflow Builder
+                    </a>
+                  </li>
+                </ul>
+              </div>
+
+              <!-- Resources Column -->
+              <div class="">
+                <h4 class="text-sm text-amber-300 mb-4 font-geist" style="">
+                  Resources
+                </h4>
+                <ul class="space-y-2">
+                  <li class="">
+                    <a href="#" class="text-white/70 hover:text-white transition font-geist" style="">
+                      Documentation
+                    </a>
+                  </li>
+                  <li class="">
+                    <a href="#" class="text-white/70 hover:text-white transition font-geist" style="">
+                      Workflow Library
+                    </a>
+                  </li>
+                </ul>
+              </div>
+
+              <!-- Company / Contact Column -->
+              <div class="">
+                <h4 class="text-sm text-amber-300 mb-4 font-geist" style="">
+                  Company
+                </h4>
+                <ul class="space-y-2 mb-6">
+                  <li class="">
+                    <a href="#" class="hover:text-white transition text-white/70 font-geist" style="">
+                      About Neuro
+                    </a>
+                  </li>
+                  <li class="">
+                    <a href="#" class="text-white/70 hover:text-white transition font-geist" style="">
+                      Careers
+                    </a>
+                  </li>
+                </ul>
+
+                <div class="text-white/70 font-geist font-light tracking-tight text-xs space-y-1">
+                  <p class="text-white" style="">Neuro Studio</p>
+                  <p style="" class="">Remote-first / Montreal, Canada</p>
+                  <p style="" class="">Built for product, design &amp; ops teams.</p>
+                  <p style="" class="">hello@neuro.app</p>
+                </div>
+
+                <div class="flex items-center gap-3 mt-4">
+                  <!-- X -->
+                  <a href="#" class="w-8 h-8 rounded-full bg-amber-400/10 border border-amber-400/30 flex items-center justify-center text-amber-300 hover:bg-amber-400/20 transition">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" class="">
+                      <path d="M18.146 2H21l-6.52 7.45L22.5 22H16.3L11.5 15.6 5.94 22H3.09l6.98-7.97L1.5 2h6.36l4.3 5.86L18.15 2z" class=""></path>
+                    </svg>
+                  </a>
+                  <!-- Dribbble -->
+                  <a href="#" class="w-8 h-8 rounded-full bg-amber-400/10 border border-amber-400/30 flex items-center justify-center text-amber-300 hover:bg-amber-400/20 transition">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" class="">
+                      <path d="M12 0C5.383 0 0 5.383 0 12s5.383 12 12 12 12-5.383 12-12S18.617 0 12 0zm6.743 5.89a9.46 9.46 0 0 1 2.01 5.414 17.28 17.28 0 0 0-6.397-.295 31.27 31.27 0 0 0-1.066-2.6 9.434 9.434 0 0 0 5.453-2.519zM12 2.07a9.41 9.41 0 0 1 6.002 2.163 7.93 7.93 0 0 1-4.82 2.215 32.21 32.21 0 0 0-3.03-4.9A9.5 9.5 0 0 1 12 2.07zM8.44 3.02a30.68 30.68 0 0 1 3.018 4.84 7.93 7.93 0 0 1-6.19-2.19 9.53 9.53 0 0 1 3.172-2.65zM2.06 12c0-.492.037-.974.107-1.444a9.44 9.44 0 0 1 5.64 1.023 32.63 32.63 0 0 0-2.39 5.98A9.47 9.47 0 0 1 2.06 12zm3.22 6.397a30.8 30.8 0 0 1 2.3-5.7 7.5 7.5 0 0 1 4.18 3.98 7.7 7.7 0 0 1 .42 1.48 9.4 9.4 0 0 1-6.9-1.76zm8.23 1.603a9.6 9.6 0 0 1-.7-2.3 5.9 5.9 0 0 0-.28-1.03 5.9 5.9 0 0 0-3.3-3.48 29.4 29.4 0 0 1 1.65-3.85 29.7 29.7 0 0 1 1.01 2.47c.27.78.5 1.56.7 2.34a29.4 29.4 0 0 1 .42 3.85 9.5 9.5 0 0 1-1.52.8zm2.54-1.32a27.6 27.6 0 0 0-.49-3.34 15.4 15.4 0 0 1 5.1.32 9.5 9.5 0 0 1-4.61 3.02z" class=""></path>
+                    </svg>
+                  </a>
+                  <!-- LinkedIn -->
+                  <a href="#" class="w-8 h-8 rounded-full bg-amber-400/10 border border-amber-400/30 flex items-center justify-center text-amber-300 hover:bg-amber-400/20 transition">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" class="">
+                      <path d="M4.98 3.5C4.98 4.88 3.88 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.23 8.27h4.54V23H.23V8.27zM8.3 8.27h4.35v2.01h.06c.61-1.16 2.12-2.38 4.37-2.38 4.67 0 5.53 3.07 5.53 7.06V23h-4.54v-7.07c0-1.69-.03-3.87-2.36-3.87-2.36 0-2.72 1.84-2.72 3.74V23H8.3V8.27z" class=""></path>
+                    </svg>
+                  </a>
+                  <!-- Instagram -->
+                  <a href="#" class="w-8 h-8 rounded-full bg-amber-400/10 border border-amber-400/30 flex items-center justify-center text-amber-300 hover:bg-amber-400/20 transition">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" class="">
+                      <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0 3.675a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zm6.406-.845a1.44 1.44 0 1 0 0 2.88 1.44 1.44 0 0 0 0-2.88z" class=""></path>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Bottom Section -->
+            <div class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-6 border-t border-white/10 text-xs">
+              <p class="text-white/70 font-geist" style="">
+                © Neuro. All rights reserved.
+              </p>
+              <div class="flex items-center gap-6">
+                <a href="#" class="text-white/70 hover:text-white transition font-geist" style="">
+                  Privacy Policy
+                </a>
+                <span class="text-white/30" style="">/</span>
+                <a href="#" class="text-white/70 hover:text-white transition font-geist" style="">
+                  Terms &amp; Conditions
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
