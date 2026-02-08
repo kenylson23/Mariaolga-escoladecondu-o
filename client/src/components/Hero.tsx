@@ -11,11 +11,11 @@ export default function Hero() {
   ];
 
   return (
-    <section id="inicio" className="relative min-h-screen flex items-center bg-zinc-950 overflow-hidden pt-20">
+    <section id="inicio" className="relative min-h-screen flex items-center bg-zinc-950 bg-gradient-to-br from-zinc-950 via-zinc-950 to-purple-950/30 overflow-hidden pt-20">
       {/* Background Decor */}
-      <div className="absolute inset-0 z-0 opacity-20 pointer-events-none">
-        <div className="absolute top-0 left-1/4 w-96 h-96 bg-purple-600/30 rounded-full blur-[120px]" />
-        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-purple-900/20 rounded-full blur-[120px]" />
+      <div className="absolute inset-0 z-0 opacity-15 pointer-events-none">
+        <div className="absolute top-0 left-1/4 w-96 h-96 bg-purple-600/20 rounded-full blur-[120px]" />
+        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-purple-900/10 rounded-full blur-[120px]" />
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
@@ -26,10 +26,10 @@ export default function Hero() {
               Escola de Condução KL
             </p>
             <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 font-serif leading-tight">
-              Aprenda a Conduzir com <span className="text-purple-500">Confiança</span>
+              Aprenda a Conduzir em <span className="text-purple-500 text-nowrap">Angola</span> com Confiança e Segurança
             </h1>
             <p className="text-lg md:text-xl text-zinc-400 mb-8 leading-relaxed max-w-xl">
-              Transformamos sonhos em realidade com formação adaptada às condições locais e instrutores certificados em Angola.
+              Transformamos sonhos em realidade com formação adaptada às condições locais e instrutores certificados.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 mb-12">
@@ -62,9 +62,9 @@ export default function Hero() {
           </div>
 
           {/* Right Column: Lottie Animation */}
-          <div className="relative flex justify-center lg:justify-end">
-            <div className="w-full max-w-[450px] aspect-square relative">
-              <div className="absolute inset-0 bg-purple-500/10 rounded-full blur-3xl" />
+          <div className="relative flex justify-center lg:justify-end items-center">
+            <div className="w-full max-w-[380px] aspect-square relative opacity-85">
+              <div className="absolute inset-0 bg-purple-500/5 rounded-full blur-3xl" />
               <Lottie 
                 animationData={drivingAnimation} 
                 loop={true} 
