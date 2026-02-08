@@ -1,9 +1,8 @@
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Car, Bike, Truck, Clock, CheckCircle } from 'lucide-react';
+import { Car, Truck, Clock, CheckCircle, Star } from 'lucide-react';
 import coursesData from '@/data/courses.json';
-import AnimatedSection from '@/components/AnimatedSection';
 
 export default function Courses() {
   const getIconComponent = (iconName: string) => {
@@ -19,168 +18,137 @@ export default function Courses() {
     icon: getIconComponent(course.icon)
   }));
 
+  const additionalFeesTotal = coursesData.additionalInfo.totalAdditionalFees;
+
   return (
-    <section id="categorias" className="py-20 bg-background">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold text-foreground mb-4 font-serif">
-            Nossas <span className="text-primary">Categorias</span>
+    <section id="categorias" className="py-24 bg-black text-white relative overflow-hidden">
+      {/* Background Decor */}
+      <div className="absolute inset-0 opacity-20 pointer-events-none">
+        <div className="absolute top-0 left-1/4 w-96 h-96 bg-orange-500/20 rounded-full blur-[120px]" />
+        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-[120px]" />
+      </div>
+
+      <div className="container mx-auto px-4 relative z-10">
+        {/* Header */}
+        <div className="text-center mb-16 reveal">
+          <p className="text-xs font-semibold tracking-[0.25em] uppercase text-orange-400 mb-3">
+            #CATEGORIAS
+          </p>
+          <h2 className="text-3xl md:text-5xl font-semibold leading-tight text-neutral-50 font-serif">
+            Formação que acelera o seu futuro
           </h2>
-          <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto">
-            Oferecemos formação completa seguindo as normas do IMT Angola, 
-            com instrutores certificados e veículos adaptados às condições angolanas
+          <p className="mt-4 text-sm md:text-base text-neutral-400 max-w-2xl mx-auto">
+            Escolha a categoria ideal para as suas necessidades. Todos os nossos cursos seguem as normas do IMT Angola com instrutores certificados.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-12">
-          {courses.map((course, index) => (
-            <Card 
-              key={index} 
-              className={`relative hover-elevate transition-all duration-300 ${
-                course.popular ? 'ring-2 ring-orange ring-opacity-50' : ''
-              }`}
-              data-testid={`card-course-${course.category.toLowerCase().replace(' ', '-')}`}
-            >
-              {course.popular && (
-                <Badge 
-                  className="absolute -top-2 sm:-top-3 left-1/2 transform -translate-x-1/2 bg-orange text-white"
-                  data-testid="badge-popular"
-                >
-                  Mais Popular
-                </Badge>
-              )}
-              
-              <CardHeader className="text-center pb-4">
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <course.icon className="w-8 h-8 text-primary" />
-                </div>
-                <Badge variant="secondary" className="w-fit mx-auto mb-2">
-                  {course.category}
-                </Badge>
-                <CardTitle className="text-lg sm:text-xl mb-2">{course.title}</CardTitle>
-                <p className="text-muted-foreground text-sm break-words">
-                  {course.description}
-                </p>
-              </CardHeader>
+        {/* Pricing Cards */}
+        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto">
+          {courses.map((course, index) => {
+            const isPopular = course.popular;
+            const totalCost = course.priceNumeric + course.rupeFee.priceNumeric + additionalFeesTotal;
 
-              <CardContent>
-                <div className="text-center mb-6">
-                  <div className="text-3xl font-bold text-primary mb-2">
-                    {course.price} Kz
+            return (
+              <Card 
+                key={index} 
+                className={`relative rounded-[32px] flex flex-col justify-between overflow-hidden transition-all duration-300 border-none shadow-2xl ${
+                  isPopular 
+                    ? 'bg-gradient-to-b from-orange-500/15 via-orange-500/5 to-black ring-1 ring-orange-500/50' 
+                    : 'bg-neutral-900/40 border border-neutral-800'
+                }`}
+                data-testid={`card-course-${course.category.toLowerCase().replace(' ', '-')}`}
+              >
+                {/* Decorative mesh for popular card */}
+                {isPopular && (
+                  <div className="pointer-events-none absolute inset-0 opacity-40 mix-blend-screen" 
+                    style={{ 
+                      backgroundImage: 'radial-gradient(circle at 0 0,rgba(249,115,22,0.15),transparent 55%), radial-gradient(circle at 100% 100%,rgba(249,115,22,0.15),transparent 55%)' 
+                    }} 
+                  />
+                )}
+
+                <div className="p-8 relative z-10">
+                  <div className="flex items-center justify-between mb-6">
+                    <div className={`p-3 rounded-2xl ${isPopular ? 'bg-orange-500/20 text-orange-400' : 'bg-neutral-800 text-neutral-400'}`}>
+                      <course.icon className="w-6 h-6" />
+                    </div>
+                    {isPopular && (
+                      <Badge className="bg-orange-500 text-black hover:bg-orange-400 border-none px-3 py-1 text-[10px] tracking-wider uppercase font-bold">
+                        Mais Popular
+                      </Badge>
+                    )}
                   </div>
-                  <div className="text-sm text-muted-foreground mb-2">
-                    + {course.rupeFee.price} Kz (Taxa RUPE)
-                  </div>
-                  <div className="text-xs text-muted-foreground mb-3">
-                    + 44.000 Kz (Taxas adicionais)
-                  </div>
-                  <div className="text-sm font-semibold text-foreground border-t pt-2">
-                    Total: {((course.priceNumeric + course.rupeFee.priceNumeric + coursesData.additionalInfo.totalAdditionalFees)).toLocaleString('pt-AO')} Kz
-                  </div>
-                  <div className="flex items-center justify-center gap-4 text-sm text-muted-foreground mt-3">
-                    <div className="flex items-center gap-1">
-                      <Clock className="w-4 h-4" />
-                      {course.duration}
+
+                  <h3 className="text-2xl font-semibold text-white mb-2">{course.title}</h3>
+                  <p className="text-sm text-neutral-400 mb-8 leading-relaxed">
+                    {course.description}
+                  </p>
+
+                  <div className="mb-8">
+                    <div className="flex items-baseline gap-1">
+                      <span className="text-4xl font-bold tracking-tight text-white">
+                        {course.price}
+                      </span>
+                      <span className="text-sm text-neutral-400">Kz</span>
+                    </div>
+                    <div className="mt-2 space-y-1">
+                      <p className="text-xs text-neutral-500 flex items-center gap-1">
+                        <span className="w-1 h-1 rounded-full bg-neutral-600" />
+                        + {course.rupeFee.price} Kz (Taxa RUPE)
+                      </p>
+                      <p className="text-xs text-neutral-500 flex items-center gap-1">
+                        <span className="w-1 h-1 rounded-full bg-neutral-600" />
+                        + {additionalFeesTotal.toLocaleString('pt-AO')} Kz (Taxas comuns)
+                      </p>
+                    </div>
+                    <div className="mt-4 pt-4 border-t border-neutral-800">
+                      <p className="text-xs uppercase tracking-widest text-orange-400 font-semibold mb-1">Total Estimado</p>
+                      <p className="text-xl font-bold text-white">{totalCost.toLocaleString('pt-AO')} Kz</p>
                     </div>
                   </div>
-                </div>
 
-                <ul className="space-y-3 mb-6">
-                  {course.features.map((feature, featureIndex) => (
-                    <li key={featureIndex} className="flex items-center gap-2 text-sm">
-                      <CheckCircle className="w-4 h-4 text-primary flex-shrink-0" />
-                      <span>{feature}</span>
+                  <ul className="space-y-3 mb-8">
+                    {course.features.map((feature, fIndex) => (
+                      <li key={fIndex} className="flex items-start gap-3 text-sm text-neutral-300">
+                        <CheckCircle className={`w-4 h-4 mt-0.5 shrink-0 ${isPopular ? 'text-orange-400' : 'text-neutral-500'}`} />
+                        <span>{feature}</span>
+                      </li>
+                    ))}
+                    <li className="flex items-start gap-3 text-sm text-neutral-300">
+                      <Clock className={`w-4 h-4 mt-0.5 shrink-0 ${isPopular ? 'text-orange-400' : 'text-neutral-500'}`} />
+                      <span>Duração: {course.duration}</span>
                     </li>
-                  ))}
-                </ul>
+                  </ul>
+                </div>
 
-                <Button 
-                  className="w-full"
-                  variant={course.popular ? "default" : "outline"}
-                  data-testid={`button-inscrever-${course.category.toLowerCase().replace(' ', '-')}`}
-                >
-                  Inscrever-se
-                </Button>
-              </CardContent>
-            </Card>
-          ))}
+                <div className="p-8 pt-0 relative z-10">
+                  <Button 
+                    className={`w-full rounded-full py-6 text-sm font-semibold transition-all duration-300 ${
+                      isPopular 
+                        ? 'bg-orange-500 hover:bg-orange-400 text-black shadow-[0_0_20px_rgba(249,115,22,0.3)]' 
+                        : 'bg-neutral-800 hover:bg-neutral-700 text-white'
+                    }`}
+                    data-testid={`button-inscrever-${course.category.toLowerCase().replace(' ', '-')}`}
+                  >
+                    Inscrever-se Agora
+                  </Button>
+                </div>
+              </Card>
+            );
+          })}
         </div>
 
-        {/* Additional Fees */}
-        <div className="bg-amber-50 border border-amber-200 rounded-lg p-8 mb-12">
-          <h3 className="text-2xl font-semibold mb-4 text-foreground text-center">
-            Taxas Obrigatórias
-          </h3>
-          <p className="text-muted-foreground mb-8 text-center max-w-4xl mx-auto">
-            Além do preço da categoria, são obrigatórias as seguintes taxas. As taxas comuns aplicam-se a todas as categorias, enquanto a taxa RUPE varia conforme a categoria escolhida:
-          </p>
-          
-          {/* Common fees */}
-          <div className="mb-8">
-            <h4 className="text-lg font-semibold mb-4 text-center text-foreground">Taxas Comuns (Para Todas as Categorias)</h4>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-4xl mx-auto mb-4">
-              {coursesData.additionalInfo.additionalFees.map((fee, index) => (
-                <div key={fee.id} className="bg-white rounded-lg p-4 border border-amber-200">
-                  <div className="text-center">
-                    <div className="text-lg font-bold text-amber-700 mb-1">
-                      {fee.price} Kz
-                    </div>
-                    <div className="text-sm font-medium text-foreground mb-2">
-                      {fee.name}
-                    </div>
-                    <div className="text-xs text-muted-foreground">
-                      {fee.description}
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-            <div className="text-center border-t border-amber-200 pt-4">
-              <div className="text-sm text-muted-foreground mb-2">Subtotal das taxas comuns:</div>
-              <div className="text-xl font-bold text-amber-700">
-                {(coursesData.additionalInfo.totalAdditionalFees).toLocaleString('pt-AO')} Kz
-              </div>
-            </div>
-          </div>
-
-          {/* RUPE fees */}
-          <div>
-            <h4 className="text-lg font-semibold mb-4 text-center text-foreground">Taxas RUPE (Específicas por Categoria)</h4>
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-3xl mx-auto">
-              {coursesData.courses.map((course, index) => (
-                <div key={course.id} className="bg-blue-50 rounded-lg p-4 border border-blue-200">
-                  <div className="text-center">
-                    <div className="text-lg font-bold text-blue-700 mb-1">
-                      {course.rupeFee.price} Kz
-                    </div>
-                    <div className="text-sm font-medium text-foreground mb-2">
-                      {course.category}
-                    </div>
-                    <div className="text-xs text-muted-foreground">
-                      Referência Única de Pagamento ao Estado
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-
-        {/* Additional info */}
-        <div className="text-center bg-muted rounded-lg p-8">
-          <h3 className="text-2xl font-semibold mb-4 text-foreground">
-            Outras Categorias Disponíveis
-          </h3>
-          <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
-            Também oferecemos cursos para categoria D (transportes colectivos), 
-            categoria E (veículos articulados) e cursos de reciclagem conforme exigido pelo IMT Angola.
+        {/* Bottom CTA */}
+        <div className="mt-16 text-center">
+          <p className="text-neutral-500 text-sm mb-6">
+            Preços e taxas sujeitos a alterações conforme regulamentação do IMT.
           </p>
           <Button 
             variant="outline" 
-            size="lg"
+            className="rounded-full border-neutral-700 text-neutral-300 hover:bg-neutral-900 px-8 py-6"
             data-testid="button-outras-categorias"
           >
-            Ver Todas as Categorias
+            Ver Detalhes das Taxas
           </Button>
         </div>
       </div>
