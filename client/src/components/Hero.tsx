@@ -1,6 +1,7 @@
 import { Button } from '@/components/ui/button';
 import { Award, Users, Car } from 'lucide-react';
-import heroImage from '@assets/generated_images/Driving_instructor_teaching_student_2b3ed7ce.png';
+import Lottie from 'lottie-react';
+import drivingAnimation from '@assets/Driving_Car___Success_tick___Pickup_Scheduled_1770563462145.json';
 
 export default function Hero() {
   const stats = [
@@ -10,61 +11,66 @@ export default function Hero() {
   ];
 
   return (
-    <section id="inicio" className="relative min-h-[70vh] sm:min-h-[80vh] flex items-center justify-center overflow-hidden">
-      {/* Background image with overlay */}
-      <div className="absolute inset-0 z-0">
-        <img 
-          src={heroImage} 
-          alt="Instrução de condução" 
-          className="w-full h-full object-cover"
-        />
-        {/* Purple gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-r from-primary/90 to-primary/60"></div>
+    <section id="inicio" className="relative min-h-screen flex items-center bg-zinc-950 overflow-hidden pt-20">
+      {/* Background Decor */}
+      <div className="absolute inset-0 z-0 opacity-20 pointer-events-none">
+        <div className="absolute top-0 left-1/4 w-96 h-96 bg-purple-600/30 rounded-full blur-[120px]" />
+        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-purple-900/20 rounded-full blur-[120px]" />
       </div>
 
-      {/* Content */}
-      <div className="container mx-auto px-4 relative z-10 text-center">
-        <div className="max-w-4xl mx-auto">
-          <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold text-white mb-6 font-serif">
-            Aprenda a Conduzir com <span className="text-orange">Confiança</span>
-          </h1>
-          <p className="text-lg sm:text-xl md:text-2xl text-white/90 mb-8 leading-relaxed">
-            Na Escola de Condução KL, transformamos sonhos em realidade. 
-            Com mais de 10 anos de experiência em Angola, oferecemos formação 
-            adaptada às condições locais para todas as categorias de condução.
-          </p>
-          
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-            <Button 
-              size="default"
-              className="bg-orange hover:bg-orange/90 text-white px-6 py-3 md:px-8 md:py-4 text-base md:text-lg font-semibold md:size-lg"
-              data-testid="button-inscrever-agora"
-            >
-              Inscrever Agora
-            </Button>
-            <Button 
-              size="default"
-              variant="outline" 
-              className="bg-white/10 backdrop-blur-sm border-white/30 text-white hover:bg-white/20 px-6 py-3 md:px-8 md:py-4 text-base md:text-lg md:size-lg"
-              data-testid="button-saber-mais"
-            >
-              Saber Mais
-            </Button>
+      <div className="container mx-auto px-4 relative z-10">
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          {/* Left Column: Content */}
+          <div className="text-left">
+            <p className="text-purple-400 font-semibold tracking-widest uppercase text-sm mb-4">
+              Escola de Condução KL
+            </p>
+            <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 font-serif leading-tight">
+              Aprenda a Conduzir com <span className="text-purple-500">Confiança</span>
+            </h1>
+            <p className="text-lg md:text-xl text-zinc-400 mb-8 leading-relaxed max-w-xl">
+              Transformamos sonhos em realidade com formação adaptada às condições locais e instrutores certificados em Angola.
+            </p>
+            
+            <div className="flex flex-col sm:flex-row gap-4 mb-12">
+              <Button 
+                size="lg"
+                className="bg-purple-600 hover:bg-purple-500 text-white rounded-full px-8 py-6 text-lg font-semibold shadow-lg shadow-purple-500/20"
+                data-testid="button-inscrever-agora"
+              >
+                Começar Agora
+              </Button>
+              <Button 
+                size="lg"
+                variant="outline" 
+                className="border-zinc-700 text-white hover:bg-zinc-900 rounded-full px-8 py-6 text-lg"
+                data-testid="button-saber-mais"
+              >
+                Ver Cursos
+              </Button>
+            </div>
+
+            {/* Stats */}
+            <div className="grid grid-cols-3 gap-4 border-t border-zinc-800 pt-8">
+              {stats.map((stat, index) => (
+                <div key={index} className="text-left">
+                  <div className="text-2xl font-bold text-white">{stat.value}</div>
+                  <div className="text-zinc-500 text-xs uppercase tracking-wider">{stat.label}</div>
+                </div>
+              ))}
+            </div>
           </div>
 
-          {/* Stats */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 max-w-3xl mx-auto">
-            {stats.map((stat, index) => (
-              <div 
-                key={index} 
-                className="bg-white/10 backdrop-blur-sm rounded-lg p-6 text-center"
-                data-testid={`stat-${stat.label.toLowerCase().replace(/\s+/g, '-')}`}
-              >
-                <stat.icon className="w-8 h-8 text-orange mx-auto mb-3" />
-                <div className="text-3xl font-bold text-white mb-2">{stat.value}</div>
-                <div className="text-white/80 text-sm">{stat.label}</div>
-              </div>
-            ))}
+          {/* Right Column: Lottie Animation */}
+          <div className="relative flex justify-center lg:justify-end">
+            <div className="w-full max-w-[450px] aspect-square relative">
+              <div className="absolute inset-0 bg-purple-500/10 rounded-full blur-3xl" />
+              <Lottie 
+                animationData={drivingAnimation} 
+                loop={true} 
+                className="w-full h-full relative z-10"
+              />
+            </div>
           </div>
         </div>
       </div>
