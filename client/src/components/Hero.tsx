@@ -25,7 +25,7 @@ export default function Hero() {
       {/* Content */}
       <div className="container mx-auto px-4 relative z-10 text-center">
         <div className="max-w-4xl mx-auto">
-          <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold text-white mb-6">
+          <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold text-white mb-6 font-serif">
             Aprenda a Conduzir com <span className="text-orange">Confiança</span>
           </h1>
           <p className="text-lg sm:text-xl md:text-2xl text-white/90 mb-8 leading-relaxed">
