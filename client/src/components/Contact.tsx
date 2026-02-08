@@ -71,6 +71,11 @@ Enviado através do site da Escola de Condução KL`;
     }
   };
 
+  const contactInfo = contactData.contactInfo.map(info => ({
+    ...info,
+    icon: getIconComponent(info.icon)
+  }));
+
   const contactMethods = [
     {
       icon: (
