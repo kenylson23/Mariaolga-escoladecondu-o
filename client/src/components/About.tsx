@@ -92,31 +92,30 @@ export default function About() {
           </AnimatedSection>
         </div>
 
-        {/* Features grid */}
-        <AnimatedSection animation="slideUp" className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {features.map((feature, index) => (
-            <AnimatedSection 
-              key={index}
-              animation="fadeIn"
-              delay={index * 150}
-            >
-              <Card 
-                className="text-center hover-elevate transition-all duration-300"
+        {/* Features horizontal scroll */}
+        <div className="relative mt-16">
+          <div className="flex gap-6 overflow-x-auto snap-x snap-mandatory scroll-smooth pb-8 no-scrollbar">
+            {features.map((feature, index) => (
+              <article 
+                key={index}
+                className="min-w-[280px] sm:min-w-[320px] snap-start bg-card border-border border rounded-xl shadow-lg hover-elevate transition-all duration-300 group"
                 data-testid={`card-feature-${feature.title.toLowerCase().replace(/\s+/g, '-')}`}
               >
-                <CardContent className="p-6">
-                  <feature.icon className="w-12 h-12 text-primary mx-auto mb-4" />
-                  <h4 className="text-base sm:text-lg font-semibold mb-3 text-card-foreground">
+                <div className="p-6">
+                  <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors">
+                    <feature.icon className="w-8 h-8 text-primary" />
+                  </div>
+                  <h4 className="text-xl font-bold mb-3 text-card-foreground">
                     {feature.title}
                   </h4>
-                  <p className="text-muted-foreground text-sm leading-relaxed">
+                  <p className="text-muted-foreground text-base leading-relaxed">
                     {feature.description}
                   </p>
-                </CardContent>
-              </Card>
-            </AnimatedSection>
-          ))}
-        </AnimatedSection>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
       </div>
 
       {/* Animated Statistics Section */}

@@ -1,0 +1,116 @@
+<section class="sm:px-6 lg:px-8 max-w-6xl mt-20 mr-auto ml-auto pr-0 pl-0">
+  <div class="flex items-end justify-between gap-4">
+    <div class="">
+      <h2 class="sm:text-3xl text-3xl font-semibold tracking-tight font-geist">Today's Deals</h2>
+      <p class="mt-1 text-sm text-neutral-600 font-sans">Limited time offers. While supplies last.</p>
+    </div>
+    <a href="#all-deals" class="hidden sm:inline-flex items-center gap-2 text-sm font-medium text-neutral-900 hover:text-neutral-700 transition-colors font-sans">
+      View all deals
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4"><path d="M5 12h14" class=""></path><path d="m12 5 7 7-7 7" class=""></path></svg>
+    </a>
+  </div>
+
+  <div class="relative mt-4">
+    <button id="dealsPrev" aria-label="Previous deals" class="absolute -left-2 sm:-left-3 top-1/2 -translate-y-1/2 z-10 rounded-full bg-white border border-neutral-200 shadow-sm p-2 hover:bg-neutral-50 transition-colors">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4"><path d="m15 18-6-6 6-6" class=""></path></svg>
+    </button>
+    <button id="dealsNext" aria-label="Next deals" class="absolute -right-2 sm:-right-3 top-1/2 -translate-y-1/2 z-10 rounded-full bg-white border border-neutral-200 shadow-sm p-2 hover:bg-neutral-50 transition-colors">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-line="round" stroke-linejoin="round" class="w-[16px] h-[16px]" data-icon-replaced="true" style="width: 16px; height: 16px; color: rgb(23, 23, 23);"><path d="m9 18 6-6-6-6" class=""></path></svg>
+    </button>
+
+    <div class="flex gap-4 overflow-x-auto snap-x snap-mandatory scroll-smooth pr-10 pb-20 pl-10">
+      
+
+      <!-- Card 2 -->
+      <article class="min-w-[260px] sm:min-w-[300px] snap-start bg-neutral-50 border-neutral-200 border rounded-lg shadow-xl">
+        <div class="pt-3 pr-3 pb-3 pl-3">
+          <div class="rounded-lg bg-neutral-100 overflow-hidden">
+            <img src="https://cdn.midjourney.com/1ead644f-d4d4-40b5-a570-d56b277fae84/0_0.png?w=800&amp;q=80" alt="Magnetic tiles set" class="w-full h-full object-contain">
+          </div>
+        </div>
+        <div class="pr-3 pb-4 pl-3">
+          <div class="flex flex-wrap gap-2 items-center">
+            <span class="inline-flex items-center rounded-md bg-rose-600 text-white text-[13px] px-2 py-1 font-semibold">35% off</span>
+            <span class="inline-flex items-center text-[13px] font-medium text-neutral-600 bg-neutral-200/70 rounded-md pt-1 pr-2 pb-1 pl-2">Limited Time Deal</span>
+          </div>
+          <div class="mt-2 text-lg font-semibold tracking-tight font-sans">S$36<span class="align-top text-[11px]">.39</span> <span class="ml-2 text-sm text-neutral-500 font-normal line-through">S$55.99</span></div>
+          <p class="mt-1 text-sm text-neutral-800 line-clamp-2 font-sans">Magnetic tiles 100‑piece colorful building set</p>
+        </div>
+      </article>
+
+      <!-- Card 3 -->
+      <article class="min-w-[260px] sm:min-w-[300px] snap-start bg-neutral-50 border-neutral-200 border rounded-lg shadow-xl">
+        <div class="p-3">
+          <div class="rounded-lg bg-neutral-100 overflow-hidden">
+            <img src="https://cdn.midjourney.com/d7717c87-22e5-45b5-9b2a-17127ced3c39/0_0.png?w=800&amp;q=80" alt="MagSafe phone case" class="w-full h-full object-contain">
+          </div>
+        </div>
+        <div class="pr-3 pb-4 pl-3">
+          <div class="flex flex-wrap items-center gap-2">
+            <span class="inline-flex items-center text-[13px] font-medium text-neutral-600 bg-neutral-200/70 rounded-md pt-1 pr-2 pb-1 pl-2">Limited Time Deal</span>
+          </div>
+          <div class="mt-2 text-lg font-semibold tracking-tight font-sans">S$49<span class="align-top text-[11px]">.59</span></div>
+          <p class="mt-1 text-sm text-neutral-800 line-clamp-2 font-sans">MagSafe‑compatible case with slim grip frame</p>
+        </div>
+      </article>
+
+      <!-- Card 4 -->
+      <article class="min-w-[260px] sm:min-w-[300px] snap-start bg-neutral-50 border-neutral-200 border rounded-lg shadow-xl">
+        <div class="p-3">
+          <div class="rounded-lg bg-neutral-100 overflow-hidden">
+            <img src="https://cdn.midjourney.com/0a0a6c54-45b0-4955-b91c-bcfcbaa7f16a/0_0.png?w=800&amp;q=80" alt="Portable monitor" class="w-full h-full object-contain">
+          </div>
+        </div>
+        <div class="pr-3 pb-4 pl-3">
+          <div class="flex flex-wrap items-center gap-2">
+            <span class="inline-flex items-center rounded-md bg-rose-600 text-white text-[13px] px-2 py-1 font-semibold">44% off</span>
+            <span class="inline-flex items-center text-[13px] font-medium text-neutral-600 bg-neutral-200/70 rounded-md pt-1 pr-2 pb-1 pl-2">Limited Time Deal</span>
+          </div>
+          <div class="mt-2 text-lg font-semibold tracking-tight font-sans">S$149<span class="align-top text-[11px]">.99</span> <span class="ml-2 text-sm text-neutral-500 font-normal line-through">S$269.98</span></div>
+          <p class="mt-1 text-sm text-neutral-800 line-clamp-2 font-sans">16″ 2K portable monitor with HDR and USB‑C</p>
+        </div>
+      </article>
+
+      <!-- Card 5 -->
+      <article class="min-w-[260px] sm:min-w-[300px] snap-start bg-neutral-50 border-neutral-200 border rounded-lg shadow-xl">
+        <div class="p-3">
+          <div class="rounded-lg bg-neutral-100 overflow-hidden">
+            <img src="https://hoirqrkdgbmvpwutwuwj-all.supabase.co/storage/v1/object/public/assets/assets/b201fbab-0845-4780-9fa7-7018d249dbca_800w.jpg" alt="100W USB‑C charger" class="w-full h-full object-contain">
+          </div>
+        </div>
+        <div class="pr-3 pb-4 pl-3">
+          <div class="flex flex-wrap items-center gap-2">
+            <span class="inline-flex items-center rounded-md bg-rose-600 text-white text-[13px] px-2 py-1 font-semibold">40% off</span>
+            <span class="inline-flex items-center text-[13px] font-medium text-neutral-600 bg-neutral-200/70 rounded-md pt-1 pr-2 pb-1 pl-2">Limited Time Deal</span>
+          </div>
+          <div class="mt-2 text-lg font-semibold tracking-tight font-sans">S$41<span class="align-top text-[11px]">.99</span> <span class="ml-2 text-sm text-neutral-500 font-normal line-through">S$69.99</span></div>
+          <p class="mt-1 text-sm text-neutral-800 line-clamp-2 font-sans">100W USB‑C GaN fast charger with dual ports</p>
+        </div>
+      </article>
+
+      <!-- Card 6 -->
+      <article class="min-w-[260px] sm:min-w-[300px] snap-start bg-neutral-50 border-neutral-200 border rounded-lg shadow-xl">
+        <div class="p-3">
+          <div class="rounded-lg bg-neutral-100 overflow-hidden">
+            <img src="https://hoirqrkdgbmvpwutwuwj-all.supabase.co/storage/v1/object/public/assets/assets/9119de3c-a4ae-492b-82ab-541edaa20da6_800w.jpg" alt="Wireless headphones" class="w-full h-full object-contain">
+          </div>
+        </div>
+        <div class="px-3 pb-4">
+          <div class="flex flex-wrap items-center gap-2">
+            <span class="inline-flex items-center rounded-md bg-rose-600 text-white text-[13px] px-2 py-1 font-semibold">30% off</span>
+            <span class="inline-flex items-center text-[13px] font-medium text-neutral-600 bg-neutral-200/70 rounded-md pt-1 pr-2 pb-1 pl-2">Limited Time Deal</span>
+          </div>
+          <div class="mt-2 text-lg font-semibold tracking-tight font-sans">S$69<span class="align-top text-[11px]">.90</span> <span class="ml-2 text-sm text-neutral-500 font-normal line-through">S$99.90</span></div>
+          <p class="mt-1 text-sm text-neutral-800 line-clamp-2 font-sans">Wireless over‑ear headphones with ANC</p>
+        </div>
+      </article>
+    </div>
+  </div>
+
+  <div class="mt-4 sm:hidden">
+    <a href="#all-deals" class="inline-flex items-center gap-2 text-sm font-medium text-neutral-900 hover:text-neutral-700 transition-colors font-sans">
+      View all deals
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4"><path d="M5 12h14" class=""></path><path d="m12 5 7 7-7 7" class=""></path></svg>
+    </a>
+  </div>
+</section>
