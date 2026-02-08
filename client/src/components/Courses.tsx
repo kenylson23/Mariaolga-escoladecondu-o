@@ -165,7 +165,7 @@ export default function Courses() {
                     Taxas Comuns (IMT Angola)
                   </h4>
                   <div className="grid gap-3">
-                    {coursesData.additionalInfo.commonFees.map((fee, i) => (
+                    {coursesData.additionalInfo.additionalFees.map((fee: any, i: number) => (
                       <div key={i} className="flex justify-between items-center p-3 bg-zinc-900 rounded-lg border border-zinc-800">
                         <span className="text-zinc-300">{fee.name}</span>
                         <span className="font-semibold">{fee.priceNumeric.toLocaleString('pt-AO')} Kz</span>
