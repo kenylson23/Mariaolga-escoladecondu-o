@@ -92,22 +92,23 @@ export default function Gallery() {
         </div>
 
         {/* New Interactive Gallery Layout */}
-        <div className="flex flex-col md:flex-row items-center gap-2 h-auto md:h-[500px] w-full mt-10">
-          {filteredImages.map((image, idx) => (
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
+          {filteredImages.map((image) => (
             <div
               key={image.id}
-              className="relative group flex-grow transition-all duration-500 ease-in-out w-full md:w-24 h-[300px] md:h-full rounded-2xl overflow-hidden cursor-pointer md:hover:flex-[3]"
+              className="relative group rounded-2xl overflow-hidden cursor-pointer h-[300px] hover-elevate"
             >
               <img
-                className="h-full w-full object-cover"
+                className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                 src={image.src}
                 alt={image.alt}
+                loading="lazy"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6">
-                <span className="text-orange text-xs font-bold uppercase tracking-wider mb-1 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                <span className="text-orange-400 text-xs font-bold uppercase tracking-wider mb-1">
                   {image.category === 'veiculos' ? 'Nossa Frota' : image.category === 'instalacoes' ? 'Infraestrutura' : 'Formação Prática'}
                 </span>
-                <h3 className="text-white text-xl font-bold font-serif transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500 delay-75">
+                <h3 className="text-white text-xl font-bold font-serif">
                   {image.title}
                 </h3>
               </div>
