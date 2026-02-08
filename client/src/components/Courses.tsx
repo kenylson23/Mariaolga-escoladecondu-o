@@ -1,10 +1,19 @@
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Car, Truck, Clock, CheckCircle } from 'lucide-react';
+import { 
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
+import { Car, Truck, Clock, CheckCircle, Info } from 'lucide-react';
 import coursesData from '@/data/courses.json';
+import { useState } from 'react';
 
 export default function Courses() {
+  const [isFeesModalOpen, setIsFeesModalOpen] = useState(false);
   const getIconComponent = (iconName: string) => {
     switch (iconName) {
       case 'Car': return Car;
@@ -134,13 +143,48 @@ export default function Courses() {
           <p className="text-zinc-500 text-sm mb-6">
             Preços e taxas sujeitos a alterações conforme regulamentação do IMT.
           </p>
-          <Button 
-            variant="ghost" 
-            className="rounded-full text-zinc-400 hover:text-white hover:bg-zinc-900 px-8 py-6"
-            data-testid="button-outras-categorias"
-          >
-            Ver Detalhes das Taxas
-          </Button>
+          
+          <Dialog open={isFeesModalOpen} onOpenChange={setIsFeesModalOpen}>
+            <DialogTrigger asChild>
+              <Button 
+                variant="ghost" 
+                className="rounded-full text-zinc-400 hover:text-white hover:bg-zinc-900 px-8 py-6"
+                data-testid="button-outras-categorias"
+              >
+                Ver Detalhes das Taxas
+              </Button>
+            </DialogTrigger>
+            <DialogContent className="bg-zinc-950 border-zinc-800 text-white max-w-2xl">
+              <DialogHeader>
+                <DialogTitle className="text-2xl font-serif text-white mb-4">Detalhamento das Taxas</DialogTitle>
+              </DialogHeader>
+              <div className="space-y-6">
+                <div>
+                  <h4 className="text-purple-400 font-semibold mb-3 flex items-center gap-2">
+                    <Info className="w-4 h-4" />
+                    Taxas Comuns (IMT Angola)
+                  </h4>
+                  <div className="grid gap-3">
+                    {coursesData.additionalInfo.commonFees.map((fee, i) => (
+                      <div key={i} className="flex justify-between items-center p-3 bg-zinc-900 rounded-lg border border-zinc-800">
+                        <span className="text-zinc-300">{fee.name}</span>
+                        <span className="font-semibold">{fee.priceNumeric.toLocaleString('pt-AO')} Kz</span>
+                      </div>
+                    ))}
+                    <div className="flex justify-between items-center p-3 bg-purple-500/10 rounded-lg border border-purple-500/20">
+                      <span className="font-bold text-purple-400">Total de Taxas Comuns</span>
+                      <span className="font-bold text-white">{additionalFeesTotal.toLocaleString('pt-AO')} Kz</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="text-sm text-zinc-400 bg-zinc-900/50 p-4 rounded-xl border border-zinc-800">
+                  <p className="mb-2"><strong>Nota sobre Taxas RUPE:</strong></p>
+                  <p>As taxas RUPE (Documento de Arrecadação de Receitas do Estado) variam de acordo com a categoria selecionada e são obrigatórias para a emissão do processo no IMT.</p>
+                </div>
+              </div>
+            </DialogContent>
+          </Dialog>
         </div>
       </div>
     </section>
