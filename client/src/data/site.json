@@ -10,10 +10,6 @@
       { "label": "Início", "href": "#inicio" },
       { "label": "Sobre Nós", "href": "#sobre" },
       { "label": "Categorias", "href": "#categorias" },
-      { "label": "Calculadora", "href": "#calculadora" },
-      { "label": "Quiz", "href": "#quiz" },
-      { "label": "Dicas", "href": "#dicas" },
-      { "label": "Exame", "href": "#conselhos-exame" },
       { "label": "Galeria", "href": "#galeria" },
       { "label": "Contacto", "href": "#contacto" }
     ],
