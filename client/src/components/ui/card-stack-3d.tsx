@@ -42,8 +42,9 @@ const Card = ({
   onClick,
   width,
   height,
-  spacing
-}: CardProps) => {
+  spacing,
+  images
+}: CardProps & { images: CardImage[] }) => {
   return (
     <motion.div
       className={cn(
@@ -71,18 +72,18 @@ const Card = ({
             rotateY: 0,
             x: 0,
             y: isMobile ? 0 : -50,
-            z: 50,
+            z: 100,
             boxShadow: '0px 15px 40px rgba(0, 0, 0, 0.5)',
           }
         : isHovered
         ? {
             rotateY: isMobile ? 0 : -45,
-            x: isMobile ? 0 : index * (spacing.x ?? 50),
-            y: isMobile ? index * (spacing.y ?? 50) : index * -5,
+            x: isMobile ? 0 : (index - (images.length - 1) / 2) * (spacing.x ?? 80),
+            y: isMobile ? (index - (images.length - 1) / 2) * (spacing.y ?? 60) : index * -5,
             z: index * 15,
             scale: 1.05,
             boxShadow: `10px 20px 30px rgba(0, 0, 0, ${0.2 + index * 0.05})`,
-            transition: { type: 'spring', stiffness: 300, damping: 50, delay: index * 0.1 }
+            transition: { type: 'spring', stiffness: 300, damping: 50, delay: index * 0.05 }
           }
         : {
             rotateY: 0,
@@ -91,7 +92,7 @@ const Card = ({
             z: 0,
             scale: 1,
             boxShadow: '0px 0px 15px rgba(0, 0, 0, 0.1)',
-            transition: { type: 'spring', stiffness: 300, damping: 20, delay: (4 - index) * 0.1 }
+            transition: { type: 'spring', stiffness: 300, damping: 20, delay: (images.length - 1 - index) * 0.05 }
           }
       }
       onClick={() => onClick(index)}
@@ -111,7 +112,7 @@ export function CardStack3D({
   className,
   cardWidth = 320,
   cardHeight = 192,
-  spacing = { x: 50, y: 50 }
+  spacing = { x: 80, y: 60 }
 }: CardStackProps) {
   const [isHovered, setIsHovered] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
@@ -153,6 +154,7 @@ export function CardStack3D({
             width={cardWidth}
             height={cardHeight}
             spacing={spacing}
+            images={images}
           />
         ))}
       </div>

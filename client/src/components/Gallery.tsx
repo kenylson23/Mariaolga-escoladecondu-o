@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { CardStack3D } from '@/components/ui/card-stack-3d';
 import vehiclesImage from '@assets/generated_images/Driving_school_vehicles_collection_ec97c06a.png';
@@ -7,6 +7,14 @@ import heroImage from '@assets/generated_images/Driving_instructor_teaching_stud
 
 export default function Gallery() {
   const [activeCategory, setActiveCategory] = useState('todos');
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth <= 768);
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   const images = [
     {
@@ -91,12 +99,12 @@ export default function Gallery() {
         </div>
 
         {/* 3D Card Stack Gallery */}
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-4xl mx-auto flex justify-center">
           <CardStack3D 
             images={filteredImages.map(img => ({ src: img.src, alt: img.alt }))} 
-            cardWidth={500}
-            cardHeight={300}
-            className="md:py-40"
+            cardWidth={isMobile ? 280 : 500}
+            cardHeight={isMobile ? 180 : 300}
+            className="py-20 md:py-40"
           />
         </div>
 
