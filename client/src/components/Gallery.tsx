@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
+import { CardStack3D } from '@/components/ui/card-stack-3d';
 import vehiclesImage from '@assets/generated_images/Driving_school_vehicles_collection_ec97c06a.png';
 import schoolImage from '@assets/generated_images/Modern_driving_school_building_5228ea15.png';
 import heroImage from '@assets/generated_images/Driving_instructor_teaching_student_2b3ed7ce.png';
@@ -8,7 +8,6 @@ import heroImage from '@assets/generated_images/Driving_instructor_teaching_stud
 export default function Gallery() {
   const [activeCategory, setActiveCategory] = useState('todos');
 
-  // TODO: remove mock functionality - using generated images as placeholders
   const images = [
     {
       id: 1,
@@ -66,7 +65,7 @@ export default function Gallery() {
     : images.filter(img => img.category === activeCategory);
 
   return (
-    <section id="galeria" className="py-20 bg-muted">
+    <section id="galeria" className="py-20 bg-muted overflow-hidden">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-4 font-serif">
@@ -91,29 +90,14 @@ export default function Gallery() {
           ))}
         </div>
 
-        {/* New Interactive Gallery Layout */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
-          {filteredImages.map((image) => (
-            <div
-              key={image.id}
-              className="relative group rounded-2xl overflow-hidden cursor-pointer h-[300px] hover-elevate"
-            >
-              <img
-                className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                src={image.src}
-                alt={image.alt}
-                loading="lazy"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
-                <span className="text-orange-400 text-xs font-bold uppercase tracking-wider mb-1">
-                  {image.category === 'veiculos' ? 'Nossa Frota' : image.category === 'instalacoes' ? 'Infraestrutura' : 'Formação Prática'}
-                </span>
-                <h3 className="text-white text-xl font-bold font-serif">
-                  {image.title}
-                </h3>
-              </div>
-            </div>
-          ))}
+        {/* 3D Card Stack Gallery */}
+        <div className="max-w-4xl mx-auto">
+          <CardStack3D 
+            images={filteredImages.map(img => ({ src: img.src, alt: img.alt }))} 
+            cardWidth={500}
+            cardHeight={300}
+            className="md:py-40"
+          />
         </div>
 
         {/* Call to action */}
