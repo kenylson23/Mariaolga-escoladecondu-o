@@ -24,11 +24,11 @@
   "courses": [
     {
       "value": "ligeiro-amador",
-      "label": "Ligeiro Amador - Condução Particular"
+      "label": "Ligeiro Amador"
     },
     {
       "value": "ligeiro-profissional", 
-      "label": "Ligeiro Profissional - Condução Comercial"
+      "label": "Ligeiro Profissional"
     },
     {
       "value": "pesado-profissional",
