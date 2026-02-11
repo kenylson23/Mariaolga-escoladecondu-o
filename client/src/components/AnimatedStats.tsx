@@ -2,7 +2,6 @@ import { Card, CardContent } from '@/components/ui/card';
 import { useCounterAnimation } from '@/hooks/use-counter-animation';
 import { useIntersectionObserver } from '@/hooks/use-intersection-observer';
 import { Trophy, Users, Calendar, Award, Car } from 'lucide-react';
-import { InfiniteMovingCards } from './ui/infinite-moving-cards';
 import {
   Carousel,
   CarouselContent,
@@ -52,29 +51,6 @@ export default function AnimatedStats() {
     }
   ];
 
-  const testimonials = [
-    {
-      quote: "A KL transformou minha insegurança em confiança no volante. Os instrutores são pacientes e conhecem profundamente a realidade das estradas angolanas.",
-      name: "João Manuel",
-      title: "Aluno Aprovado em 2024",
-    },
-    {
-      quote: "Excelente escola! Os veículos são modernos e bem cuidados, facilitando muito o aprendizado prático. Recomendo a todos em Luanda.",
-      name: "Maria Antónia",
-      title: "Condutora Formada",
-    },
-    {
-      quote: "A flexibilidade de horários foi fundamental para eu conseguir tirar minha carta enquanto trabalhava. O processo foi rápido e eficiente.",
-      name: "Pedro Santos",
-      title: "Aprovado na 1ª tentativa",
-    },
-    {
-      quote: "O suporte teórico é muito forte. Cheguei no exame de código muito bem preparada e sem nervosismo graças ao acompanhamento.",
-      name: "Ana Luísa",
-      title: "Aluna da KL",
-    }
-  ];
-
   return (
     <section 
       ref={elementRef}
@@ -91,7 +67,7 @@ export default function AnimatedStats() {
           </p>
         </div>
 
-        <div className="mb-20">
+        <div className="w-full">
           <Carousel
             opts={{
               align: "start",
@@ -136,14 +112,6 @@ export default function AnimatedStats() {
               ))}
             </CarouselContent>
           </Carousel>
-        </div>
-
-        <div className="pt-10 border-t border-white/10">
-          <InfiniteMovingCards
-            items={testimonials}
-            direction="right"
-            speed="slow"
-          />
         </div>
       </div>
     </section>
