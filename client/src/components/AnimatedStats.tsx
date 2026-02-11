@@ -1,7 +1,7 @@
 import { Card, CardContent } from '@/components/ui/card';
 import { useCounterAnimation } from '@/hooks/use-counter-animation';
 import { useIntersectionObserver } from '@/hooks/use-intersection-observer';
-import { Trophy, Users, Calendar, Award } from 'lucide-react';
+import { Trophy, Users, Calendar, Award, Car } from 'lucide-react';
 
 export default function AnimatedStats() {
   const { elementRef, isVisible } = useIntersectionObserver({
@@ -10,9 +10,9 @@ export default function AnimatedStats() {
   });
 
   const yearsCount = useCounterAnimation({ end: 12, isVisible, duration: 2000 });
-  const studentsCount = useCounterAnimation({ end: 1500, isVisible, duration: 2500 });
-  const successRate = useCounterAnimation({ end: 92, isVisible, duration: 2200 });
-  const coursesCount = useCounterAnimation({ end: 8, isVisible, duration: 1800 });
+  const studentsCount = useCounterAnimation({ end: 3500, isVisible, duration: 2500 });
+  const successRate = useCounterAnimation({ end: 95, isVisible, duration: 2200 });
+  const vehiclesCount = useCounterAnimation({ end: 12, isVisible, duration: 1800 });
 
   const stats = [
     {
@@ -20,28 +20,28 @@ export default function AnimatedStats() {
       value: yearsCount,
       suffix: '+',
       label: 'Anos de Experiência',
-      description: 'Formando condutores desde 2013'
+      description: 'Formando condutores com excelência desde 2013'
     },
     {
       icon: Users,
       value: studentsCount,
       suffix: '+',
-      label: 'Alunos Formados',
-      description: 'Condutores preparados com sucesso'
+      label: 'Alunos Aprovados',
+      description: 'Milhares de condutores preparados com sucesso'
     },
     {
       icon: Trophy,
       value: successRate,
       suffix: '%',
-      label: 'Taxa de Sucesso',
-      description: 'Aprovação nos exames'
+      label: 'Taxa de Aprovação',
+      description: 'Compromisso real com o seu resultado final'
     },
     {
-      icon: Award,
-      value: coursesCount,
+      icon: Car,
+      value: vehiclesCount,
       suffix: '',
-      label: 'Tipos de Cursos',
-      description: 'Categorias de condução disponíveis'
+      label: 'Veículos Adequados',
+      description: 'Frota moderna e preparada para o seu aprendizado'
     }
   ];
 

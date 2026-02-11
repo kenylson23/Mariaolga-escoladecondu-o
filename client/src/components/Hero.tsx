@@ -51,17 +51,19 @@ export default function Hero() {
             </div>
 
             {/* Stats */}
-            <div className="grid grid-cols-3 gap-6 pt-10 border-t border-border/50">
+            <div className="grid grid-cols-3 gap-4 sm:gap-6 pt-10 border-t border-border/50">
               {stats.map((stat, index) => (
-                <div key={index} className="flex flex-col items-center text-center gap-2 group cursor-default">
-                  <div className="flex items-center justify-center gap-2 mb-1">
-                    <div className="p-2 rounded-lg bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-300">
+                <div key={index} className="flex flex-col items-center sm:items-start text-center sm:text-left gap-1 group cursor-default">
+                  <div className="flex items-center justify-center sm:justify-start gap-2 mb-1">
+                    <div className="p-2 rounded-xl bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300 shadow-sm">
                       <stat.icon className="w-5 h-5" />
                     </div>
                   </div>
-                  <div className="flex flex-col items-center">
-                    <div className="text-3xl font-bold text-foreground tracking-tight">{stat.value}</div>
-                    <div className="text-muted-foreground text-[10px] sm:text-xs font-medium uppercase tracking-widest leading-tight">
+                  <div className="flex flex-col items-center sm:items-start">
+                    <div className="text-2xl sm:text-3xl font-bold text-foreground tracking-tight flex items-baseline gap-0.5">
+                      {stat.value}
+                    </div>
+                    <div className="text-muted-foreground text-[9px] sm:text-[10px] font-semibold uppercase tracking-wider leading-tight max-w-[80px] sm:max-w-none">
                       {stat.label}
                     </div>
                   </div>
