@@ -3,6 +3,12 @@ import { useCounterAnimation } from '@/hooks/use-counter-animation';
 import { useIntersectionObserver } from '@/hooks/use-intersection-observer';
 import { Trophy, Users, Calendar, Award, Car } from 'lucide-react';
 import { InfiniteMovingCards } from './ui/infinite-moving-cards';
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+} from "@/components/ui/carousel";
+import Autoplay from "embla-carousel-autoplay";
 
 export default function AnimatedStats() {
   const { elementRef, isVisible } = useIntersectionObserver({
@@ -85,35 +91,51 @@ export default function AnimatedStats() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
-          {stats.map((stat, index) => (
-            <Card 
-              key={index}
-              className={`bg-white/10 border-white/20 backdrop-blur-sm hover-elevate transition-all duration-500 ${
-                isVisible 
-                  ? 'opacity-100 translate-y-0' 
-                  : 'opacity-0 translate-y-8'
-              }`}
-              style={{ 
-                transitionDelay: `${index * 150}ms` 
-              }}
-              data-testid={`card-stat-${stat.label.toLowerCase().replace(/\s+/g, '-')}`}
-            >
-              <CardContent className="p-6 text-center">
-                <stat.icon className="w-12 h-12 mx-auto mb-4 text-orange" />
-                <div className="text-3xl md:text-4xl font-bold mb-2 text-white">
-                  {stat.value}
-                  <span className="text-orange">{stat.suffix}</span>
-                </div>
-                <h3 className="text-lg font-semibold mb-2 text-white">
-                  {stat.label}
-                </h3>
-                <p className="text-sm text-primary-foreground/70">
-                  {stat.description}
-                </p>
-              </CardContent>
-            </Card>
-          ))}
+        <div className="mb-20">
+          <Carousel
+            opts={{
+              align: "start",
+              loop: true,
+            }}
+            plugins={[
+              Autoplay({
+                delay: 4000,
+              }),
+            ]}
+            className="w-full"
+          >
+            <CarouselContent className="-ml-2 md:-ml-4">
+              {stats.map((stat, index) => (
+                <CarouselItem key={index} className="pl-2 md:pl-4 basis-full sm:basis-1/2 lg:basis-1/4">
+                  <Card 
+                    className={`h-full bg-white/10 border-white/20 backdrop-blur-sm hover-elevate transition-all duration-500 ${
+                      isVisible 
+                        ? 'opacity-100 translate-y-0' 
+                        : 'opacity-0 translate-y-8'
+                    }`}
+                    style={{ 
+                      transitionDelay: `${index * 150}ms` 
+                    }}
+                    data-testid={`card-stat-${stat.label.toLowerCase().replace(/\s+/g, '-')}`}
+                  >
+                    <CardContent className="p-6 text-center flex flex-col items-center justify-center h-full">
+                      <stat.icon className="w-12 h-12 mb-4 text-orange shrink-0" />
+                      <div className="text-3xl md:text-4xl font-bold mb-2 text-white">
+                        {stat.value}
+                        <span className="text-orange">{stat.suffix}</span>
+                      </div>
+                      <h3 className="text-lg font-semibold mb-2 text-white">
+                        {stat.label}
+                      </h3>
+                      <p className="text-sm text-primary-foreground/70">
+                        {stat.description}
+                      </p>
+                    </CardContent>
+                  </Card>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+          </Carousel>
         </div>
 
         <div className="pt-10 border-t border-white/10">
