@@ -40,7 +40,7 @@ export default function About() {
 
   return (
     <section id="sobre" className="py-24 bg-background overflow-hidden">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-4 pb-12">
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-20 items-center">
           {/* Visual Elements Column */}
           <AnimatedSection animation="slideRight" delay={200} className="relative">
