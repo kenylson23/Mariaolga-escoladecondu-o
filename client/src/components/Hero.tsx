@@ -51,7 +51,7 @@ export default function Hero() {
             </div>
 
             {/* Stats */}
-            <div className="grid grid-cols-3 gap-4 sm:gap-6 pt-10 border-t border-border/50">
+            <div className="grid grid-cols-3 gap-4 sm:gap-6 pt-10 pb-10 border-t border-border/50">
               {stats.map((stat, index) => (
                 <div key={index} className="flex flex-col items-center sm:items-start text-center sm:text-left gap-1 group cursor-default">
                   <div className="flex items-center justify-center sm:justify-start gap-2 mb-1">
