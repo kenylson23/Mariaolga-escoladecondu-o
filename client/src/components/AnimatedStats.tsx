@@ -2,6 +2,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { useCounterAnimation } from '@/hooks/use-counter-animation';
 import { useIntersectionObserver } from '@/hooks/use-intersection-observer';
 import { Trophy, Users, Calendar, Award, Car } from 'lucide-react';
+import { InfiniteMovingCards } from './ui/infinite-moving-cards';
 
 export default function AnimatedStats() {
   const { elementRef, isVisible } = useIntersectionObserver({
@@ -45,15 +46,38 @@ export default function AnimatedStats() {
     }
   ];
 
+  const testimonials = [
+    {
+      quote: "A KL transformou minha insegurança em confiança no volante. Os instrutores são pacientes e conhecem profundamente a realidade das estradas angolanas.",
+      name: "João Manuel",
+      title: "Aluno Aprovado em 2024",
+    },
+    {
+      quote: "Excelente escola! Os veículos são modernos e bem cuidados, facilitando muito o aprendizado prático. Recomendo a todos em Luanda.",
+      name: "Maria Antónia",
+      title: "Condutora Formada",
+    },
+    {
+      quote: "A flexibilidade de horários foi fundamental para eu conseguir tirar minha carta enquanto trabalhava. O processo foi rápido e eficiente.",
+      name: "Pedro Santos",
+      title: "Aprovado na 1ª tentativa",
+    },
+    {
+      quote: "O suporte teórico é muito forte. Cheguei no exame de código muito bem preparada e sem nervosismo graças ao acompanhamento.",
+      name: "Ana Luísa",
+      title: "Aluna da KL",
+    }
+  ];
+
   return (
     <section 
       ref={elementRef}
-      className="py-20 bg-primary text-primary-foreground"
+      className="py-20 bg-primary text-primary-foreground overflow-hidden"
       data-testid="section-animated-stats"
     >
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 font-serif text-white">
             Números que Falam por Si
           </h2>
           <p className="text-lg text-primary-foreground/80 max-w-2xl mx-auto">
@@ -61,7 +85,7 @@ export default function AnimatedStats() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
           {stats.map((stat, index) => (
             <Card 
               key={index}
@@ -90,6 +114,14 @@ export default function AnimatedStats() {
               </CardContent>
             </Card>
           ))}
+        </div>
+
+        <div className="pt-10 border-t border-white/10">
+          <InfiniteMovingCards
+            items={testimonials}
+            direction="right"
+            speed="slow"
+          />
         </div>
       </div>
     </section>
