@@ -98,9 +98,6 @@ export default function AnimatedStats() {
                     data-testid={`card-stat-${stat.label.toLowerCase().replace(/\s+/g, '-')}`}
                   >
                     <CardContent className="p-8 text-center flex flex-col items-center justify-center h-full">
-                      <div className="w-16 h-16 rounded-2xl bg-secondary/20 flex items-center justify-center mb-6 shadow-xl">
-                        <stat.icon className="w-8 h-8 text-secondary shrink-0" />
-                      </div>
                       <div className="text-4xl md:text-5xl font-bold mb-3 text-white tracking-tighter">
                         {stat.value}
                         <span className="text-secondary">{stat.suffix}</span>

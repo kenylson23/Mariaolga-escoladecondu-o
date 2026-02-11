@@ -139,9 +139,6 @@ export default function About() {
                 className="border-none shadow-xl bg-muted/30 hover-elevate transition-all duration-300 rounded-2xl overflow-hidden group"
               >
                 <CardContent className="p-8">
-                  <div className="w-14 h-14 rounded-2xl bg-white shadow-lg flex items-center justify-center mb-6 group-hover:bg-secondary transition-colors duration-500">
-                    <feature.icon className="w-7 h-7 text-secondary group-hover:text-white transition-colors duration-500" />
-                  </div>
                   <h4 className="text-xl font-bold mb-3 text-primary">
                     {feature.title}
                   </h4>
