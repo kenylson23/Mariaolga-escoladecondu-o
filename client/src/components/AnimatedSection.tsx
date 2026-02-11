@@ -22,29 +22,29 @@ export default function AnimatedSection({
   });
 
   const getAnimationClasses = () => {
-    const baseClasses = `transition-all ease-out`;
+    const baseClasses = `transition-all duration-1000 ease-[cubic-bezier(0.23,1,0.32,1)]`;
     const durationClass = `duration-${duration}`;
     
     switch (animation) {
       case 'fadeIn':
-        return `${baseClasses} ${durationClass} ${
-          isVisible ? 'opacity-100' : 'opacity-0'
+        return `${baseClasses} ${
+          isVisible ? 'opacity-100 translate-y-0 blur-0' : 'opacity-0 translate-y-4 blur-sm'
         }`;
       case 'slideUp':
-        return `${baseClasses} ${durationClass} ${
-          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+        return `${baseClasses} ${
+          isVisible ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-12 scale-95'
         }`;
       case 'slideLeft':
-        return `${baseClasses} ${durationClass} ${
-          isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-8'
+        return `${baseClasses} ${
+          isVisible ? 'opacity-100 translate-x-0 rotate-0' : 'opacity-0 translate-x-12 rotate-1'
         }`;
       case 'slideRight':
-        return `${baseClasses} ${durationClass} ${
-          isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'
+        return `${baseClasses} ${
+          isVisible ? 'opacity-100 translate-x-0 rotate-0' : 'opacity-0 -translate-x-12 -rotate-1'
         }`;
       case 'scale':
-        return `${baseClasses} ${durationClass} ${
-          isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
+        return `${baseClasses} ${
+          isVisible ? 'opacity-100 scale-100 blur-0' : 'opacity-0 scale-90 blur-md'
         }`;
       default:
         return `${baseClasses} ${durationClass} ${

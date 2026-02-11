@@ -9,6 +9,7 @@ import ExamTips from './ExamTips';
 import Gallery from './Gallery';
 import Contact from './Contact';
 import Footer from './Footer';
+import AnimatedSection from './AnimatedSection';
 
 export default function Home() {
   return (
@@ -16,14 +17,30 @@ export default function Home() {
       <Header />
       <main>
         <Hero />
-        <About />
-        <Courses />
-        <Calculator />
-        <Quiz />
-        <DrivingTips />
-        <ExamTips />
-        <Gallery />
-        <Contact />
+        <AnimatedSection animation="slideUp">
+          <About />
+        </AnimatedSection>
+        <AnimatedSection animation="fadeIn">
+          <Courses />
+        </AnimatedSection>
+        <AnimatedSection animation="scale">
+          <Calculator />
+        </AnimatedSection>
+        <AnimatedSection animation="slideUp">
+          <Quiz />
+        </AnimatedSection>
+        <AnimatedSection animation="slideLeft">
+          <DrivingTips />
+        </AnimatedSection>
+        <AnimatedSection animation="slideRight">
+          <ExamTips />
+        </AnimatedSection>
+        <AnimatedSection animation="scale">
+          <Gallery />
+        </AnimatedSection>
+        <AnimatedSection animation="fadeIn">
+          <Contact />
+        </AnimatedSection>
       </main>
       <Footer />
     </div>
