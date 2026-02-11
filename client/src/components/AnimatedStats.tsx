@@ -67,7 +67,7 @@ export default function AnimatedStats() {
           </p>
         </div>
 
-        <div className="w-full">
+        <div className="w-full relative px-10">
           <Carousel
             opts={{
               align: "start",
@@ -76,13 +76,14 @@ export default function AnimatedStats() {
             plugins={[
               Autoplay({
                 delay: 4000,
+                stopOnInteraction: false,
               }),
             ]}
             className="w-full"
           >
             <CarouselContent className="-ml-2 md:-ml-4">
               {stats.map((stat, index) => (
-                <CarouselItem key={index} className="pl-2 md:pl-4 basis-full sm:basis-1/2 lg:basis-1/4">
+                <CarouselItem key={index} className="pl-2 md:pl-4 basis-full sm:basis-1/2 lg:basis-1/3 xl:basis-1/4">
                   <Card 
                     className={`h-full bg-white/10 border-white/20 backdrop-blur-sm hover-elevate transition-all duration-500 ${
                       isVisible 
@@ -111,6 +112,8 @@ export default function AnimatedStats() {
                 </CarouselItem>
               ))}
             </CarouselContent>
+            <CarouselPrevious className="hidden md:flex -left-12 bg-white/10 border-white/20 text-white hover:bg-white/20" />
+            <CarouselNext className="hidden md:flex -right-12 bg-white/10 border-white/20 text-white hover:bg-white/20" />
           </Carousel>
         </div>
       </div>
