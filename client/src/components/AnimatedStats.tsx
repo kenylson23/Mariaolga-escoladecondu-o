@@ -56,16 +56,16 @@ export default function AnimatedStats() {
   return (
     <section 
       ref={elementRef}
-      className="py-20 bg-primary text-primary-foreground overflow-hidden"
+      className="py-24 bg-primary text-primary-foreground overflow-hidden"
       data-testid="section-animated-stats"
     >
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 font-serif text-white">
+        <div className="text-center mb-20">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 font-serif text-white tracking-tight">
             Números que Falam por Si
           </h2>
-          <p className="text-lg text-primary-foreground/80 max-w-2xl mx-auto">
-            Mais de uma década de dedicação ao ensino da condução em Angola
+          <p className="text-xl text-primary-foreground/80 max-w-2xl mx-auto font-light leading-relaxed">
+            Mais de uma década de dedicação ao ensino da condução em Angola com resultados comprovados.
           </p>
         </div>
 
@@ -87,26 +87,28 @@ export default function AnimatedStats() {
               {stats.map((stat, index) => (
                 <CarouselItem key={index} className="pl-2 md:pl-4 basis-full sm:basis-1/2 lg:basis-1/3 xl:basis-1/4">
                   <Card 
-                    className={`h-full bg-white/10 border-white/20 backdrop-blur-sm hover-elevate transition-all duration-500 ${
+                    className={`h-full bg-white/5 border-white/10 backdrop-blur-md hover-elevate transition-all duration-700 ${
                       isVisible 
                         ? 'opacity-100 translate-y-0' 
-                        : 'opacity-0 translate-y-8'
+                        : 'opacity-0 translate-y-12'
                     }`}
                     style={{ 
                       transitionDelay: `${index * 150}ms` 
                     }}
                     data-testid={`card-stat-${stat.label.toLowerCase().replace(/\s+/g, '-')}`}
                   >
-                    <CardContent className="p-6 text-center flex flex-col items-center justify-center h-full">
-                      <stat.icon className="w-12 h-12 mb-4 text-orange shrink-0" />
-                      <div className="text-3xl md:text-4xl font-bold mb-2 text-white">
-                        {stat.value}
-                        <span className="text-orange">{stat.suffix}</span>
+                    <CardContent className="p-8 text-center flex flex-col items-center justify-center h-full">
+                      <div className="w-16 h-16 rounded-2xl bg-secondary/20 flex items-center justify-center mb-6 shadow-xl">
+                        <stat.icon className="w-8 h-8 text-secondary shrink-0" />
                       </div>
-                      <h3 className="text-lg font-semibold mb-2 text-white">
+                      <div className="text-4xl md:text-5xl font-bold mb-3 text-white tracking-tighter">
+                        {stat.value}
+                        <span className="text-secondary">{stat.suffix}</span>
+                      </div>
+                      <h3 className="text-xl font-bold mb-3 text-white">
                         {stat.label}
                       </h3>
-                      <p className="text-sm text-primary-foreground/70">
+                      <p className="text-base text-primary-foreground/70 font-medium">
                         {stat.description}
                       </p>
                     </CardContent>
