@@ -19,11 +19,6 @@ export default function Header() {
     <header className="sticky top-0 z-50 flex justify-center w-full px-4 pt-2">
       <nav className="max-w-5xl w-full bg-background/80 backdrop-blur-md border border-border rounded-full px-5 py-2 flex items-center justify-between shadow-lg">
         <a href="#" className="flex items-center gap-2 group">
-          <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center group-hover:scale-105 transition-transform duration-200">
-            <svg className="w-5 h-5 text-white" viewBox="0 0 48 48" fill="currentColor">
-              <path d="M24 10 L26 22 L38 24 L26 26 L24 38 L22 26 L10 24 L22 22 Z" />
-            </svg>
-          </div>
           <span className="text-lg font-bold tracking-tight text-foreground">
             {siteData.company.name.split(' KL')[0]} <span className="text-primary">KL</span>
           </span>
