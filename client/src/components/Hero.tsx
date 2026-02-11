@@ -68,7 +68,7 @@ export default function Hero() {
           </div>
 
           {/* Right Column: Lottie Animation */}
-          <div className="relative flex justify-center lg:justify-end items-center">
+          <div className="relative flex justify-center lg:justify-end items-center -mt-8 lg:-mt-16">
             <div className="w-full max-w-[380px] aspect-square relative opacity-90">
               <div className="absolute inset-0 bg-primary/5 rounded-full blur-3xl" />
               <Lottie 
