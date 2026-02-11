@@ -1,13 +1,13 @@
 import { Button } from '@/components/ui/button';
-import { Award, Users, Car } from 'lucide-react';
+import { Star, GraduationCap, CarFront } from 'lucide-react';
 import Lottie from 'lottie-react';
 import drivingAnimation from '@assets/Driving_Car___Success_tick___Pickup_Scheduled_1770563462145.json';
 
 export default function Hero() {
   const stats = [
-    { icon: Award, label: 'Anos de Experiência', value: '12+' },
-    { icon: Users, label: 'Alunos Aprovados', value: '3500+' },
-    { icon: Car, label: 'Veículos Adequados', value: '12' },
+    { icon: Star, label: 'Anos de Experiência', value: '12+' },
+    { icon: GraduationCap, label: 'Alunos Aprovados', value: '3500+' },
+    { icon: CarFront, label: 'Veículos Adequados', value: '12' },
   ];
 
   return (

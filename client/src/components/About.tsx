@@ -1,6 +1,6 @@
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import { Shield, Trophy, Heart, Clock, CheckCircle2, ArrowRight } from 'lucide-react';
+import { ShieldCheck, Target, Heart, Timer, CheckCircle2, ArrowRight } from 'lucide-react';
 import mariaOlgaImage from '@assets/generated_images/Maria_Olga_driving_instructor_portrait_bb9c3c1b.png';
 import schoolImage from '@assets/generated_images/Modern_driving_school_building_5228ea15.png';
 import AnimatedSection from '@/components/AnimatedSection';
@@ -10,12 +10,12 @@ import { Badge } from '@/components/ui/badge';
 export default function About() {
   const features = [
     {
-      icon: Shield,
+      icon: ShieldCheck,
       title: 'Segurança em Primeiro',
       description: 'Priorizamos a segurança rodoviária em todas as nossas lições, preparando condutores responsáveis.'
     },
     {
-      icon: Trophy,
+      icon: Target,
       title: 'Taxa de Sucesso Elevada',
       description: 'Mais de 90% dos nossos alunos são aprovados no exame de condução em Angola.'
     },
@@ -25,7 +25,7 @@ export default function About() {
       description: 'Adaptamos o nosso método de ensino às necessidades individuais de cada aluno.'
     },
     {
-      icon: Clock,
+      icon: Timer,
       title: 'Horários Flexíveis',
       description: 'Oferecemos aulas em horários convenientes, incluindo fins de semana.'
     }
@@ -58,7 +58,7 @@ export default function About() {
                 <div className="bg-white p-6 rounded-2xl shadow-2xl border-l-4 border-secondary">
                   <div className="flex items-center gap-4 mb-2">
                     <div className="w-12 h-12 rounded-full bg-secondary/20 flex items-center justify-center">
-                      <Trophy className="w-6 h-6 text-secondary" />
+                      <Target className="w-6 h-6 text-secondary" />
                     </div>
                     <div>
                       <p className="text-2xl font-bold text-primary">12+</p>

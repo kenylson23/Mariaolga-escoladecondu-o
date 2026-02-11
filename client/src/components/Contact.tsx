@@ -79,9 +79,7 @@ Enviado através do site da Escola de Condução KL`;
   const contactMethods = [
     {
       icon: (
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
-          <path strokeLinecap="round" strokeLinejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0" />
-        </svg>
+        <MessageCircle className="w-6 h-6" />
       ),
       title: "Conecte-se connosco",
       desc: "Estamos aqui para ajudar e responder a qualquer dúvida que possa ter.",
@@ -92,16 +90,7 @@ Enviado através do site da Escola de Condução KL`;
     },
     {
       icon: (
-        <svg className="w-6 h-6" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <g clipPath="url(#clip0_17_80)">
-            <path d="M15.1003 43.5C33.2091 43.5 43.1166 28.4935 43.1166 15.4838C43.1166 15.0619 43.1072 14.6307 43.0884 14.2088C45.0158 12.815 46.679 11.0886 48 9.11066C46.205 9.90926 44.2993 10.4308 42.3478 10.6575C44.4026 9.42588 45.9411 7.491 46.6781 5.21159C44.7451 6.35718 42.6312 7.16528 40.4269 7.60128C38.9417 6.02318 36.978 4.97829 34.8394 4.62816C32.7008 4.27803 30.5064 4.64216 28.5955 5.66425C26.6846 6.68635 25.1636 8.30947 24.2677 10.2827C23.3718 12.2559 23.1" fill="currentColor" />
-          </g>
-          <defs>
-            <clipPath id="clip0_17_80">
-              <rect width="48" height="48" fill="white" />
-            </clipPath>
-          </defs>
-        </svg>
+        <div className="font-bold text-lg">f</div>
       ),
       title: "Siga-nos",
       desc: "Acompanhe as nossas novidades e dicas nas redes sociais.",
