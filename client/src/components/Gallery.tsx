@@ -102,9 +102,9 @@ export default function Gallery() {
         <div className="max-w-4xl mx-auto flex justify-center">
           <CardStack3D 
             images={filteredImages.map(img => ({ src: img.src, alt: img.alt }))} 
-            cardWidth={isMobile ? 280 : 500}
-            cardHeight={isMobile ? 180 : 300}
-            className="py-20 md:py-40"
+            cardWidth={isMobile ? 240 : 400}
+            cardHeight={isMobile ? 150 : 250}
+            className="py-16 md:py-32"
           />
         </div>
 
