@@ -39,6 +39,7 @@
   --muted-foreground: 220 40% 40%;
   --accent: 35 90% 92%;
   --accent-foreground: 35 90% 30%;
+}
 
 .dark {
   --button-outline: rgba(255,255,255, .10);
