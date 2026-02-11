@@ -107,9 +107,6 @@ export default function About() {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 py-6 border-y border-border">
                 {highlights.map((item, i) => (
                   <div key={i} className="flex items-center gap-3">
-                    <div className="shrink-0 w-6 h-6 rounded-full bg-secondary/20 flex items-center justify-center">
-                      <CheckCircle2 className="w-4 h-4 text-secondary" />
-                    </div>
                     <span className="font-semibold text-primary/80">{item}</span>
                   </div>
                 ))}

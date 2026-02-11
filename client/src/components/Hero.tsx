@@ -54,11 +54,6 @@ export default function Hero() {
             <div className="grid grid-cols-3 gap-4 sm:gap-6 pt-10 pb-10 border-t border-border/50">
               {stats.map((stat, index) => (
                 <div key={index} className="flex flex-col items-center sm:items-start text-center sm:text-left gap-1 group cursor-default">
-                  <div className="flex items-center justify-center sm:justify-start gap-2 mb-1">
-                    <div className="p-2 rounded-xl bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300 shadow-sm">
-                      <stat.icon className="w-5 h-5" />
-                    </div>
-                  </div>
                   <div className="flex flex-col items-center sm:items-start">
                     <div className="text-2xl sm:text-3xl font-bold text-foreground tracking-tight flex items-baseline gap-0.5">
                       {stat.value}

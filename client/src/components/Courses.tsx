@@ -110,12 +110,10 @@ export default function Courses() {
                   <ul className="space-y-3 mb-8">
                     {course.features.map((feature, fIndex) => (
                       <li key={fIndex} className="flex items-start gap-3 text-sm text-foreground/80">
-                        <CheckCircle className={`w-4 h-4 mt-0.5 shrink-0 ${isPopular ? 'text-primary' : 'text-muted-foreground'}`} />
                         <span>{feature}</span>
                       </li>
                     ))}
                     <li className="flex items-start gap-3 text-sm text-foreground/80">
-                      <Clock className={`w-4 h-4 mt-0.5 shrink-0 ${isPopular ? 'text-primary' : 'text-muted-foreground'}`} />
                       <span>Duração: {course.duration}</span>
                     </li>
                   </ul>
