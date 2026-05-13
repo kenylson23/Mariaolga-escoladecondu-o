@@ -256,43 +256,33 @@ export default function ExamTips() {
           </TabsContent>
         </Tabs>
 
-        {/* Success statistics */}
-        <Card className="mt-16 bg-primary/5 border-primary/20">
-          <CardContent className="p-8 text-center">
-            <Users className="w-16 h-16 text-primary mx-auto mb-6" />
-            <h3 className="text-2xl font-semibold mb-4 text-foreground">
-              Taxa de Sucesso da Maria Olga
-            </h3>
-            <div className="grid md:grid-cols-3 gap-8 mb-6">
-              <div>
-                <div className="text-3xl font-bold text-primary mb-2">96%</div>
-                <div className="text-muted-foreground">Aprovação no Teórico</div>
-              </div>
-              <div>
-                <div className="text-3xl font-bold text-primary mb-2">94%</div>
-                <div className="text-muted-foreground">Aprovação no Prático</div>
-              </div>
-              <div>
-                <div className="text-3xl font-bold text-primary mb-2">89%</div>
-                <div className="text-muted-foreground">Aprovação à 1ª Tentativa</div>
-              </div>
+        {/* CTA */}
+        <div className="mt-16 max-w-4xl mx-auto rounded-3xl bg-primary overflow-hidden">
+          <div className="relative px-10 py-14 md:px-16 flex flex-col md:flex-row items-center justify-between gap-8">
+            <div className="absolute top-0 right-0 w-72 h-72 rounded-full bg-white/5 translate-x-1/3 -translate-y-1/3 pointer-events-none" />
+            <div className="absolute bottom-0 left-0 w-48 h-48 rounded-full bg-secondary/10 -translate-x-1/3 translate-y-1/3 pointer-events-none" />
+
+            <div className="relative z-10 text-center md:text-left">
+              <p className="text-white/50 text-xs uppercase tracking-widest font-semibold mb-3">Escola de Condução KL</p>
+              <h3 className="text-2xl md:text-3xl font-black text-white tracking-tight leading-tight">
+                Pronto para começar<br className="hidden md:block" /> a sua preparação?
+              </h3>
+              <p className="text-white/60 mt-3 text-sm max-w-md leading-relaxed">
+                Os nossos instrutores certificados vão guiá-lo em cada etapa do processo até obter a sua carta.
+              </p>
             </div>
-            <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
-              A nossa experiência de 25 anos e métodos de ensino comprovados 
-              resultam numa das melhores taxas de aprovação de Portugal.
-            </p>
-            <Button
-              onClick={() => {
-                const element = document.getElementById('contacto');
-                element?.scrollIntoView({ behavior: 'smooth' });
-              }}
-              size="lg"
-              data-testid="button-start-lessons"
-            >
-              Começar Preparação
-            </Button>
-          </CardContent>
-        </Card>
+
+            <div className="relative z-10 shrink-0">
+              <a
+                href="#contacto"
+                data-testid="button-start-lessons"
+                className="inline-flex items-center justify-center bg-secondary text-foreground font-semibold px-7 py-3.5 rounded-2xl text-sm hover:bg-secondary/90 transition-colors"
+              >
+                Começar Preparação
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );
