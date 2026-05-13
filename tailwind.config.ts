@@ -87,8 +87,8 @@ export default {
         },
       },
       fontFamily: {
-        sans: ["Inter", "Poppins", "sans-serif"],
-        serif: ["var(--font-serif)"],
+        sans: ["Helvetica Neue", "HelveticaNeue", "Helvetica", "Arial", "sans-serif"],
+        serif: ["Helvetica Neue", "HelveticaNeue", "Helvetica", "Arial", "sans-serif"],
         mono: ["var(--font-mono)"],
       },
       keyframes: {
