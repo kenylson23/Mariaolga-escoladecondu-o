@@ -1,8 +1,18 @@
+import { useRef } from 'react';
+import { motion, useInView } from 'framer-motion';
 import { Facebook, Instagram, Youtube, Mail, Phone, MapPin, ArrowUpRight, Twitter, Linkedin } from 'lucide-react';
-import { Button } from '@/components/ui/button';
 import siteData from '@/data/site.json';
 
+const fadeUp = {
+  hidden: { opacity: 0, y: 24 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.55, ease: [0.25, 0.46, 0.45, 0.94] } },
+};
+const container = { hidden: {}, show: { transition: { staggerChildren: 0.08 } } };
+
 export default function Footer() {
+  const ref = useRef(null);
+  const inView = useInView(ref, { once: true, margin: '-60px' });
+
   const getIconComponent = (iconName: string) => {
     switch (iconName) {
       case 'Facebook': return Facebook;
@@ -14,11 +24,7 @@ export default function Footer() {
     }
   };
 
-  const socialLinks = siteData.socialLinks.map(link => ({
-    ...link,
-    icon: getIconComponent(link.icon)
-  }));
-
+  const socialLinks = siteData.socialLinks.map(link => ({ ...link, icon: getIconComponent(link.icon) }));
   const quickLinks = siteData.navigation.quickLinks;
 
   const courses = [
@@ -26,145 +32,146 @@ export default function Footer() {
     { label: 'Ligeiro Profissional', href: '#categorias' },
     { label: 'Pesado Profissional', href: '#categorias' },
     { label: 'Categorias de Reciclagem', href: '#categorias' },
-    { label: 'Outras Categorias', href: '#categorias' },
   ];
 
   return (
-    <footer className="animate-on-scroll lg:px-6 lg:pt-12 lg:pb-0 max-w-6xl mx-auto pt-24 px-4 pb-24 bg-background">
-      <div 
-        className="lg:px-6 bg-gradient-to-br from-blue-500/0 via-blue-500/10 to-blue-500/0 max-w-6xl rounded-3xl mx-auto mb-8 p-8 relative border border-white/10"
-        style={{ 
-          background: 'linear-gradient(135deg, rgba(59, 130, 246, 0.05), rgba(59, 130, 246, 0))'
-        }}
+    <footer className="bg-background" ref={ref}>
+      {/* CTA Banner */}
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        animate={inView ? { opacity: 1, y: 0 } : {}}
+        transition={{ duration: 0.7, ease: [0.25, 0.46, 0.45, 0.94] }}
+        className="mx-4 md:mx-8 lg:mx-12 rounded-3xl bg-primary overflow-hidden mb-0"
       >
-        {/* CTA Banner */}
-        <div className="mb-0 p-8">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-            <h2 className="text-4xl lg:text-5xl font-light text-foreground tracking-tight flex items-center gap-4">
+        <div className="relative px-8 py-16 md:px-16 flex flex-col md:flex-row items-center justify-between gap-8">
+          {/* Decorative circles */}
+          <div className="absolute top-0 right-0 w-96 h-96 rounded-full bg-white/5 translate-x-1/2 -translate-y-1/2 pointer-events-none" />
+          <div className="absolute bottom-0 left-0 w-64 h-64 rounded-full bg-secondary/10 -translate-x-1/2 translate-y-1/2 pointer-events-none" />
+
+          <div className="relative z-10">
+            <p className="text-white/50 text-sm uppercase tracking-widest font-semibold mb-3">Pronto para começar?</p>
+            <h2 className="text-4xl lg:text-5xl font-black text-white tracking-tight flex items-center gap-4">
               Vamos conversar?
-              <ArrowUpRight className="w-12 h-12 text-amber-400" strokeWidth={1.5} />
+              <ArrowUpRight className="w-10 h-10 text-secondary" strokeWidth={2} />
             </h2>
-            <Button 
-              size="lg"
-              className="rounded-full px-8 bg-gradient-to-bl from-amber-200 via-orange-500 to-amber-200 hover:brightness-110 transition-all text-white border-none shadow-[0_0_20px_rgba(245,158,11,0.3)]"
-              asChild
-            >
-              <a href="#contacto">Contactar Agora</a>
-            </Button>
           </div>
+
+          <motion.a
+            href="#contacto"
+            whileHover={{ scale: 1.04 }}
+            whileTap={{ scale: 0.96 }}
+            className="relative z-10 shrink-0 inline-flex items-center gap-2 bg-secondary text-foreground font-bold px-8 py-4 rounded-2xl text-sm shadow-lg shadow-secondary/20"
+          >
+            Contactar Agora
+            <ArrowUpRight className="w-4 h-4" />
+          </motion.a>
         </div>
+      </motion.div>
 
-        {/* Divider */}
-        <div className="h-px bg-gradient-to-r from-transparent via-foreground/10 to-transparent mb-12"></div>
-
-        {/* Footer Content */}
-        <div className="flex flex-col gap-12">
-          {/* Top Section */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-sm">
-            {/* Logo + short description */}
-            <div>
-              <div className="flex items-center gap-3 mb-4">
-                <span className="text-2xl font-bold text-foreground">
-                  {siteData.company.name.split(' KL')[0]} <span className="text-orange-500">{siteData.company.shortName}</span>
-                </span>
-              </div>
-              <p className="text-xs text-muted-foreground max-w-xs leading-relaxed">
-                {siteData.company.description}
-              </p>
-            </div>
-
-            {/* Product Column */}
-            <div>
-              <h4 className="text-sm text-amber-500 mb-4 font-semibold uppercase tracking-wider">
-                Links Rápidos
-              </h4>
-              <ul className="space-y-2">
-                {quickLinks.map((link, index) => (
-                  <li key={index}>
-                    <a href={link.href} className="text-muted-foreground hover:text-foreground transition-colors">
-                      {link.label}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Resources Column */}
-            <div>
-              <h4 className="text-sm text-amber-500 mb-4 font-semibold uppercase tracking-wider">
-                Categorias
-              </h4>
-              <ul className="space-y-2">
-                {courses.map((course, index) => (
-                  <li key={index}>
-                    <a href={course.href} className="text-muted-foreground hover:text-foreground transition-colors">
-                      {course.label}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Company / Contact Column */}
-            <div>
-              <h4 className="text-sm text-amber-500 mb-4 font-semibold uppercase tracking-wider">
-                Contacto
-              </h4>
-              <div className="text-muted-foreground text-xs space-y-2 mb-6">
-                <p className="text-foreground font-medium">{siteData.company.name}</p>
-                <div className="flex items-center gap-2">
-                  <MapPin className="w-3 h-3 text-orange-500" />
-                  <span>Luanda, Angola</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <Phone className="w-3 h-3 text-orange-500" />
-                  <span>{siteData.contact.phone}</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <Mail className="w-3 h-3 text-orange-500" />
-                  <span>{siteData.contact.email}</span>
-                </div>
-              </div>
-
-              <div className="flex items-center gap-3 mt-4">
-                {socialLinks.map((social, index) => (
-                  <a 
-                    key={index}
-                    href={social.href} 
-                    className="w-8 h-8 rounded-full bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-600 hover:bg-amber-500/20 transition-colors"
-                    aria-label={social.label}
-                  >
-                    <social.icon className="w-4 h-4" />
-                  </a>
-                ))}
-              </div>
-            </div>
-          </div>
-
-          {/* Bottom Section */}
-          <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-6 border-t border-foreground/10 text-xs">
-            <div className="text-muted-foreground flex items-center gap-2">
-              <span>© {new Date().getFullYear()} {siteData.company.name}.</span>
-              <span className="hidden sm:inline">|</span>
-              <span>
-                Feito por{' '}
-                <a href="https://www.instagram.com/keny_ggg/" target="_blank" rel="noopener noreferrer" className="text-orange-500 hover:underline">
-                  Kenylson Lourenço
-                </a>
+      {/* Main footer */}
+      <motion.div
+        variants={container}
+        initial="hidden"
+        animate={inView ? 'show' : 'hidden'}
+        className="container mx-auto px-4 pt-20 pb-10"
+      >
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+          {/* Brand */}
+          <motion.div variants={fadeUp} className="lg:col-span-1">
+            <div className="mb-4">
+              <span className="text-2xl font-black text-foreground tracking-tight">
+                {siteData.company.name.split(' KL')[0]}{' '}
+                <span className="text-secondary">KL</span>
               </span>
             </div>
-            <div className="flex items-center gap-6">
-              <a href="#" className="text-muted-foreground hover:text-foreground transition-colors">
-                Política de Privacidade
-              </a>
-              <span className="text-muted-foreground/30">/</span>
-              <a href="#" className="text-muted-foreground hover:text-foreground transition-colors">
-                Termos & Condições
-              </a>
+            <p className="text-sm text-muted-foreground leading-relaxed mb-6 max-w-xs">
+              {siteData.company.description}
+            </p>
+            <div className="flex items-center gap-2.5">
+              {socialLinks.map((social, i) => (
+                <motion.a
+                  key={i}
+                  href={social.href}
+                  whileHover={{ scale: 1.1, y: -2 }}
+                  whileTap={{ scale: 0.9 }}
+                  aria-label={social.label}
+                  className="w-9 h-9 rounded-xl bg-muted flex items-center justify-center text-muted-foreground hover:text-foreground hover:bg-muted/80 transition-colors"
+                >
+                  <social.icon className="w-4 h-4" />
+                </motion.a>
+              ))}
             </div>
-          </div>
+          </motion.div>
+
+          {/* Quick links */}
+          <motion.div variants={fadeUp}>
+            <h4 className="text-xs font-bold uppercase tracking-[0.2em] text-secondary mb-5">Links Rápidos</h4>
+            <ul className="space-y-3">
+              {quickLinks.map((link, i) => (
+                <li key={i}>
+                  <a href={link.href} className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                    {link.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </motion.div>
+
+          {/* Courses */}
+          <motion.div variants={fadeUp}>
+            <h4 className="text-xs font-bold uppercase tracking-[0.2em] text-secondary mb-5">Categorias</h4>
+            <ul className="space-y-3">
+              {courses.map((course, i) => (
+                <li key={i}>
+                  <a href={course.href} className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                    {course.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </motion.div>
+
+          {/* Contact */}
+          <motion.div variants={fadeUp}>
+            <h4 className="text-xs font-bold uppercase tracking-[0.2em] text-secondary mb-5">Contacto</h4>
+            <div className="space-y-3.5">
+              <div className="flex items-start gap-2.5">
+                <MapPin className="w-4 h-4 text-secondary shrink-0 mt-0.5" />
+                <span className="text-sm text-muted-foreground">Luanda, Angola</span>
+              </div>
+              <div className="flex items-center gap-2.5">
+                <Phone className="w-4 h-4 text-secondary shrink-0" />
+                <span className="text-sm text-muted-foreground">{siteData.contact.phone}</span>
+              </div>
+              <div className="flex items-center gap-2.5">
+                <Mail className="w-4 h-4 text-secondary shrink-0" />
+                <span className="text-sm text-muted-foreground">{siteData.contact.email}</span>
+              </div>
+            </div>
+          </motion.div>
         </div>
-      </div>
+
+        {/* Bottom bar */}
+        <motion.div
+          variants={fadeUp}
+          className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-8 border-t border-border text-xs text-muted-foreground"
+        >
+          <div className="flex items-center gap-2">
+            <span>© {new Date().getFullYear()} {siteData.company.name}.</span>
+            <span className="text-border">|</span>
+            <span>
+              Feito por{' '}
+              <a href="https://www.instagram.com/keny_ggg/" target="_blank" rel="noopener noreferrer" className="text-secondary hover:underline">
+                Kenylson Lourenço
+              </a>
+            </span>
+          </div>
+          <div className="flex items-center gap-5">
+            <a href="#" className="hover:text-foreground transition-colors">Política de Privacidade</a>
+            <a href="#" className="hover:text-foreground transition-colors">Termos & Condições</a>
+          </div>
+        </motion.div>
+      </motion.div>
     </footer>
   );
 }
