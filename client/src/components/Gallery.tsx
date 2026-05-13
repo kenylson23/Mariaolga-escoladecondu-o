@@ -4,7 +4,7 @@ import { CardStack3D } from '@/components/ui/card-stack-3d';
 import vehiclesImage from '@assets/Gemini_Generated_Image_7ytgr57ytgr57ytg_1778663721818.png';
 import vehiclesImage2 from '@assets/Gemini_Generated_Image_dfvip4dfvip4dfvi_1778663763636.png';
 import schoolImage from '@assets/Gemini_Generated_Image_pnjfklpnjfklpnjf_1778664763212.png';
-import heroImage from '@assets/generated_images/Driving_instructor_teaching_student_2b3ed7ce.png';
+import heroImage from '@assets/Gemini_Generated_Image_nyg2e4nyg2e4nyg2_1778665000186.png';
 
 export default function Gallery() {
   const [activeCategory, setActiveCategory] = useState('todos');
@@ -46,13 +46,6 @@ export default function Gallery() {
       category: 'veiculos',
       title: 'Duplo Comando'
     },
-    {
-      id: 6,
-      src: heroImage,
-      alt: 'Instrutor e aluno',
-      category: 'aulas',
-      title: 'Ensino Personalizado'
-    }
   ];
 
   const categories = [
