@@ -80,12 +80,12 @@ export default function DrivingTips() {
     }
   ];
 
-  const getDifficultyColor = (difficulty: string) => {
+  const getDifficultyStyle = (difficulty: string) => {
     switch (difficulty) {
-      case 'Básico': return 'bg-green-100 text-green-800 border-green-300';
-      case 'Intermédio': return 'bg-orange-100 text-orange-800 border-orange-300';
-      case 'Avançado': return 'bg-red-100 text-red-800 border-red-300';
-      default: return 'bg-gray-100 text-gray-800 border-gray-300';
+      case 'Básico':     return 'font-light italic tracking-tight text-foreground/35';
+      case 'Intermédio': return 'font-semibold italic tracking-tight text-foreground/55';
+      case 'Avançado':   return 'font-black italic tracking-tight text-foreground/80';
+      default:           return 'font-light italic text-foreground/30';
     }
   };
 
@@ -111,12 +111,9 @@ export default function DrivingTips() {
             >
               <CardHeader className="pb-4">
                 <div className="flex items-start justify-between mb-4">
-                  <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
-                    <tip.icon className="w-6 h-6 text-primary" />
-                  </div>
-                  <Badge className={getDifficultyColor(tip.difficulty)}>
+                  <span className={`text-2xl leading-none ${getDifficultyStyle(tip.difficulty)}`}>
                     {tip.difficulty}
-                  </Badge>
+                  </span>
                 </div>
                 <CardTitle className="text-lg mb-2">{tip.title}</CardTitle>
                 <Badge variant="outline" className="w-fit">
