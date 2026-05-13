@@ -1,7 +1,7 @@
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { ShieldCheck, Target, Heart, Timer, CheckCircle2, ArrowRight } from 'lucide-react';
-import mariaOlgaImage from '@assets/generated_images/Maria_Olga_driving_instructor_portrait_bb9c3c1b.png';
+import mariaOlgaImage from '@assets/Gemini_Generated_Image_j60n42j60n42j60n_1778662345906.png';
 import schoolImage from '@assets/Gemini_Generated_Image_xymirgxymirgxymi_1778662049110.png';
 import AnimatedSection from '@/components/AnimatedSection';
 import AnimatedStats from '@/components/AnimatedStats';
