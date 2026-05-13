@@ -8,7 +8,7 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
-import { Car, Truck, CheckCircle, Info, ArrowRight, Sparkles } from 'lucide-react';
+import { Car, Truck, CheckCircle, Info, ArrowRight } from 'lucide-react';
 import coursesData from '@/data/courses.json';
 import { useState } from 'react';
 
@@ -103,8 +103,7 @@ export default function Courses() {
               >
                 {/* Popular ribbon */}
                 {isPopular && (
-                  <div className="absolute top-5 right-5 flex items-center gap-1.5 bg-secondary text-foreground font-bold text-[10px] uppercase tracking-widest px-3 py-1.5 rounded-full">
-                    <Sparkles className="w-3 h-3" />
+                  <div className="absolute top-5 right-5 bg-secondary text-foreground font-bold text-[10px] uppercase tracking-widest px-3 py-1.5 rounded-full">
                     Mais Popular
                   </div>
                 )}
