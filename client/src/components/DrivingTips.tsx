@@ -130,42 +130,39 @@ export default function DrivingTips() {
         </div>
 
         {/* Call to action */}
-        <div className="text-center mt-16">
-          <Card className="bg-primary/5 border-primary/20 max-w-4xl mx-auto">
-            <CardContent className="p-8">
-              <Shield className="w-16 h-16 text-primary mx-auto mb-6" />
-              <h3 className="text-2xl font-semibold mb-4 text-foreground">
-                Quer aprender mais técnicas de condução defensiva?
+        <div className="mt-16 max-w-4xl mx-auto rounded-3xl bg-primary overflow-hidden">
+          <div className="relative px-10 py-14 md:px-16 flex flex-col md:flex-row items-center justify-between gap-8">
+            {/* Decorative circles */}
+            <div className="absolute top-0 right-0 w-72 h-72 rounded-full bg-white/5 translate-x-1/3 -translate-y-1/3 pointer-events-none" />
+            <div className="absolute bottom-0 left-0 w-48 h-48 rounded-full bg-secondary/10 -translate-x-1/3 translate-y-1/3 pointer-events-none" />
+
+            <div className="relative z-10 text-center md:text-left">
+              <p className="text-white/50 text-xs uppercase tracking-widest font-semibold mb-3">Próximo passo</p>
+              <h3 className="text-2xl md:text-3xl font-black text-white tracking-tight leading-tight">
+                Quer aprender mais técnicas<br className="hidden md:block" /> de condução defensiva?
               </h3>
-              <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
-                Os nossos instrutores experientes ensinam estas e muitas outras técnicas 
-                durante as aulas práticas. A segurança é sempre a nossa prioridade.
+              <p className="text-white/60 mt-3 text-sm max-w-md leading-relaxed">
+                Os nossos instrutores ensinam estas e muitas outras técnicas durante as aulas práticas.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button
-                  onClick={() => {
-                    const element = document.getElementById('contacto');
-                    element?.scrollIntoView({ behavior: 'smooth' });
-                  }}
-                  size="lg"
-                  data-testid="button-book-lessons"
-                >
-                  Marcar Aulas Práticas
-                </Button>
-                <Button
-                  onClick={() => {
-                    const element = document.getElementById('quiz');
-                    element?.scrollIntoView({ behavior: 'smooth' });
-                  }}
-                  variant="outline"
-                  size="lg"
-                  data-testid="button-test-knowledge"
-                >
-                  Testar Conhecimentos
-                </Button>
-              </div>
-            </CardContent>
-          </Card>
+            </div>
+
+            <div className="relative z-10 flex flex-col sm:flex-row md:flex-col gap-3 shrink-0">
+              <a
+                href="#contacto"
+                data-testid="button-book-lessons"
+                className="inline-flex items-center justify-center gap-2 bg-secondary text-foreground font-semibold px-7 py-3.5 rounded-2xl text-sm hover:bg-secondary/90 transition-colors"
+              >
+                Marcar Aulas Práticas
+              </a>
+              <a
+                href="#quiz"
+                data-testid="button-test-knowledge"
+                className="inline-flex items-center justify-center gap-2 bg-white/10 text-white font-semibold px-7 py-3.5 rounded-2xl text-sm hover:bg-white/15 transition-colors"
+              >
+                Testar Conhecimentos
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </section>
