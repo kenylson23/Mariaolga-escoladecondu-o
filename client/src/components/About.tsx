@@ -1,15 +1,15 @@
 import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
-import { ShieldCheck, Target, Heart, Timer, ArrowRight, CheckCircle2 } from 'lucide-react';
+import { Target, ArrowRight, CheckCircle2 } from 'lucide-react';
 import mariaOlgaImage from '@assets/Gemini_Generated_Image_j60n42j60n42j60n_1778662345906.png';
 import schoolImage from '@assets/Gemini_Generated_Image_xymirgxymirgxymi_1778662049110.png';
 import AnimatedStats from '@/components/AnimatedStats';
 
 const features = [
-  { icon: ShieldCheck, title: 'Segurança em Primeiro', description: 'Priorizamos a segurança rodoviária em cada lição, formando condutores responsáveis.' },
-  { icon: Target, title: 'Taxa de Sucesso 90%+', description: 'A maioria dos nossos alunos é aprovada no exame de condução à primeira tentativa.' },
-  { icon: Heart, title: 'Ensino Personalizado', description: 'Adaptamos o método de ensino às necessidades individuais de cada aluno.' },
-  { icon: Timer, title: 'Horários Flexíveis', description: 'Aulas em horários convenientes, incluindo fins de semana e feriados.' },
+  { title: 'Segurança em Primeiro', description: 'Priorizamos a segurança rodoviária em cada lição, formando condutores responsáveis.' },
+  { title: 'Taxa de Sucesso 90%+', description: 'A maioria dos nossos alunos é aprovada no exame de condução à primeira tentativa.' },
+  { title: 'Ensino Personalizado', description: 'Adaptamos o método de ensino às necessidades individuais de cada aluno.' },
+  { title: 'Horários Flexíveis', description: 'Aulas em horários convenientes, incluindo fins de semana e feriados.' },
 ];
 
 const highlights = [
@@ -221,9 +221,6 @@ export default function About() {
                 <div className="absolute inset-0 bg-gradient-to-br from-secondary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl" />
 
                 <div className="relative z-10">
-                  <div className="w-11 h-11 rounded-xl bg-secondary/10 flex items-center justify-center mb-5">
-                    <feature.icon className="w-5 h-5 text-secondary" />
-                  </div>
                   <h4 className="text-base font-bold text-foreground mb-2">{feature.title}</h4>
                   <p className="text-sm text-muted-foreground leading-relaxed">{feature.description}</p>
                 </div>
