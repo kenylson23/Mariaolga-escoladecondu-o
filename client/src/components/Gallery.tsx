@@ -3,7 +3,7 @@ import { Button } from '@/components/ui/button';
 import { CardStack3D } from '@/components/ui/card-stack-3d';
 import vehiclesImage from '@assets/Gemini_Generated_Image_7ytgr57ytgr57ytg_1778663721818.png';
 import vehiclesImage2 from '@assets/Gemini_Generated_Image_dfvip4dfvip4dfvi_1778663763636.png';
-import schoolImage from '@assets/generated_images/Modern_driving_school_building_5228ea15.png';
+import schoolImage from '@assets/Gemini_Generated_Image_pnjfklpnjfklpnjf_1778664763212.png';
 import heroImage from '@assets/generated_images/Driving_instructor_teaching_student_2b3ed7ce.png';
 
 export default function Gallery() {
@@ -45,13 +45,6 @@ export default function Gallery() {
       alt: 'Veículo de instrução',
       category: 'veiculos',
       title: 'Duplo Comando'
-    },
-    {
-      id: 5,
-      src: schoolImage,
-      alt: 'Sala de aulas teóricas',
-      category: 'instalacoes',
-      title: 'Salas de Aula'
     },
     {
       id: 6,
